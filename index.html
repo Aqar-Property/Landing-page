@@ -11,6 +11,7 @@
 <meta name="theme-color" content="#0b0d0c" media="(prefers-color-scheme: dark)">
 
 <link rel="canonical" href="https://aqar-property.github.io/">
+<link rel="apple-touch-icon" href="Materials/App_Icon.png">
 
 <!-- Open Graph / WhatsApp / Telegram -->
 <meta property="og:type" content="website">
@@ -20,9 +21,14 @@
 <meta property="og:url" content="https://aqar-property.github.io/">
 <meta property="og:locale" content="ar_AR">
 <meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://aqar-property.github.io/Materials/Aqar_Logo_AR_AppIcon.png">
+<meta property="og:image:width" content="2000">
+<meta property="og:image:height" content="2000">
+<meta property="og:image:alt" content="عقار | Aqar Property">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="عقار | Aqar Property — تحميل تطبيق الأندرويد">
 <meta name="twitter:description" content="منصة عقارية ببحث واضح، حسابات موثقة، وباقات مرنة. تحميل تطبيق الأندرويد APK مباشرة.">
+<meta name="twitter:image" content="https://aqar-property.github.io/Materials/Aqar_Logo_AR_AppIcon.png">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23101211'/%3E%3Cpath d='M7 23V13l9-6 9 6v10' fill='none' stroke='%23f6f5f1' stroke-width='2'/%3E%3Cpath d='M13 23v-6h6v6' fill='none' stroke='%235ce0b0' stroke-width='2'/%3E%3C/svg%3E">
 
@@ -36,7 +42,7 @@
       lang = localStorage.getItem('aqar:lang');
     } catch (e) {}
     if (theme !== 'dark' && theme !== 'light') {
-      theme = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      theme = 'light';
     }
     root.setAttribute('data-theme', theme);
     root.style.colorScheme = theme;
@@ -58,6 +64,8 @@
     --accent: #0f5a48;
     --accent-fg: #ffffff;
     --accent-soft: #e6efe9;
+    --tile: #101211;
+    --tile-line: #101211;
     --maxw: 1140px;
     --gutter: clamp(18px, 4vw, 40px);
     --radius: 2px;
@@ -67,15 +75,17 @@
   }
 
   html[data-theme="dark"] {
-    --bg: #0b0d0c;
+    --bg: #0a0c0b;
     --surface: #111413;
     --ink: #f2f1ec;
-    --muted: #9aa29d;
-    --line: #282d2a;
+    --muted: #98a19b;
+    --line: #262c29;
     --line-strong: #f2f1ec;
     --accent: #5ce0b0;
     --accent-fg: #07130f;
-    --accent-soft: #152a22;
+    --accent-soft: #14241f;
+    --tile: #171d1a;
+    --tile-line: #38403b;
   }
 
   *, *::before, *::after { box-sizing: border-box; }
@@ -97,6 +107,8 @@
 
   img, svg { display: block; max-width: 100%; }
   a { color: inherit; }
+
+  ::selection { background: var(--accent); color: var(--accent-fg); }
 
   :where(a, button):focus-visible {
     outline: 2px solid var(--accent);
@@ -164,16 +176,17 @@
     color: var(--ink);
   }
 
-  .brand-mark {
+  .brand-tile {
     flex: 0 0 auto;
     width: 34px;
     height: 34px;
-    border: 1px solid var(--line-strong);
     display: grid;
     place-items: center;
-    background: var(--surface);
+    background: var(--tile);
+    border: 1px solid var(--tile-line);
+    border-radius: var(--radius);
   }
-  .brand-mark svg { width: 20px; height: 20px; }
+  .brand-tile img { width: 23px; height: 23px; object-fit: contain; }
 
   .brand-text {
     display: flex;
@@ -250,6 +263,24 @@
     -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 0%, #000 0%, transparent 78%);
     mask-image: radial-gradient(ellipse 85% 75% at 50% 0%, #000 0%, transparent 78%);
   }
+
+  /* Brand wordmark: black on light paper, white on ink. */
+  .wordmark { display: block; }
+  .wordmark--white { display: none; }
+  html[data-theme="dark"] .wordmark--white { display: block; }
+  html[data-theme="dark"] .wordmark--black { display: none; }
+
+  .hero-watermark {
+    position: absolute;
+    z-index: -1;
+    inset-inline-end: -3vw;
+    bottom: -7%;
+    pointer-events: none;
+    opacity: .06;
+    -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 88%);
+    mask-image: linear-gradient(to top, #000 0%, transparent 88%);
+  }
+  .hero-watermark img { width: min(540px, 74vw); height: auto; }
 
   .hero-inner {
     position: relative;
@@ -364,6 +395,44 @@
     background: var(--surface);
     border-radius: var(--radius);
     align-self: start;
+  }
+
+  .spec-plate {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--line);
+  }
+  .spec-tile {
+    flex: 0 0 auto;
+    width: 64px;
+    height: 64px;
+    display: grid;
+    place-items: center;
+    background: var(--tile);
+    border: 1px solid var(--tile-line);
+    border-radius: var(--radius);
+  }
+  .spec-tile img { width: 42px; height: 42px; object-fit: contain; }
+  .spec-plate-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    min-width: 0;
+  }
+  .spec-plate-text .wordmark {
+    width: 94px;
+    height: 94px;
+    margin-block: -23px;
+  }
+  .plate-sub {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
   }
 
   .spec-top {
@@ -598,8 +667,8 @@
     gap: 12px;
     min-width: 0;
   }
-  .footer-brand .brand-mark { width: 30px; height: 30px; }
-  .footer-brand .brand-mark svg { width: 17px; height: 17px; }
+  .footer-brand .brand-tile { width: 30px; height: 30px; }
+  .footer-brand .brand-tile img { width: 20px; height: 20px; }
   .footer-name {
     margin: 0 0 3px;
     font-size: 14.5px;
@@ -659,6 +728,9 @@
     #themeToggle .ctrl-label { display: none; }
     .brand-latin { font-size: 8.5px; }
     .spec-row, .spec-top, .spec-foot { padding-inline: 14px; }
+    .spec-plate { padding-inline: 14px; gap: 12px; }
+    .spec-plate-text .wordmark { width: 82px; height: 82px; margin-block: -20px; }
+    .hero-watermark { display: none; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -678,11 +750,8 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="#" aria-label="عقار | Aqar Property">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="miter">
-          <path d="M5 23V12.5L16 5l11 7.5V23"/>
-          <path d="M12 23v-6.5h8V23"/>
-        </svg>
+      <span class="brand-tile" aria-hidden="true">
+        <img src="Materials/App_Icon.png" alt="" width="23" height="23" decoding="async">
       </span>
       <span class="brand-text">
         <strong>عقار</strong>
@@ -718,6 +787,10 @@
   <!-- Hero -->
   <section class="hero">
     <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-watermark" aria-hidden="true">
+      <img class="wordmark wordmark--black" src="Materials/Aqar_logo_Black.png" alt="" width="1025" height="1025" loading="lazy" decoding="async">
+      <img class="wordmark wordmark--white" src="Materials/Aqar_logo.png" alt="" width="1025" height="1025" loading="lazy" decoding="async">
+    </div>
     <div class="wrap hero-inner">
 
       <div class="hero-copy">
@@ -760,6 +833,17 @@
       </div>
 
       <aside class="spec" aria-labelledby="specLabel">
+        <div class="spec-plate">
+          <span class="spec-tile" aria-hidden="true">
+            <img src="Materials/App_Icon.png" alt="" width="42" height="42" decoding="async">
+          </span>
+          <div class="spec-plate-text">
+            <img class="wordmark wordmark--black" src="Materials/Aqar_logo_Black.png" alt="عقار" width="94" height="94" decoding="async">
+            <img class="wordmark wordmark--white" src="Materials/Aqar_logo.png" alt="عقار" width="94" height="94" decoding="async">
+            <span class="plate-sub">Aqar Property</span>
+          </div>
+        </div>
+
         <div class="spec-top">
           <span class="spec-label" id="specLabel" data-i18n="spec.label">بطاقة الإصدار</span>
           <span class="status">
@@ -904,11 +988,8 @@
 <footer class="site-footer">
   <div class="wrap footer-inner">
     <div class="footer-brand">
-      <span class="brand-mark" aria-hidden="true">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 23V12.5L16 5l11 7.5V23"/>
-          <path d="M12 23v-6.5h8V23"/>
-        </svg>
+      <span class="brand-tile" aria-hidden="true">
+        <img src="Materials/App_Icon.png" alt="" width="20" height="20" loading="lazy" decoding="async">
       </span>
       <div>
         <p class="footer-name">عقار | Aqar Property</p>
@@ -1127,16 +1208,6 @@
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
   applyLang(state.lang);
-
-  if (window.matchMedia) {
-    var mq = window.matchMedia("(prefers-color-scheme: dark)");
-    var onScheme = function (event) {
-      if (safeGet(KEY_THEME) === "dark" || safeGet(KEY_THEME) === "light") return;
-      applyTheme(event.matches ? "dark" : "light");
-    };
-    if (mq.addEventListener) mq.addEventListener("change", onScheme);
-    else if (mq.addListener) mq.addListener(onScheme);
-  }
 })();
 </script>
 </body>
