@@ -289,14 +289,23 @@
     color: var(--brand-ink);
     box-shadow: 0 8px 20px -10px var(--brand), inset 0 1px 0 rgba(255, 255, 255, .4);
   }
-  .mark svg { width: 23px; height: 23px; }
+  .mark img { height: 22px; width: auto; }
 
-  .brand-copy { display: flex; flex-direction: column; line-height: 1.1; min-width: 0; }
-  .brand-copy b { font-size: 18px; font-weight: 900; }
-  .brand-copy small {
-    font-size: 8.5px;
+  .brand-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    min-width: 0;
+  }
+  .wm { display: block; height: 28px; width: auto; }
+  .wm--white { display: none; }
+  html[data-theme="dark"] .wm--white { display: block; }
+  html[data-theme="dark"] .wm--black { display: none; }
+  .brand-latin {
+    font-size: 7.5px;
     font-weight: 700;
-    letter-spacing: .18em;
+    letter-spacing: .14em;
     text-transform: uppercase;
     color: var(--muted);
     white-space: nowrap;
@@ -576,8 +585,8 @@
   }
   .ph-brand { display: flex; align-items: center; gap: 7px; }
   .ph-brand .mark { width: 24px; height: 24px; border-radius: 8px; }
-  .ph-brand .mark svg { width: 15px; height: 15px; }
-  .ph-brand b { font-size: 13px; font-weight: 900; }
+  .ph-brand .mark img { height: 14px; width: auto; }
+  .ph-brand .wm { display: block; height: 17px; width: auto; }
   .ph-bell {
     position: relative;
     width: 26px; height: 26px;
@@ -1171,9 +1180,18 @@
   }
   .footer-brand { display: flex; gap: 12px; max-width: 34ch; }
   .footer-brand .mark { width: 34px; height: 34px; border-radius: 10px; }
-  .footer-brand .mark svg { width: 20px; height: 20px; }
-  .footer-name { margin: 0; font-size: 16px; font-weight: 900; line-height: 1.3; }
-  .footer-tag { margin: 4px 0 0; font-size: 12px; color: var(--muted); }
+  .footer-brand .mark img { height: 20px; width: auto; }
+  .footer-lockup { display: flex; align-items: center; gap: 9px; }
+  .footer-lockup .wm { height: 21px; }
+  .footer-latin {
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .footer-tag { margin: 6px 0 0; font-size: 12px; color: var(--muted); }
 
   .footer-links {
     display: flex;
@@ -1308,14 +1326,12 @@
   <div class="wrap header-inner">
     <a class="brand" href="#top" data-i18n-aria="a11y.home" aria-label="عقار — Aqar Property">
       <span class="mark" aria-hidden="true">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M7 24.5V14.4L16 7l9 7.4v10.1"/>
-          <path d="M12.8 24.5v-6h6.4v6"/>
-        </svg>
+        <img src="Materials/aqar-house-white.png" alt="" width="252" height="320" decoding="async">
       </span>
       <span class="brand-copy">
-        <b>عقار</b>
-        <small>Aqar Property</small>
+        <img class="wm wm--black" src="Materials/aqar-wordmark-black.png" alt="" width="720" height="391" decoding="async">
+        <img class="wm wm--white" src="Materials/aqar-wordmark-white.png" alt="" width="720" height="391" decoding="async">
+        <span class="brand-latin">Aqar Property</span>
       </span>
     </a>
 
@@ -1429,12 +1445,9 @@
             <div class="ph-top">
               <div class="ph-brand">
                 <span class="mark" aria-hidden="true">
-                  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M7 24.5V14.4L16 7l9 7.4v10.1"/>
-                    <path d="M12.8 24.5v-6h6.4v6"/>
-                  </svg>
+                  <img src="Materials/aqar-house-white.png" alt="" width="252" height="320" loading="lazy" decoding="async">
                 </span>
-                <b>عقار</b>
+                <img class="wm wm--white" src="Materials/aqar-wordmark-white.png" alt="" width="720" height="391" loading="lazy" decoding="async">
               </div>
               <span class="ph-bell" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.5 9.5a5.5 5.5 0 0 1 11 0v3.6l1.6 2.6H4.9l1.6-2.6Z"/><path d="M10.2 18.6a1.9 1.9 0 0 0 3.6 0"/></svg>
@@ -1831,13 +1844,14 @@
     <div class="footer-top">
       <div class="footer-brand">
         <span class="mark" aria-hidden="true">
-          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M7 24.5V14.4L16 7l9 7.4v10.1"/>
-            <path d="M12.8 24.5v-6h6.4v6"/>
-          </svg>
+          <img src="Materials/aqar-house-white.png" alt="" width="252" height="320" loading="lazy" decoding="async">
         </span>
         <div>
-          <p class="footer-name">عقار | Aqar Property</p>
+          <div class="footer-lockup">
+            <img class="wm wm--black" src="Materials/aqar-wordmark-black.png" alt="Aqar" width="720" height="391" loading="lazy" decoding="async">
+            <img class="wm wm--white" src="Materials/aqar-wordmark-white.png" alt="Aqar" width="720" height="391" loading="lazy" decoding="async">
+            <span class="footer-latin">Aqar Property</span>
+          </div>
           <p class="footer-tag" data-i18n="footer.tag">منصة الإعلانات العقارية — من المالك والمكتب إلى الباحث.</p>
         </div>
       </div>
