@@ -1,56 +1,48 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl" data-theme="light">
+<html lang="ar" dir="rtl" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title>عقار | Aqar Property — تحميل تطبيق الأندرويد</title>
-<meta name="description" content="عقار (Aqar Property) منصة عقارية لتصفح الإعلانات الموثقة، الفلترة حسب النوع والمدينة والسعر، والتواصل مع المعلنين والمكاتب العقارية. حمّل تطبيق الأندرويد APK مباشرة.">
+<title>عقار — منصة الإعلانات العقارية | Aqar Property</title>
+<meta name="description" content="عقار (Aqar Property) منصّة للإعلانات العقارية الموثّقة: تصفّح، فلتر حسب النوع والمدينة والسعر، وتواصل مباشرة مع المالكين والمكاتب العقارية. حمّل تطبيق الأندرويد أو استخدم نسخة الويب.">
 <meta name="author" content="Aqar Property">
-<meta name="theme-color" content="#f6f5f1" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0b0d0c" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0B0F0E" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F7F5EE" media="(prefers-color-scheme: light)">
 
 <link rel="canonical" href="https://aqar-property.github.io/">
 <link rel="apple-touch-icon" href="Materials/App_Icon.png">
 <link rel="preload" href="fonts/Cairo-arabic.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Cairo-latin.woff2" as="font" type="font/woff2" crossorigin>
 
-<!-- Open Graph / WhatsApp / Telegram -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="عقار | Aqar Property">
-<meta property="og:title" content="عقار | Aqar Property — تحميل تطبيق الأندرويد">
-<meta property="og:description" content="منصة عقارية ببحث واضح، حسابات موثقة، وباقات مرنة. تحميل تطبيق الأندرويد APK مباشرة.">
+<meta property="og:title" content="عقار — منصة الإعلانات العقارية">
+<meta property="og:description" content="إعلانات عقارية موثّقة من المالكين والمكاتب، في تطبيق واحد ونسخة ويب لكل الأجهزة.">
 <meta property="og:url" content="https://aqar-property.github.io/">
 <meta property="og:locale" content="ar_AR">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:image" content="https://aqar-property.github.io/Materials/Aqar_Logo_AR_AppIcon.png">
-<meta property="og:image:width" content="2000">
-<meta property="og:image:height" content="2000">
-<meta property="og:image:alt" content="عقار | Aqar Property">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="عقار | Aqar Property — تحميل تطبيق الأندرويد">
-<meta name="twitter:description" content="منصة عقارية ببحث واضح، حسابات موثقة، وباقات مرنة. تحميل تطبيق الأندرويد APK مباشرة.">
+<meta name="twitter:title" content="عقار — منصة الإعلانات العقارية">
+<meta name="twitter:description" content="إعلانات عقارية موثّقة من المالكين والمكاتب، في تطبيق واحد ونسخة ويب لكل الأجهزة.">
 <meta name="twitter:image" content="https://aqar-property.github.io/Materials/Aqar_Logo_AR_AppIcon.png">
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23101211'/%3E%3Cpath d='M7 23V13l9-6 9 6v10' fill='none' stroke='%23f6f5f1' stroke-width='2'/%3E%3Cpath d='M13 23v-6h6v6' fill='none' stroke='%235ce0b0' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231EC97E'/%3E%3Cpath d='M8 24V14.4L16 8l8 6.4V24' fill='none' stroke='%2304180F' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M13.2 24v-5.6h5.6V24' fill='none' stroke='%2304180F' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 
 <script>
-  /* Apply stored theme/language before paint to avoid a flash. */
   (function () {
     var root = document.documentElement;
+    root.classList.add("js");
     var theme = null, lang = null;
     try {
-      theme = localStorage.getItem('aqar:theme');
-      lang = localStorage.getItem('aqar:lang');
+      theme = localStorage.getItem("aqar:theme");
+      lang = localStorage.getItem("aqar:lang");
     } catch (e) {}
-    if (theme !== 'dark' && theme !== 'light') {
-      theme = 'light';
-    }
-    root.setAttribute('data-theme', theme);
+    if (theme !== "dark" && theme !== "light") theme = "dark";
+    root.setAttribute("data-theme", theme);
     root.style.colorScheme = theme;
-    if (lang === 'en') {
-      root.lang = 'en';
-      root.dir = 'ltr';
-    }
+    if (lang === "en") { root.lang = "en"; root.dir = "ltr"; }
   })();
 </script>
 
@@ -72,62 +64,99 @@
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
   }
 
+  /* ---------- Tokens ---------- */
   :root {
-    --bg: #f6f5f1;
-    --surface: #fffefa;
-    --ink: #101211;
-    --muted: #565b57;
-    --line: #d9d7ce;
-    --line-strong: #101211;
-    --accent: #0f5a48;
-    --accent-fg: #ffffff;
-    --accent-soft: #e6efe9;
-    --maxw: 1140px;
-    --gutter: clamp(18px, 4vw, 40px);
-    --radius: 2px;
-    --header-h: 70px;
-    --font-body: "Cairo", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, "Noto Sans Arabic", sans-serif;
-    --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    --maxw: 1180px;
+    --gutter: clamp(18px, 4.5vw, 46px);
+    --r-xl: 30px;
+    --r-lg: 24px;
+    --r: 16px;
+    --r-sm: 11px;
+    --ease: cubic-bezier(.22, .8, .3, 1);
+    --font: "Cairo", "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, "Noto Sans Arabic", sans-serif;
+    --mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    --header-h: 72px;
   }
 
   html[data-theme="dark"] {
-    --bg: #0a0c0b;
-    --surface: #111413;
-    --ink: #f2f1ec;
-    --muted: #98a19b;
-    --line: #262c29;
-    --line-strong: #f2f1ec;
-    --accent: #5ce0b0;
-    --accent-fg: #07130f;
-    --accent-soft: #14241f;
+    --bg: #0B0F0E;
+    --bg-2: #101614;
+    --surface: #151C19;
+    --surface-2: #1B2421;
+    --ink: #F0F4F1;
+    --ink-2: #CBD6D0;
+    --muted: #8E9C95;
+    --line: rgba(255, 255, 255, .09);
+    --line-2: rgba(255, 255, 255, .17);
+    --glass: rgba(15, 21, 19, .72);
+    --brand: #22C77E;
+    --brand-ink: #04180F;
+    --brand-soft: rgba(34, 199, 126, .13);
+    --brand-line: rgba(34, 199, 126, .42);
+    --ghost: rgba(255, 255, 255, .035);
+    --ghost-strong: rgba(255, 255, 255, .07);
+    --shadow: 0 34px 80px -34px rgba(0, 0, 0, .9);
+    --phone-bg: #0A0F0D;
+  }
+
+  html[data-theme="light"] {
+    --bg: #F7F5EE;
+    --bg-2: #EFEDE3;
+    --surface: #FFFEF9;
+    --surface-2: #F3F1E7;
+    --ink: #0C1713;
+    --ink-2: #2C3A34;
+    --muted: #5C6A63;
+    --line: rgba(12, 23, 19, .11);
+    --line-2: rgba(12, 23, 19, .22);
+    --glass: rgba(255, 253, 246, .78);
+    --brand: #0E9E60;
+    --brand-ink: #FFFFFF;
+    --brand-soft: rgba(14, 158, 96, .10);
+    --brand-line: rgba(14, 158, 96, .34);
+    --ghost: rgba(12, 23, 19, .035);
+    --ghost-strong: rgba(12, 23, 19, .065);
+    --shadow: 0 34px 80px -40px rgba(12, 23, 19, .4);
+    --phone-bg: #0A0F0D;
   }
 
   *, *::before, *::after { box-sizing: border-box; }
 
-  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+  }
 
   body {
     margin: 0;
     background: var(--bg);
     color: var(--ink);
-    font-family: var(--font-body);
+    font-family: var(--font);
     font-size: 16px;
-    line-height: 1.65;
+    line-height: 1.7;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
-    transition: background-color .22s ease, color .22s ease;
+    overflow-x: clip;
+    transition: background-color .3s ease, color .3s ease;
   }
 
   img, svg { display: block; max-width: 100%; }
   a { color: inherit; }
-
-  ::selection { background: var(--accent); color: var(--accent-fg); }
+  ::selection { background: var(--brand); color: var(--brand-ink); }
 
   :where(a, button):focus-visible {
-    outline: 2px solid var(--accent);
+    outline: 2px solid var(--brand);
     outline-offset: 3px;
-    border-radius: var(--radius);
+    border-radius: 8px;
+  }
+
+  .wrap {
+    width: 100%;
+    max-width: var(--maxw);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
   }
 
   .sr-only {
@@ -143,113 +172,174 @@
   .skip-link {
     position: absolute;
     inset-inline-start: 12px;
-    top: -100px;
-    z-index: 60;
-    background: var(--accent);
-    color: var(--accent-fg);
-    padding: 10px 16px;
-    font-weight: 700;
+    top: -120px;
+    z-index: 90;
+    background: var(--brand);
+    color: var(--brand-ink);
+    padding: 10px 18px;
+    border-radius: 10px;
+    font-weight: 800;
     text-decoration: none;
-    border-radius: var(--radius);
   }
   .skip-link:focus { top: 12px; }
 
-  .wrap {
+  /* ---------- Progress ---------- */
+  .progress {
+    position: fixed;
+    top: 0; left: 0;
+    height: 2px;
     width: 100%;
-    max-width: var(--maxw);
-    margin-inline: auto;
-    padding-inline: var(--gutter);
+    transform: scaleX(0);
+    transform-origin: left center;
+    background: linear-gradient(90deg, var(--brand), transparent);
+    z-index: 70;
+    pointer-events: none;
   }
+  html[dir="rtl"] .progress { transform-origin: right center; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 20px;
+    border-radius: 14px;
+    border: 1px solid transparent;
+    font-family: inherit;
+    font-weight: 800;
+    line-height: 1.25;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform .25s var(--ease), box-shadow .25s var(--ease), background-color .2s, border-color .2s;
+  }
+  .btn svg { width: 19px; height: 19px; flex: 0 0 auto; }
+
+  .btn--primary {
+    background-color: var(--brand);
+    background-image: linear-gradient(140deg, rgba(255, 255, 255, .26), rgba(255, 255, 255, 0) 55%);
+    color: var(--brand-ink);
+    box-shadow: 0 14px 30px -16px var(--brand), inset 0 1px 0 rgba(255, 255, 255, .35);
+  }
+  .btn--primary:hover { transform: translateY(-2px); box-shadow: 0 22px 40px -18px var(--brand); }
+  .btn--primary:active { transform: translateY(0); }
+
+  .btn--ghost {
+    background: var(--glass);
+    border-color: var(--line-2);
+    color: var(--ink);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+  }
+  .btn--ghost:hover { border-color: var(--brand); color: var(--brand); transform: translateY(-2px); }
+
+  .btn--sm { padding: 10px 16px; border-radius: 11px; font-size: 13.5px; gap: 8px; }
+  .btn--sm svg { width: 16px; height: 16px; }
+
+  .btn--lg { padding: 15px 22px; }
+
+  .btn-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; }
+  .btn-txt b { font-size: 15px; font-weight: 800; }
+  .btn-txt small { font-size: 11px; font-weight: 600; opacity: .72; }
+  html[dir="rtl"] .btn-txt small { letter-spacing: 0; }
 
   /* ---------- Header ---------- */
   .site-header {
     position: sticky;
     top: 0;
-    z-index: 30;
-    background: var(--bg);
-    background: color-mix(in srgb, var(--bg) 88%, transparent);
-    -webkit-backdrop-filter: saturate(1.4) blur(10px);
-    backdrop-filter: saturate(1.4) blur(10px);
-    border-bottom: 1px solid var(--line);
+    z-index: 60;
+    padding-block: 12px;
+    transition: padding .3s var(--ease);
   }
 
   .header-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
-    min-height: var(--header-h);
+    gap: 14px;
+    min-height: 58px;
+    padding: 7px 7px 7px 16px;
+    border-radius: 18px;
+    border: 1px solid var(--line);
+    background: var(--glass);
+    -webkit-backdrop-filter: saturate(1.6) blur(18px);
+    backdrop-filter: saturate(1.6) blur(18px);
+    transition: box-shadow .3s var(--ease), border-color .3s, background-color .3s;
   }
+  html[dir="rtl"] .header-inner { padding: 7px 16px 7px 7px; }
+  .site-header.is-stuck .header-inner { box-shadow: var(--shadow); border-color: var(--line-2); }
 
   .brand {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    min-width: 0;
+    gap: 11px;
     text-decoration: none;
     color: var(--ink);
-  }
-
-  .brand-tile {
-    flex: 0 0 auto;
-    width: 34px;
-    height: 34px;
-    display: grid;
-    place-items: center;
-  }
-  .brand-tile img { width: 27px; height: 27px; object-fit: contain; }
-  /* The supplied icon is white: invert it to ink on the light theme. */
-  html[data-theme="light"] .brand-tile img { filter: invert(1); }
-
-  .brand-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.15;
     min-width: 0;
   }
-  .brand-text strong {
-    font-size: 17px;
-    font-weight: 800;
-    white-space: nowrap;
+  .mark {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 auto;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background-color: var(--brand);
+    background-image: linear-gradient(145deg, rgba(255, 255, 255, .3), rgba(255, 255, 255, 0) 60%);
+    color: var(--brand-ink);
+    box-shadow: 0 8px 20px -10px var(--brand), inset 0 1px 0 rgba(255, 255, 255, .4);
   }
-  .brand-latin {
-    font-family: var(--font-mono);
-    font-size: 9px;
-    line-height: 1.4;
-    letter-spacing: .16em;
+  .mark svg { width: 23px; height: 23px; }
+
+  .brand-copy { display: flex; flex-direction: column; line-height: 1.1; min-width: 0; }
+  .brand-copy b { font-size: 18px; font-weight: 900; }
+  .brand-copy small {
+    font-size: 8.5px;
+    font-weight: 700;
+    letter-spacing: .18em;
     text-transform: uppercase;
     color: var(--muted);
     white-space: nowrap;
   }
 
-  .header-actions {
+  .nav {
     display: flex;
     align-items: center;
-    gap: 6px;
-    flex: 0 0 auto;
+    gap: 4px;
   }
+  .nav a {
+    padding: 8px 13px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color .18s, background-color .18s;
+  }
+  .nav a:hover { color: var(--ink); background: var(--ghost-strong); }
+
+  .header-actions { display: flex; align-items: center; gap: 7px; flex: 0 0 auto; }
 
   .ctrl {
     display: inline-flex;
     align-items: center;
     gap: 7px;
-    padding: 8px 11px;
+    height: 38px;
+    padding-inline: 12px;
+    border-radius: 11px;
     border: 1px solid var(--line);
-    border-radius: var(--radius);
     background: transparent;
-    color: var(--ink);
+    color: var(--ink-2);
     font-family: inherit;
     font-size: 12.5px;
     font-weight: 700;
     line-height: 1;
     cursor: pointer;
-    transition: background-color .18s ease, border-color .18s ease, color .18s ease;
+    transition: border-color .18s, color .18s, background-color .18s;
   }
-  .ctrl:hover { border-color: var(--line-strong); background: var(--surface); }
-  .ctrl svg { width: 15px; height: 15px; flex: 0 0 auto; }
-  .ctrl-label { font-family: var(--font-mono); letter-spacing: .04em; }
-
-  #langToggle .ctrl-label { min-width: 2ch; text-align: center; }
+  .ctrl:hover { color: var(--ink); border-color: var(--line-2); background: var(--ghost-strong); }
+  .ctrl svg { width: 16px; height: 16px; flex: 0 0 auto; }
+  #langToggle { min-width: 52px; justify-content: center; font-family: var(--mono); letter-spacing: .06em; }
 
   .icon-sun, .icon-moon { display: none; }
   html[data-theme="light"] .icon-moon { display: block; }
@@ -260,480 +350,942 @@
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    border-bottom: 1px solid var(--line);
+    padding-block: clamp(26px, 4.4vw, 54px) clamp(48px, 7vw, 96px);
   }
 
-  .hero-grid {
+  .hero-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+
+  .hero-bg::before {
+    content: "";
     position: absolute;
     inset: 0;
-    z-index: -1;
-    pointer-events: none;
     background-image:
       linear-gradient(to right, var(--line) 1px, transparent 1px),
       linear-gradient(to bottom, var(--line) 1px, transparent 1px);
-    background-size: 72px 72px;
-    opacity: .5;
-    -webkit-mask-image: radial-gradient(ellipse 85% 75% at 50% 0%, #000 0%, transparent 78%);
-    mask-image: radial-gradient(ellipse 85% 75% at 50% 0%, #000 0%, transparent 78%);
+    background-size: 88px 88px;
+    opacity: .55;
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 60% 10%, #000, transparent 74%);
+    mask-image: radial-gradient(ellipse 80% 70% at 60% 10%, #000, transparent 74%);
   }
 
-  /* Brand wordmark: black on light paper, white on ink. */
-  .wordmark { display: block; }
-  .wordmark--white { display: none; }
-  html[data-theme="dark"] .wordmark--white { display: block; }
-  html[data-theme="dark"] .wordmark--black { display: none; }
+  .blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(70px);
+    opacity: .55;
+  }
+  .blob--a {
+    width: 620px; height: 620px;
+    inset-block-start: -260px;
+    inset-inline-end: -140px;
+    background: radial-gradient(circle, rgba(34, 199, 126, .34), transparent 70%);
+  }
+  .blob--b {
+    width: 520px; height: 520px;
+    inset-block-end: -220px;
+    inset-inline-start: -180px;
+    background: radial-gradient(circle, rgba(34, 199, 126, .16), transparent 70%);
+  }
+  html[data-theme="light"] .blob { opacity: .5; }
+  html[data-theme="light"] .blob--a { background: radial-gradient(circle, rgba(14, 158, 96, .22), transparent 70%); }
 
-  .hero-watermark {
+  /* Brand wordmark watermark */
+  .hero-ghost {
     position: absolute;
     z-index: -1;
-    inset-inline-end: -3vw;
-    bottom: -7%;
+    inset-block-end: -9%;
+    inset-inline-start: -4%;
     pointer-events: none;
     opacity: .06;
-    -webkit-mask-image: linear-gradient(to top, #000 0%, transparent 88%);
-    mask-image: linear-gradient(to top, #000 0%, transparent 88%);
+    -webkit-mask-image: linear-gradient(to top, #000 10%, transparent 92%);
+    mask-image: linear-gradient(to top, #000 10%, transparent 92%);
   }
-  .hero-watermark img { width: min(540px, 74vw); height: auto; }
+  .hero-ghost img { width: min(520px, 58vw); height: auto; }
+  .ghost--white { display: none; }
+  html[data-theme="dark"] .ghost--white { display: block; }
+  html[data-theme="dark"] .ghost--black { display: none; }
+  html[data-theme="light"] .hero-ghost { opacity: .07; }
 
   .hero-inner {
-    position: relative;
     display: grid;
-    gap: clamp(34px, 5vw, 60px);
-    padding-block: clamp(40px, 7vw, 92px);
+    gap: clamp(34px, 5vw, 40px);
+    align-items: center;
   }
 
   .eyebrow {
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    margin: 0 0 20px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--muted);
+    margin: 0 0 22px;
+    padding: 7px 13px 7px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--ghost-strong);
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--ink-2);
   }
-  .eyebrow::before {
-    content: "";
-    width: 7px;
-    height: 7px;
-    background: var(--accent);
+  html[dir="rtl"] .eyebrow { padding: 7px 10px 7px 13px; }
+  .eyebrow .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow: 0 0 0 4px var(--brand-soft);
+    animation: pulse 2.6s ease-in-out infinite;
     flex: 0 0 auto;
   }
-  html[dir="ltr"] .eyebrow { letter-spacing: .14em; }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .4; }
+  }
 
   h1 {
     margin: 0;
-    font-size: clamp(32px, 6vw, 58px);
-    font-weight: 800;
-    line-height: 1.26;
-    letter-spacing: 0;
-    max-width: 17ch;
+    max-width: 16ch;
+    font-size: clamp(36px, 6vw, 70px);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -.01em;
   }
-  html[dir="ltr"] h1 { letter-spacing: -.025em; }
+  html[dir="ltr"] h1 { line-height: 1.05; letter-spacing: -.035em; }
 
-  .hero-lead {
-    margin: 20px 0 0;
-    max-width: 52ch;
-    font-size: clamp(15px, 1.5vw, 17.5px);
+  h1 em {
+    position: relative;
+    font-style: normal;
+    color: var(--brand);
+    white-space: nowrap;
+  }
+  h1 em::after {
+    content: "";
+    position: absolute;
+    inset-inline: .04em;
+    bottom: -.09em;
+    height: .09em;
+    border-radius: 99px;
+    background: var(--brand);
+    opacity: .32;
+  }
+
+  .lead {
+    margin: 22px 0 0;
+    max-width: 50ch;
+    font-size: clamp(15px, 1.5vw, 17px);
     color: var(--muted);
   }
 
-  .hero-actions {
-    margin-top: clamp(26px, 3.4vw, 36px);
-    display: flex;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 14px;
-  }
-
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
-    max-width: 420px;
-    padding: 17px 24px;
-    border: 1px solid var(--accent);
-    border-radius: var(--radius);
-    background: var(--accent);
-    color: var(--accent-fg);
-    font-size: clamp(15px, 1.6vw, 16.5px);
-    font-weight: 800;
-    line-height: 1.25;
-    text-decoration: none;
-    transition: transform .18s ease, filter .18s ease;
-  }
-  .btn-primary svg { width: 19px; height: 19px; flex: 0 0 auto; }
-  .btn-primary:hover { transform: translateY(-2px); filter: brightness(.93); }
-  .btn-primary:active { transform: translateY(0); }
-
-  .hero-sub {
+  .hero-cta {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 6px 14px;
-    font-family: var(--font-mono);
-    font-size: 11.5px;
+    gap: 12px;
+    margin-top: clamp(26px, 3.4vw, 34px);
+  }
+
+  .hero-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 20px;
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12.5px;
+    font-weight: 600;
     color: var(--muted);
   }
-  .hero-sub .dot-sep {
-    width: 3px;
-    height: 3px;
-    background: var(--muted);
+  .hero-proof li { display: inline-flex; align-items: center; gap: 7px; }
+  .hero-proof svg { width: 15px; height: 15px; color: var(--brand); flex: 0 0 auto; }
+
+  /* ---------- Phone mockup ---------- */
+  .hero-stage {
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding-block: 10px;
+  }
+
+  .hero-stage::before {
+    content: "";
+    position: absolute;
+    width: min(480px, 92vw);
+    aspect-ratio: 1;
     border-radius: 50%;
-    flex: 0 0 auto;
+    background: radial-gradient(circle, var(--brand-soft), transparent 62%);
+  }
+  .hero-stage::after {
+    content: "";
+    position: absolute;
+    width: min(400px, 88vw);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px dashed var(--line-2);
+    opacity: .55;
   }
 
-  .link-quiet {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 14px;
-    font-weight: 700;
-    color: var(--ink);
-    text-decoration: none;
-    border-bottom: 1px solid var(--line-strong);
-    padding-bottom: 2px;
-    transition: color .18s ease, border-color .18s ease;
+  .phone {
+    position: relative;
+    z-index: 2;
+    width: min(300px, 74vw);
+    aspect-ratio: 300 / 616;
+    padding: 9px;
+    border-radius: 46px;
+    background: linear-gradient(155deg, #404B46 0%, #1A211F 34%, #090D0C 100%);
+    box-shadow:
+      0 60px 100px -46px rgba(0, 0, 0, .95),
+      0 0 0 1px rgba(255, 255, 255, .09),
+      inset 0 0 0 1px rgba(255, 255, 255, .05);
+    transform: rotate(-3.4deg);
+    transition: transform .7s var(--ease);
   }
-  .link-quiet:hover { color: var(--accent); border-color: var(--accent); }
-  .link-quiet svg { width: 14px; height: 14px; }
-  html[dir="rtl"] .link-quiet svg { transform: scaleX(-1); }
+  .hero-stage:hover .phone { transform: rotate(0deg) translateY(-6px); }
 
-  /* Release spec card */
-  .spec {
-    border: 1px solid var(--line-strong);
-    background: var(--surface);
-    border-radius: var(--radius);
-    align-self: start;
-  }
-
-  .spec-plate {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px 18px;
-    border-bottom: 1px solid var(--line);
-  }
-  .spec-plate-text {
+  .phone-screen {
+    height: 100%;
+    border-radius: 37px;
+    background: var(--phone-bg);
+    color: #E9F1EC;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1px;
-    min-width: 0;
+    padding: 10px 12px 0;
+    font-size: 11px;
+    line-height: 1.5;
+    direction: rtl;
   }
-  .spec-plate-text .wordmark {
-    width: 94px;
-    height: 94px;
-    margin-block: -23px;
-  }
-  .plate-sub {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    color: var(--muted);
-    white-space: nowrap;
-  }
+  html[dir="ltr"] .phone-screen { direction: ltr; }
 
-  .spec-top {
+  .ph-status {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 10px;
-    padding: 14px 18px;
-    border-bottom: 1px solid var(--line);
-    background: var(--accent-soft);
-  }
-
-  .spec-label {
-    font-family: var(--font-mono);
-    font-size: 10.5px;
+    font-size: 9px;
     font-weight: 700;
-    text-transform: uppercase;
-    color: var(--ink);
+    color: rgba(233, 241, 236, .75);
+    padding-block: 2px 8px;
   }
-  html[dir="ltr"] .spec-label { letter-spacing: .14em; }
+  .ph-status .bars { display: flex; gap: 2px; align-items: flex-end; }
+  .ph-status .bars i { width: 2.5px; background: currentColor; border-radius: 1px; display: block; }
+  .ph-status .bars i:nth-child(1) { height: 3px; }
+  .ph-status .bars i:nth-child(2) { height: 5px; }
+  .ph-status .bars i:nth-child(3) { height: 7px; }
 
-  .status {
-    display: inline-flex;
+  .ph-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding-block: 4px 10px;
+  }
+  .ph-brand { display: flex; align-items: center; gap: 7px; }
+  .ph-brand .mark { width: 24px; height: 24px; border-radius: 8px; }
+  .ph-brand .mark svg { width: 15px; height: 15px; }
+  .ph-brand b { font-size: 13px; font-weight: 900; }
+  .ph-bell {
+    position: relative;
+    width: 26px; height: 26px;
+    display: grid;
+    place-items: center;
+    border-radius: 9px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    color: rgba(233, 241, 236, .8);
+  }
+  .ph-bell svg { width: 13px; height: 13px; }
+  .ph-bell::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    inset-inline-end: 5px;
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: #22C77E;
+    box-shadow: 0 0 0 2px #0A0F0D;
+  }
+
+  .ph-search {
+    display: flex;
     align-items: center;
     gap: 7px;
-    font-family: var(--font-mono);
-    font-size: 10.5px;
+    padding: 8px 10px;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, .06);
+    border: 1px solid rgba(255, 255, 255, .08);
+    color: rgba(233, 241, 236, .55);
+    font-size: 9.5px;
+  }
+  .ph-search svg { width: 12px; height: 12px; flex: 0 0 auto; color: #22C77E; }
+
+  .ph-chips {
+    display: flex;
+    gap: 5px;
+    margin-top: 8px;
+    overflow: hidden;
+  }
+  .ph-chips span {
+    padding: 4px 9px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, .12);
+    font-size: 8.5px;
     font-weight: 700;
-    color: var(--accent);
-    background: var(--surface);
-    border: 1px solid var(--line);
-    padding: 3px 9px;
+    color: rgba(233, 241, 236, .7);
     white-space: nowrap;
   }
-  .status-dot {
-    width: 6px;
-    height: 6px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: status-pulse 2.4s ease-in-out infinite;
-  }
-  @keyframes status-pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: .45; }
-  }
+  .ph-chips span.on { background: #22C77E; border-color: #22C77E; color: #04180F; }
 
-  .spec-row {
+  .ph-section {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
-    gap: 12px;
-    padding: 15px 18px;
-    border-bottom: 1px solid var(--line);
+    margin: 12px 0 7px;
+    font-size: 9.5px;
+    font-weight: 800;
+    color: #E9F1EC;
   }
-  .spec-key { font-size: 13.5px; color: var(--muted); }
-  .spec-val {
-    font-family: var(--font-mono);
-    font-size: 13.5px;
+  .ph-section span { font-size: 8px; font-weight: 700; color: #22C77E; }
+
+  .ph-card {
+    border-radius: 13px;
+    overflow: hidden;
+    background: #131A17;
+    border: 1px solid rgba(255, 255, 255, .08);
+  }
+  .ph-card-img {
+    position: relative;
+    height: 124px;
+    background-image: url("assets/images/apartment.jpg");
+    background-size: cover;
+    background-position: center 62%;
+  }
+  .ph-badge {
+    position: absolute;
+    inset-block-start: 7px;
+    inset-inline-start: 7px;
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+    padding: 3px 7px;
+    border-radius: 999px;
+    background: rgba(8, 16, 13, .62);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    color: #CFF7E3;
+    font-size: 7.5px;
     font-weight: 700;
-    text-align: end;
-    overflow-wrap: anywhere;
+    border: 1px solid rgba(34, 199, 126, .45);
+  }
+  .ph-badge svg { width: 8px; height: 8px; }
+  .ph-heart {
+    position: absolute;
+    inset-block-start: 6px;
+    inset-inline-end: 6px;
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: rgba(8, 16, 13, .55);
+    color: #E9F1EC;
+  }
+  .ph-heart svg { width: 10px; height: 10px; }
+
+  .ph-card-body { padding: 8px 9px 9px; }
+  .ph-card-body b { display: block; font-size: 10px; font-weight: 800; color: #E9F1EC; }
+  .ph-card-body .loc { font-size: 8px; color: rgba(233, 241, 236, .55); margin-top: 1px; }
+  .ph-card-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+  }
+  .ph-price { font-size: 10px; font-weight: 900; color: #22C77E; }
+  .ph-meta { font-size: 7.5px; color: rgba(233, 241, 236, .5); }
+
+  .ph-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 7px;
+    padding: 6px;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, .04);
+    border: 1px solid rgba(255, 255, 255, .07);
+  }
+  .ph-mini img { width: 40px; height: 34px; border-radius: 7px; object-fit: cover; }
+  .ph-mini b { display: block; font-size: 8.5px; font-weight: 800; }
+  .ph-mini span { font-size: 7.5px; color: rgba(233, 241, 236, .5); }
+
+  .ph-tabs {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 4px 11px;
+    border-top: 1px solid rgba(255, 255, 255, .07);
+    color: rgba(233, 241, 236, .42);
+    font-size: 7px;
+    font-weight: 700;
+  }
+  .ph-tabs div { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .ph-tabs svg { width: 13px; height: 13px; }
+  .ph-tabs .on { color: #22C77E; }
+
+  .float {
+    position: absolute;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 13px;
+    border-radius: 15px;
+    border: 1px solid var(--line-2);
+    background: var(--glass);
+    -webkit-backdrop-filter: blur(18px) saturate(1.5);
+    backdrop-filter: blur(18px) saturate(1.5);
+    box-shadow: var(--shadow);
+    font-size: 11.5px;
+    font-weight: 800;
+    line-height: 1.3;
+    animation: bob 7s ease-in-out infinite;
+  }
+  .float small { display: block; font-size: 9.5px; font-weight: 600; color: var(--muted); }
+  .float svg { width: 17px; height: 17px; color: var(--brand); flex: 0 0 auto; }
+  .float--a { top: 31%; inset-inline-end: -8px; animation-delay: -1.5s; }
+  .float--b { bottom: 9%; inset-inline-start: -10px; padding: 8px 11px 8px 8px; }
+  html[dir="rtl"] .float--b { padding: 8px 8px 8px 11px; }
+  .float--b img { width: 36px; height: 36px; border-radius: 9px; object-fit: cover; }
+
+  @keyframes bob {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
   }
 
-  .spec-foot {
-    padding: 15px 18px;
-    margin: 0;
-    font-size: 13px;
-    color: var(--muted);
+  /* ---------- Ticker ---------- */
+  .ticker {
     display: flex;
-    gap: 9px;
-    align-items: flex-start;
+    overflow: hidden;
+    border-block: 1px solid var(--line);
+    background: var(--bg-2);
+    padding-block: 15px;
   }
-  .spec-foot svg { width: 15px; height: 15px; flex: 0 0 auto; margin-top: 2px; color: var(--accent); }
+  .ticker-track {
+    display: flex;
+    flex: 0 0 auto;
+    width: max-content;
+    animation: marquee 44s linear infinite;
+  }
+  html[dir="rtl"] .ticker-track { animation-direction: reverse; }
+  .ticker:hover .ticker-track { animation-play-state: paused; }
+  .ticker-group { display: flex; flex: 0 0 auto; }
+  .ticker-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 22px;
+    padding-inline: 22px;
+    white-space: nowrap;
+    font-size: 13.5px;
+    font-weight: 800;
+    color: var(--muted);
+  }
+  .ticker-item::after {
+    content: "";
+    width: 5px; height: 5px;
+    border-radius: 50%;
+    background: var(--brand);
+  }
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
 
   /* ---------- Sections ---------- */
-  .section { padding-block: clamp(48px, 7vw, 84px); }
-  .section + .section { border-top: 1px solid var(--line); }
-  .section--surface { background: var(--surface); }
-
-  .section-head {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-    margin-bottom: clamp(26px, 4vw, 40px);
+  .section { padding-block: clamp(58px, 8.5vw, 112px); }
+  .section--tint {
+    background: var(--bg-2);
+    border-block: 1px solid var(--line);
   }
 
-  .sec-index {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--accent);
-    padding-top: 4px;
-    flex: 0 0 auto;
+  .sec-head {
+    display: grid;
+    gap: 18px;
+    margin-bottom: clamp(30px, 4.5vw, 52px);
+  }
+
+  .kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 12px;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--brand);
+  }
+  .kicker::before {
+    content: "";
+    width: 26px;
+    height: 1px;
+    background: var(--brand-line);
   }
 
   h2 {
     margin: 0;
-    font-size: clamp(23px, 3.2vw, 34px);
-    font-weight: 800;
-    line-height: 1.32;
+    font-size: clamp(27px, 4vw, 44px);
+    font-weight: 900;
+    line-height: 1.25;
+    letter-spacing: -.01em;
+    max-width: 20ch;
   }
-  html[dir="ltr"] h2 { letter-spacing: -.02em; }
+  html[dir="ltr"] h2 { letter-spacing: -.03em; }
 
-  .section-head .kicker {
-    margin: 0 0 8px;
-    font-family: var(--font-mono);
-    font-size: 10.5px;
-    font-weight: 600;
-    text-transform: uppercase;
+  .sec-lead {
+    margin: 0;
+    max-width: 46ch;
     color: var(--muted);
+    font-size: 15px;
   }
-  html[dir="ltr"] .section-head .kicker { letter-spacing: .16em; }
 
-  /* Steps */
-  .steps {
+  /* ---------- Audience ---------- */
+  .aud-grid {
     display: grid;
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    overflow: hidden;
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
-  .step {
-    background: var(--bg);
-    padding: clamp(22px, 3vw, 32px);
+
+  .aud {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(24px, 3vw, 32px);
+    border-radius: var(--r-lg);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    transition: transform .35s var(--ease), border-color .35s, box-shadow .35s;
+  }
+  .aud::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(120% 90% at 100% 0, var(--brand-soft), transparent 58%);
+    opacity: 0;
+    transition: opacity .4s;
+  }
+  .aud:hover { transform: translateY(-4px); border-color: var(--brand-line); box-shadow: var(--shadow); }
+  .aud:hover::before { opacity: 1; }
+
+  .aud-num {
+    position: absolute;
+    top: 14px;
+    inset-inline-end: 20px;
+    font-size: 54px;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--ghost-strong);
+    letter-spacing: -.04em;
+  }
+
+  .aud-role {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 11.5px;
+    font-weight: 800;
+    letter-spacing: .04em;
+    color: var(--brand);
+  }
+  .aud-role svg { width: 15px; height: 15px; }
+
+  .aud h3 {
+    margin: 14px 0 9px;
+    font-size: clamp(19px, 2vw, 23px);
+    font-weight: 900;
+    line-height: 1.35;
+    max-width: 16ch;
+  }
+  .aud p { margin: 0; font-size: 14px; color: var(--muted); }
+
+  .aud-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid var(--line);
+  }
+  .aud-tags span {
+    padding: 5px 9px;
+    border-radius: 8px;
+    border: 1px solid var(--line);
+    background: var(--bg-2);
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--ink-2);
+  }
+
+  /* ---------- Bento ---------- */
+  .bento {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .card {
+    position: relative;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 11px;
+    min-height: 232px;
+    padding: clamp(22px, 2.6vw, 28px);
+    border-radius: var(--r-lg);
+    border: 1px solid var(--line);
+    background: var(--surface);
+    transition: transform .35s var(--ease), border-color .35s, box-shadow .35s;
   }
-  .section--surface .step { background: var(--surface); }
-  .step-num {
-    font-family: var(--font-mono);
-    font-size: 11px;
+  .card:hover { transform: translateY(-3px); border-color: var(--brand-line); box-shadow: var(--shadow); }
+
+  .card-ico {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    border: 1px solid var(--brand-line);
+    background: var(--brand-soft);
+    color: var(--brand);
+  }
+  .card-ico svg { width: 19px; height: 19px; }
+
+  .card h3 { margin: 4px 0 0; font-size: 17px; font-weight: 800; line-height: 1.4; }
+  .card p { margin: 0; font-size: 13.5px; color: var(--muted); }
+
+  .card-vis { margin-top: auto; padding-top: 16px; }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips span {
+    padding: 5px 11px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    font-size: 10.5px;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--muted);
+  }
+  .chips span.on {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: var(--brand-ink);
+  }
+
+  .verify-vis { display: flex; align-items: center; gap: 13px; }
+  .verify-ring {
+    width: 54px;
+    height: 54px;
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--brand);
+    background: radial-gradient(circle, var(--brand-soft), transparent 72%);
+    border: 1px dashed var(--brand-line);
+  }
+  .verify-ring svg { width: 23px; height: 23px; }
+  .verify-vis b { display: block; font-size: 12px; font-weight: 800; }
+  .verify-vis small { font-size: 10.5px; color: var(--muted); }
+
+  .plans { display: grid; gap: 9px; }
+  .plan-row { display: flex; align-items: center; gap: 9px; font-size: 10.5px; font-weight: 700; color: var(--muted); }
+  .plan-row span { width: 44px; flex: 0 0 auto; }
+  .plan-track { flex: 1; height: 6px; border-radius: 99px; background: var(--line); overflow: hidden; }
+  .plan-track i { display: block; height: 100%; border-radius: 99px; background: var(--brand); }
+  .plan-row:nth-child(1) .plan-track i { width: 42%; opacity: .55; }
+  .plan-row:nth-child(2) .plan-track i { width: 72%; opacity: .8; }
+  .plan-row:nth-child(3) .plan-track i { width: 100%; }
+
+  .seg-group { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .seg {
+    display: inline-flex;
+    padding: 3px;
+    gap: 2px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--bg-2);
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .seg b, .seg i {
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--muted);
+  }
+  .seg .on { background: var(--brand); color: var(--brand-ink); }
+
+  .chats { display: flex; flex-direction: column; gap: 6px; font-size: 10.5px; }
+  .bub {
+    max-width: 88%;
+    padding: 7px 10px;
+    border-radius: 11px 11px 11px 3px;
+    background: var(--surface-2);
+    border: 1px solid var(--line);
+    color: var(--ink-2);
+    align-self: flex-start;
+  }
+  .bub--me {
+    align-self: flex-end;
+    border-radius: 11px 11px 3px 11px;
+    background: var(--brand);
+    border-color: transparent;
+    color: var(--brand-ink);
+    font-weight: 700;
+  }
+
+  .platforms { display: flex; gap: 8px; }
+  .platforms span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 11px;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: var(--bg-2);
+    font-size: 10.5px;
+    font-weight: 700;
+    color: var(--ink-2);
+  }
+  .platforms svg { width: 14px; height: 14px; color: var(--brand); }
+
+  /* ---------- Steps ---------- */
+  .steps {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .step {
+    position: relative;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    gap: 8px;
+  }
+  .step-n {
+    font-size: clamp(40px, 4.4vw, 56px);
+    font-weight: 900;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1px var(--brand-line);
+    letter-spacing: -.03em;
+  }
+  .step h3 { margin: 0; font-size: 19px; font-weight: 800; }
+  .step p { margin: 0; max-width: 38ch; font-size: 14px; color: var(--muted); }
+
+  /* ---------- CTA ---------- */
+  .cta-panel {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--r-xl);
+    border: 1px solid var(--line);
+    background:
+      radial-gradient(90% 120% at 0% 0%, var(--brand-soft), transparent 55%),
+      var(--surface);
+    padding: clamp(24px, 4.4vw, 56px);
+  }
+  .cta-grid {
+    display: grid;
+    gap: 28px;
+    align-items: center;
+  }
+  .cta-copy h2 { max-width: 18ch; }
+  .cta-copy p { margin: 16px 0 0; max-width: 44ch; color: var(--muted); font-size: 15px; }
+  .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  .cta-notes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 18px;
+    margin: 20px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  .cta-notes li { display: inline-flex; align-items: center; gap: 6px; }
+  .cta-notes svg { width: 14px; height: 14px; color: var(--brand); }
+
+  .cta-photo {
+    position: relative;
+    min-height: 300px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+  }
+  .cta-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cta-photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(4, 12, 9, .82), rgba(4, 12, 9, .05) 62%);
+  }
+  .cta-photo figcaption {
+    position: absolute;
+    z-index: 2;
+    inset-block-end: 16px;
+    inset-inline: 16px;
     display: flex;
     align-items: center;
     gap: 8px;
-  }
-  .step-num::after {
-    content: "";
-    flex: 1 1 auto;
-    height: 1px;
-    background: var(--line);
-  }
-  .step h3 {
-    margin: 0;
-    font-size: 17px;
-    font-weight: 800;
-    line-height: 1.35;
-  }
-  .step p {
-    margin: 0;
-    font-size: 14.5px;
-    color: var(--muted);
-  }
-
-  /* Features */
-  .features {
-    display: grid;
-    gap: 1px;
-    background: var(--line);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    overflow: hidden;
-  }
-  .feature {
-    background: var(--bg);
-    padding: clamp(22px, 3vw, 30px);
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    position: relative;
-    transition: background-color .2s ease;
-  }
-  .section--surface .feature { background: var(--surface); }
-  .feature:hover { background: var(--accent-soft); }
-
-  .feature-head {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 2px;
-  }
-  .feature-icon {
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--line-strong);
-    background: var(--surface);
-    display: grid;
-    place-items: center;
-    border-radius: var(--radius);
-    color: var(--ink);
-  }
-  .section--surface .feature-icon { background: var(--bg); }
-  .feature-icon svg { width: 19px; height: 19px; }
-
-  .feature-idx {
-    font-family: var(--font-mono);
-    font-size: 11px;
+    color: #F2FFF8;
+    font-size: 12px;
     font-weight: 700;
-    color: var(--muted);
   }
-  .feature h3 {
-    margin: 0;
-    font-size: 16.5px;
-    font-weight: 800;
-    line-height: 1.35;
+  .cta-photo figcaption svg { width: 16px; height: 16px; color: #34E39A; flex: 0 0 auto; }
+  .cta-pill {
+    position: absolute;
+    z-index: 2;
+    inset-block-start: 14px;
+    inset-inline-start: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: rgba(6, 16, 12, .55);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(52, 227, 154, .4);
+    color: #CFF7E3;
+    font-size: 9.5px;
+    font-weight: 700;
   }
-  .feature p {
-    margin: 0;
-    font-size: 14.5px;
-    color: var(--muted);
-  }
+  .cta-pill svg { width: 11px; height: 11px; }
 
   /* ---------- Footer ---------- */
   .site-footer {
-    border-top: 1px solid var(--line-strong);
-    padding-block: clamp(26px, 4vw, 34px);
+    padding-block: 40px 34px;
+    border-top: 1px solid var(--line);
+    background: var(--bg-2);
   }
-  .footer-inner {
+  .footer-top {
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 20px 28px;
+    gap: 26px 40px;
   }
-  .footer-brand {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    min-width: 0;
-  }
-  .footer-brand .brand-tile { width: 30px; height: 30px; }
-  .footer-brand .brand-tile img { width: 24px; height: 24px; }
-  .footer-name {
-    margin: 0 0 3px;
-    font-size: 14.5px;
-    font-weight: 800;
-    line-height: 1.3;
-  }
-  .copyright {
-    margin: 0;
-    font-size: 12.5px;
-    color: var(--muted);
-  }
+  .footer-brand { display: flex; gap: 12px; max-width: 34ch; }
+  .footer-brand .mark { width: 34px; height: 34px; border-radius: 10px; }
+  .footer-brand .mark svg { width: 20px; height: 20px; }
+  .footer-name { margin: 0; font-size: 16px; font-weight: 900; line-height: 1.3; }
+  .footer-tag { margin: 4px 0 0; font-size: 12px; color: var(--muted); }
 
   .footer-links {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 6px 18px;
+    gap: 8px 20px;
     font-size: 13px;
+    font-weight: 700;
   }
-  .footer-links a {
+  .footer-links a { color: var(--muted); text-decoration: none; transition: color .18s; }
+  .footer-links a:hover { color: var(--brand); }
+
+  .footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 28px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 11.5px;
     color: var(--muted);
-    text-decoration: none;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 1px;
-    transition: color .18s ease, border-color .18s ease;
   }
-  .footer-links a:hover { color: var(--ink); border-bottom-color: var(--ink); }
+  .footer-bottom .mono { font-family: var(--mono); letter-spacing: .04em; }
+
+  /* ---------- Mobile bar ---------- */
+  .mobile-bar { display: none; }
+
+  /* ---------- Reveal ---------- */
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .js .reveal.is-in {
+    opacity: 1;
+    transform: none;
+    transition: opacity .8s var(--ease), transform .8s var(--ease);
+    transition-delay: var(--d, 0ms);
+  }
 
   /* ---------- Responsive ---------- */
-  @media (min-width: 560px) {
-    .hero-actions { flex-direction: row; flex-wrap: wrap; align-items: center; gap: 16px 22px; }
-    .btn-primary { width: auto; }
-  }
-
-  @media (min-width: 640px) {
-    .features { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  @media (min-width: 600px) {
+    .hero-cta { gap: 12px; }
+    .aud-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .step { grid-template-columns: 92px 1fr; align-items: start; gap: 8px 20px; padding: 30px 0; }
+    .step h3, .step p { grid-column: 2; }
+    .step .step-n { grid-row: 1 / span 2; }
   }
 
   @media (min-width: 860px) {
-    .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .nav { display: flex; }
+    .header-inner { min-height: 64px; }
+    .hero-inner { grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr); }
+    .sec-head { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: end; }
+    .sec-head .sec-lead { justify-self: end; }
+    .cta-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); }
   }
 
-  @media (min-width: 960px) {
-    .hero-inner {
-      grid-template-columns: minmax(0, 1.12fr) minmax(320px, .88fr);
-      align-items: center;
+  @media (min-width: 1000px) {
+    .bento { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .bento .card:nth-child(1) { grid-row: span 1; }
+    .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
+    .step {
+      border-bottom: 0;
+      border-inline-start: 1px solid var(--line);
+      padding: 30px clamp(18px, 2.4vw, 30px);
+      grid-template-columns: 1fr;
     }
-    .features { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    .spec { width: 100%; }
+    .step:first-child { border-inline-start: 0; }
+    .step h3, .step p { grid-column: 1; }
+    .step .step-n { grid-row: auto; }
+    .step .step-n { margin-bottom: 12px; }
   }
 
-  @media (max-width: 419px) {
-    .ctrl-label { display: none; }
-    #langToggle .ctrl-label { display: inline; }
-    .ctrl { padding: 8px 9px; gap: 0; }
-    #langToggle { gap: 0; }
-    #themeToggle .ctrl-label { display: none; }
-    .brand-latin { font-size: 8.5px; }
-    .spec-row, .spec-top, .spec-foot { padding-inline: 14px; }
-    .spec-plate { padding-inline: 14px; }
-    .spec-plate-text .wordmark { width: 82px; height: 82px; margin-block: -20px; }
-    .hero-watermark { display: none; }
+  @media (max-width: 859px) {
+    .nav { display: none; }
+  }
+
+  @media (max-width: 700px) {
+    .header-actions .ctrl-label, #themeLabel { display: none; }
+    .header-actions .ctrl { padding-inline: 10px; }
+    .header-actions .btn--sm span { display: none; }
+    .header-actions .btn--sm { padding: 10px; }
+    .site-header { padding-block: 8px; }
+    .float--a { inset-inline-end: 0; top: 28%; }
+    .float--b { inset-inline-start: 0; bottom: 4%; }
+  }
+
+  @media (max-width: 559px) {
+    .hero-stage { margin-top: 6px; }
+    .float { font-size: 10.5px; }
+    .float--a { inset-inline-end: -2px; }
+    .aud-num { font-size: 42px; }
+    body { padding-bottom: 74px; }
+    .mobile-bar {
+      position: fixed;
+      z-index: 55;
+      inset-inline: 10px;
+      bottom: 10px;
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 8px;
+      padding: 8px;
+      border-radius: 16px;
+      border: 1px solid var(--line-2);
+      background: var(--glass);
+      -webkit-backdrop-filter: blur(20px) saturate(1.6);
+      backdrop-filter: blur(20px) saturate(1.6);
+      box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .7);
+    }
+    .mobile-bar .btn { justify-content: center; padding: 11px 10px; font-size: 13px; border-radius: 11px; gap: 7px; }
+    .mobile-bar .btn svg { width: 16px; height: 16px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -743,242 +1295,531 @@
       animation-iteration-count: 1 !important;
       transition-duration: .001ms !important;
     }
+    .js .reveal { opacity: 1; transform: none; }
   }
 </style>
 </head>
 <body>
 
 <a class="skip-link" href="#main" data-i18n="a11y.skip">تجاوز إلى المحتوى</a>
+<div class="progress" id="progress" aria-hidden="true"></div>
 
-<header class="site-header">
+<header class="site-header" id="top">
   <div class="wrap header-inner">
-    <a class="brand" href="#" aria-label="عقار | Aqar Property">
-      <span class="brand-tile" aria-hidden="true">
-        <img src="Materials/App_Icon.png" alt="" width="23" height="23" decoding="async">
+    <a class="brand" href="#top" data-i18n-aria="a11y.home" aria-label="عقار — Aqar Property">
+      <span class="mark" aria-hidden="true">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 24.5V14.4L16 7l9 7.4v10.1"/>
+          <path d="M12.8 24.5v-6h6.4v6"/>
+        </svg>
       </span>
-      <span class="brand-text">
-        <strong>عقار</strong>
-        <span class="brand-latin">Aqar Property</span>
+      <span class="brand-copy">
+        <b>عقار</b>
+        <small>Aqar Property</small>
       </span>
     </a>
 
+    <nav class="nav" data-i18n-aria="a11y.nav" aria-label="التنقل">
+      <a href="#audience" data-i18n="nav.audience">لمن عقار</a>
+      <a href="#features" data-i18n="nav.features">المميزات</a>
+      <a href="#how" data-i18n="nav.how">كيف يعمل</a>
+      <a href="#download" data-i18n="nav.download">التحميل</a>
+    </nav>
+
     <div class="header-actions">
-      <button class="ctrl" id="langToggle" type="button" aria-label="تبديل اللغة" title="تبديل اللغة">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-          <circle cx="12" cy="12" r="9"/>
-          <path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/>
+      <button class="ctrl" id="langToggle" type="button" data-i18n-aria="a11y.lang" aria-label="تبديل اللغة">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+          <circle cx="12" cy="12" r="8.6"/>
+          <path d="M3.4 12h17.2M12 3.4c2.5 2.6 2.5 14.6 0 17.2M12 3.4c-2.5 2.6-2.5 14.6 0 17.2"/>
         </svg>
-        <span class="ctrl-label" id="langLabel" lang="en">EN</span>
+        <span id="langLabel" lang="en">EN</span>
       </button>
 
-      <button class="ctrl" id="themeToggle" type="button" aria-pressed="false" aria-label="تبديل مظهر الألوان" title="تبديل مظهر الألوان">
-        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
-          <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z"/>
+      <button class="ctrl" id="themeToggle" type="button" aria-pressed="true" data-i18n-aria="a11y.theme" aria-label="تبديل المظهر">
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+          <path d="M20 14.6A8.6 8.6 0 0 1 9.4 4a8.6 8.6 0 1 0 10.6 10.6Z"/>
         </svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
           <circle cx="12" cy="12" r="4.2"/>
-          <path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6"/>
+          <path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6"/>
         </svg>
         <span class="ctrl-label" id="themeLabel">فاتح</span>
       </button>
+
+      <a class="btn btn--primary btn--sm" href="https://aqar-property.github.io/Aqar/releases/latest/Aqar.apk" download rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3.5v10.5"/><path d="m7.6 10 4.4 4.4L16.4 10"/><path d="M4.5 19.5h15"/>
+        </svg>
+        <span data-i18n="nav.cta">حمّل التطبيق</span>
+      </a>
     </div>
   </div>
 </header>
 
 <main id="main">
 
-  <!-- Hero -->
+  <!-- ================= HERO ================= -->
   <section class="hero">
-    <div class="hero-grid" aria-hidden="true"></div>
-    <div class="hero-watermark" aria-hidden="true">
-      <img class="wordmark wordmark--black" src="Materials/Aqar_logo_Black.png" alt="" width="1025" height="1025" loading="lazy" decoding="async">
-      <img class="wordmark wordmark--white" src="Materials/Aqar_logo.png" alt="" width="1025" height="1025" loading="lazy" decoding="async">
+    <div class="hero-bg" aria-hidden="true">
+      <span class="blob blob--a"></span>
+      <span class="blob blob--b"></span>
     </div>
+
+    <div class="hero-ghost" aria-hidden="true">
+      <img class="ghost--white" src="Materials/Aqar_logo.png" alt="" width="1025" height="1025" loading="lazy" decoding="async">
+      <img class="ghost--black" src="Materials/Aqar_logo_Black.png" alt="" width="1025" height="1025" loading="lazy" decoding="async">
+    </div>
+
     <div class="wrap hero-inner">
-
       <div class="hero-copy">
-        <p class="eyebrow" data-i18n="hero.eyebrow">منصة عقارية · تطبيق أندرويد</p>
+        <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.eyebrow">منصة عقارية · تطبيق أندرويد ونسخة ويب</span></p>
 
-        <h1 data-i18n="hero.title">ابحث عن عقارك القادم بوضوح وثقة.</h1>
+        <h1 class="reveal" style="--d:80ms" data-i18n-html="hero.title">بيتك القادم يبدأ من <em>عقار</em>.</h1>
 
-        <p class="hero-lead" data-i18n="hero.lead">
-          «عقار» منصة عقارية تجمع الإعلانات الموثقة من المعلنين والمكاتب العقارية في مكان واحد: تصفّح، فلتر، وتواصل مباشرة من تطبيق الأندرويد.
-        </p>
+        <p class="lead reveal" style="--d:160ms" data-i18n="hero.lead">منصّة واحدة تجمع إعلانات العقارات الموثّقة من المالكين والمكاتب العقارية. تصفّح بذكاء، فلتر في ثوانٍ، وتواصل مباشرة — من التطبيق أو من أي متصفح.</p>
 
-        <div class="hero-actions">
-          <a class="btn-primary"
-             href="releases/latest/Aqar.apk"
-             download="Aqar.apk"
-             rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" aria-hidden="true">
-              <path d="M12 3v11"/>
-              <path d="M7.5 10.5 12 15l4.5-4.5"/>
-              <path d="M4 19.5h16"/>
+        <div class="hero-cta reveal" style="--d:240ms">
+          <a class="btn btn--primary btn--lg" href="https://aqar-property.github.io/Aqar/releases/latest/Aqar.apk" download rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3.5v10.5"/><path d="m7.6 10 4.4 4.4L16.4 10"/><path d="M4.5 19.5h15"/>
             </svg>
-            <span data-i18n="hero.download">تحميل تطبيق الأندرويد (APK)</span>
+            <span class="btn-txt">
+              <b data-i18n="hero.download">حمّل التطبيق</b>
+              <small data-i18n="hero.downloadMeta">أندرويد · APK</small>
+            </span>
           </a>
 
-          <a class="link-quiet" href="#features">
-            <span data-i18n="hero.more">تعرّف على المميزات</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <path d="M5 12h13M12 6l6 6-6 6"/>
+          <a class="btn btn--ghost btn--lg" href="https://aqar-property.github.io/app/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.4"/>
+              <path d="M3.6 12h16.8M12 3.6c2.4 2.5 2.4 14.3 0 16.8M12 3.6c-2.4 2.5-2.4 14.3 0 16.8"/>
             </svg>
+            <span class="btn-txt">
+              <b data-i18n="hero.web">نسخة الويب</b>
+              <small data-i18n="hero.webMeta">لكل الأجهزة</small>
+            </span>
           </a>
         </div>
 
-        <p class="hero-sub">
-          <span data-i18n="hero.note">تحميل مباشر · Aqar.apk</span>
-          <span class="dot-sep" aria-hidden="true"></span>
-          <span>v1.0.0</span>
-          <span class="dot-sep" aria-hidden="true"></span>
-          <span>Android</span>
-        </p>
+        <ul class="hero-proof reveal" style="--d:320ms">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
+            <span data-i18n="hero.proof1">إعلانات موثّقة</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
+            <span data-i18n="hero.proof2">بدون متجر تطبيقات</span>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
+            <span data-i18n="hero.proof3">عربي / English</span>
+          </li>
+        </ul>
       </div>
 
-      <aside class="spec" aria-labelledby="specLabel">
-        <div class="spec-plate">
-          <div class="spec-plate-text">
-            <img class="wordmark wordmark--black" src="Materials/Aqar_logo_Black.png" alt="عقار" width="94" height="94" decoding="async">
-            <img class="wordmark wordmark--white" src="Materials/Aqar_logo.png" alt="عقار" width="94" height="94" decoding="async">
-            <span class="plate-sub">Aqar Property</span>
+      <div class="hero-stage reveal" style="--d:200ms">
+
+        <div class="phone" role="img" data-i18n-aria="hero.phoneAlt" aria-label="واجهة تطبيق عقار على الهاتف">
+          <div class="phone-screen">
+            <div class="ph-status">
+              <span>9:41</span>
+              <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+            </div>
+
+            <div class="ph-top">
+              <div class="ph-brand">
+                <span class="mark" aria-hidden="true">
+                  <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M7 24.5V14.4L16 7l9 7.4v10.1"/>
+                    <path d="M12.8 24.5v-6h6.4v6"/>
+                  </svg>
+                </span>
+                <b>عقار</b>
+              </div>
+              <span class="ph-bell" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6.5 9.5a5.5 5.5 0 0 1 11 0v3.6l1.6 2.6H4.9l1.6-2.6Z"/><path d="M10.2 18.6a1.9 1.9 0 0 0 3.6 0"/></svg>
+              </span>
+            </div>
+
+            <div class="ph-search">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="6.4"/><path d="m16 16 4 4"/></svg>
+              <span data-i18n="phone.search">ابحث عن شقة، فيلا، أرض…</span>
+            </div>
+
+            <div class="ph-chips">
+              <span class="on" data-i18n="phone.chip1">الكل</span>
+              <span data-i18n="phone.chip2">شقق</span>
+              <span data-i18n="phone.chip3">فلل</span>
+              <span data-i18n="phone.chip4">أراضٍ</span>
+              <span data-i18n="phone.chip5">مكاتب</span>
+            </div>
+
+            <div class="ph-section">
+              <span data-i18n="phone.featured">إعلانات مميزة</span>
+              <span data-i18n="phone.viewall">عرض الكل</span>
+            </div>
+
+            <div class="ph-card">
+              <div class="ph-card-img">
+                <span class="ph-badge">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
+                  <span data-i18n="phone.verified">موثّق</span>
+                </span>
+                <span class="ph-heart" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.2-7-9a3.9 3.9 0 0 1 7-2.4A3.9 3.9 0 0 1 19 11c0 4.8-7 9-7 9Z"/></svg>
+                </span>
+              </div>
+              <div class="ph-card-body">
+                <b data-i18n="phone.l1">شقة بإطلالة بانورامية</b>
+                <span class="loc" data-i18n="phone.l1loc">عبدون · عمّان</span>
+                <div class="ph-card-foot">
+                  <span class="ph-price" data-i18n="phone.l1price">120,000 د.أ</span>
+                  <span class="ph-meta" data-i18n="phone.l1meta">3 غرف · 145 م²</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="ph-mini">
+              <img src="assets/images/interior.jpg" alt="" width="80" height="68" loading="lazy" decoding="async">
+              <span>
+                <b data-i18n="phone.l2">شقة مفروشة حديثاً</b>
+                <span data-i18n="phone.l2loc">الرابية · عمّان</span>
+              </span>
+            </div>
+
+            <div class="ph-mini">
+              <img src="assets/images/villa.jpg" alt="" width="80" height="68" loading="lazy" decoding="async">
+              <span>
+                <b data-i18n="phone.l3">فيلا بحديقة خاصة</b>
+                <span data-i18n="phone.l3loc">دابوق · عمّان</span>
+              </span>
+            </div>
+
+            <div class="ph-tabs" aria-hidden="true">
+              <div class="on">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="6.2"/><path d="m16 16 4 4"/></svg>
+                <span data-i18n="phone.tab1">بحث</span>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 20s-7-4.4-7-9.2A4 4 0 0 1 12 8a4 4 0 0 1 7 2.8C19 15.6 12 20 12 20Z"/></svg>
+                <span data-i18n="phone.tab2">المحفوظة</span>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h5"/></svg>
+                <span data-i18n="phone.tab3">إعلاناتي</span>
+              </div>
+              <div>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="9" r="3.4"/><path d="M5 20a7 7 0 0 1 14 0"/></svg>
+                <span data-i18n="phone.tab4">حسابي</span>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="spec-top">
-          <span class="spec-label" id="specLabel" data-i18n="spec.label">بطاقة الإصدار</span>
-          <span class="status">
-            <span class="status-dot" aria-hidden="true"></span>
-            <span data-i18n="spec.status">متاح الآن</span>
+        <div class="float float--a">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 3 5 6v5.8c0 4 2.9 7.2 7 8.2 4.1-1 7-4.2 7-8.2V6l-7-3Z"/><path d="m9.2 11.8 2 2 3.6-3.8"/></svg>
+          <span data-i18n="hero.float1">مكتب عقاري موثّق</span>
+        </div>
+
+        <div class="float float--b">
+          <img src="assets/images/interior.jpg" alt="" width="72" height="72" loading="lazy" decoding="async">
+          <span>
+            <span data-i18n="hero.float2">شقة مفروشة حديثاً</span>
+            <small data-i18n="hero.float2loc">الرابية · عمّان</small>
           </span>
         </div>
-
-        <div class="spec-row">
-          <span class="spec-key" data-i18n="spec.platform">المنصة</span>
-          <span class="spec-val" dir="ltr">Android APK</span>
-        </div>
-        <div class="spec-row">
-          <span class="spec-key" data-i18n="spec.version">الإصدار</span>
-          <span class="spec-val" dir="ltr">v1.0.0</span>
-        </div>
-        <div class="spec-row">
-          <span class="spec-key" data-i18n="spec.size">اسم الملف</span>
-          <span class="spec-val" dir="ltr">Aqar.apk</span>
-        </div>
-
-        <p class="spec-foot">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-            <path d="M12 3 4.5 6v6c0 4.2 3.1 7.6 7.5 9 4.4-1.4 7.5-4.8 7.5-9V6L12 3Z"/>
-            <path d="M8.8 12.2 11.2 14.5l4-4.3"/>
-          </svg>
-          <span data-i18n="spec.note">تثبيت مباشر دون الحاجة إلى متجر تطبيقات.</span>
-        </p>
-      </aside>
-
+      </div>
     </div>
   </section>
 
-  <!-- Installation -->
-  <section class="section section--surface" id="install">
+  <!-- ================= TICKER ================= -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <div class="ticker-group">
+        <span class="ticker-item" data-i18n="ticker.1">شقق</span>
+        <span class="ticker-item" data-i18n="ticker.2">فلل</span>
+        <span class="ticker-item" data-i18n="ticker.3">أراضٍ</span>
+        <span class="ticker-item" data-i18n="ticker.4">مكاتب</span>
+        <span class="ticker-item" data-i18n="ticker.5">محلات</span>
+        <span class="ticker-item" data-i18n="ticker.6">مزارع</span>
+        <span class="ticker-item" data-i18n="ticker.7">شاليهات</span>
+        <span class="ticker-item" data-i18n="ticker.8">مستودعات</span>
+      </div>
+      <div class="ticker-group">
+        <span class="ticker-item" data-i18n="ticker.1">شقق</span>
+        <span class="ticker-item" data-i18n="ticker.2">فلل</span>
+        <span class="ticker-item" data-i18n="ticker.3">أراضٍ</span>
+        <span class="ticker-item" data-i18n="ticker.4">مكاتب</span>
+        <span class="ticker-item" data-i18n="ticker.5">محلات</span>
+        <span class="ticker-item" data-i18n="ticker.6">مزارع</span>
+        <span class="ticker-item" data-i18n="ticker.7">شاليهات</span>
+        <span class="ticker-item" data-i18n="ticker.8">مستودعات</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================= AUDIENCE ================= -->
+  <section class="section" id="audience">
     <div class="wrap">
-      <div class="section-head">
-        <span class="sec-index" aria-hidden="true">01</span>
+      <div class="sec-head reveal">
         <div>
-          <p class="kicker" data-i18n="steps.kicker">التثبيت</p>
-          <h2 data-i18n="steps.title">ثلاث خطوات للتثبيت</h2>
+          <p class="kicker" data-i18n="aud.kicker">لمن عقار</p>
+          <h2 data-i18n="aud.title">ثلاثة أدوار. منصة واحدة.</h2>
         </div>
+        <p class="sec-lead" data-i18n="aud.lead">سواء كنت تبيع، أو توسّع محفظتك العقارية، أو تبحث عن سكنك الأول — عقار مبني حول ما تحتاجه فعلاً.</p>
+      </div>
+
+      <div class="aud-grid">
+        <article class="aud reveal" style="--d:60ms">
+          <span class="aud-num" aria-hidden="true">01</span>
+          <span class="aud-role">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20H4Z"/><path d="M9.5 20v-5h5v5"/></svg>
+            <span data-i18n="aud.1.role">لأصحاب العقارات</span>
+          </span>
+          <h3 data-i18n="aud.1.title">أعلن عن عقارك بثقة</h3>
+          <p data-i18n="aud.1.text">أضف العقار، أدر إعلانك، واستقبل اهتمام الباحثين الجديين — بشفافية كاملة في كل خطوة.</p>
+          <div class="aud-tags">
+            <span data-i18n="aud.1.tag1">إضافة عقار</span>
+            <span data-i18n="aud.1.tag2">إدارة الإعلان</span>
+            <span data-i18n="aud.1.tag3">ردود فورية</span>
+          </div>
+        </article>
+
+        <article class="aud reveal" style="--d:140ms">
+          <span class="aud-num" aria-hidden="true">02</span>
+          <span class="aud-role">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="3.5" width="16" height="17" rx="2.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+            <span data-i18n="aud.2.role">للمكاتب العقارية</span>
+          </span>
+          <h3 data-i18n="aud.2.title">محفظتك في لوحة واحدة</h3>
+          <p data-i18n="aud.2.text">أطلق إعلانات موثّقة، تابع أداءها، وأدِر إعلانات مكتبك وباقاتك من مكان واحد يناسب حجم عملك.</p>
+          <div class="aud-tags">
+            <span data-i18n="aud.2.tag1">حساب مكتب</span>
+            <span data-i18n="aud.2.tag2">باقات مرنة</span>
+            <span data-i18n="aud.2.tag3">إدارة إعلانات</span>
+          </div>
+        </article>
+
+        <article class="aud reveal" style="--d:220ms">
+          <span class="aud-num" aria-hidden="true">03</span>
+          <span class="aud-role">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="6.4"/><path d="m16 16 4.5 4.5"/><path d="M8.5 11h5M11 8.5v5"/></svg>
+            <span data-i18n="aud.3.role">للباحثين عن عقار</span>
+          </span>
+          <h3 data-i18n="aud.3.title">ابحث كما ينبغي</h3>
+          <p data-i18n="aud.3.text">فلترة حسب النوع والمدينة والسعر والمساحة، حفظ المفضّلة، وتواصل مباشرة مع المعلن.</p>
+          <div class="aud-tags">
+            <span data-i18n="aud.3.tag1">بحث متقدم</span>
+            <span data-i18n="aud.3.tag2">المحفوظة</span>
+            <span data-i18n="aud.3.tag3">تواصل مباشر</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FEATURES ================= -->
+  <section class="section section--tint" id="features">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <p class="kicker" data-i18n="feat.kicker">المميزات</p>
+          <h2 data-i18n="feat.title">كل ما تحتاجه للبحث والإعلان.</h2>
+        </div>
+        <p class="sec-lead" data-i18n="feat.lead">أدوات واضحة، بلا ضجيج — من أول فلتر إلى آخر رسالة مع المعلن.</p>
+      </div>
+
+      <div class="bento">
+
+        <article class="card reveal">
+          <span class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="6.4"/><path d="m16 16 4.5 4.5"/><path d="M8.5 11h5M11 8.5v5"/></svg>
+          </span>
+          <h3 data-i18n="feat.1.title">بحث وفلترة دقيقة</h3>
+          <p data-i18n="feat.1.text">حدّد نوع العقار والمدينة والسعر والمساحة، ووصل إلى ما يناسبك في ثوانٍ.</p>
+          <div class="card-vis">
+            <div class="chips">
+              <span class="on" data-i18n="feat.1.chip1">شقة</span>
+              <span data-i18n="feat.1.chip2">فيلا</span>
+              <span data-i18n="feat.1.chip3">أرض</span>
+              <span data-i18n="feat.1.chip4">مكتب</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" style="--d:80ms">
+          <span class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3 5 6v5.8c0 4 2.9 7.2 7 8.2 4.1-1 7-4.2 7-8.2V6l-7-3Z"/><path d="m9.2 11.8 2 2 3.6-3.8"/></svg>
+          </span>
+          <h3 data-i18n="feat.2.title">حسابات موثّقة</h3>
+          <p data-i18n="feat.2.text">توثيق المعلنين والمكاتب يرفع مصداقية كل إعلان ويجعل قرارك أسهل.</p>
+          <div class="card-vis">
+            <div class="verify-vis">
+              <span class="verify-ring" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 3 5 6v5.8c0 4 2.9 7.2 7 8.2 4.1-1 7-4.2 7-8.2V6l-7-3Z"/><path d="m9.2 11.8 2 2 3.6-3.8"/></svg>
+              </span>
+              <span>
+                <b data-i18n="feat.2.badge">حساب موثّق</b>
+                <small data-i18n="feat.2.sub">تم التحقق من المعلن</small>
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" style="--d:160ms">
+          <span class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><path d="M3.5 9.5h17M8 5v4.5"/><path d="M7 13h5M7 16h8"/></svg>
+          </span>
+          <h3 data-i18n="feat.3.title">باقات مرنة</h3>
+          <p data-i18n="feat.3.text">باقة لإعلان واحد أو محفظة كاملة، مع إدارة واضحة لحالة كل إعلان.</p>
+          <div class="card-vis">
+            <div class="plans" aria-hidden="true">
+              <div class="plan-row"><span data-i18n="feat.3.p1">أساسي</span><span class="plan-track"><i></i></span></div>
+              <div class="plan-row"><span data-i18n="feat.3.p2">احترافي</span><span class="plan-track"><i></i></span></div>
+              <div class="plan-row"><span data-i18n="feat.3.p3">مكتب</span><span class="plan-track"><i></i></span></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" style="--d:60ms">
+          <span class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.4"/><path d="M3.6 12h16.8M12 3.6c2.4 2.5 2.4 14.3 0 16.8M12 3.6c-2.4 2.5-2.4 14.3 0 16.8"/></svg>
+          </span>
+          <h3 data-i18n="feat.4.title">لغتان وثيمان</h3>
+          <p data-i18n="feat.4.text">العربية والإنجليزية، داكن وفاتح — الواجهة تتكيّف معك وتتذكّر اختيارك.</p>
+          <div class="card-vis">
+            <div class="seg-group" aria-hidden="true">
+              <span class="seg"><b class="on" data-i18n="feat.4.ar">العربية</b><i>EN</i></span>
+              <span class="seg"><b class="on" data-i18n="feat.4.dark">داكن</b><i data-i18n="feat.4.light">فاتح</i></span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" style="--d:140ms">
+          <span class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 15.5a3 3 0 0 1-3 3H8.6L4.5 21.5V6.5a3 3 0 0 1 3-3h9.5a3 3 0 0 1 3 3Z"/></svg>
+          </span>
+          <h3 data-i18n="feat.5.title">تواصل مباشر</h3>
+          <p data-i18n="feat.5.text">راسل المعلن أو المكتب من داخل التطبيق واتفق على المعاينة بسرعة.</p>
+          <div class="card-vis">
+            <div class="chats" aria-hidden="true">
+              <span class="bub" data-i18n="feat.5.msg1">هل الشقة متاحة للمعاينة السبت؟</span>
+              <span class="bub bub--me" data-i18n="feat.5.msg2">أكيد، الساعة ١١ صباحاً.</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card reveal" style="--d:220ms">
+          <span class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="13" height="10" rx="2"/><path d="M6 17h7"/><path d="M18 9h3v9a2 2 0 0 1-2 2h-7"/></svg>
+          </span>
+          <h3 data-i18n="feat.6.title">تطبيق ونسخة ويب</h3>
+          <p data-i18n="feat.6.text">نفس الحساب ونفس الإعلانات — على أندرويد وعلى أي متصفح.</p>
+          <div class="card-vis">
+            <div class="platforms">
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 19h3"/></svg>
+                <span data-i18n="feat.6.android">أندرويد</span>
+              </span>
+              <span>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="8.4"/><path d="M3.6 12h16.8"/></svg>
+                <span data-i18n="feat.6.web">الويب</span>
+              </span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= HOW ================= -->
+  <section class="section" id="how">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <p class="kicker" data-i18n="how.kicker">البداية</p>
+          <h2 data-i18n="how.title">ثلاث خطوات وتبدأ.</h2>
+        </div>
+        <p class="sec-lead" data-i18n="how.lead">لا تعقيد، لا خطوات زائدة — من التحميل إلى أول عقار في دقائق.</p>
       </div>
 
       <div class="steps">
-        <div class="step">
-          <span class="step-num" aria-hidden="true">01</span>
-          <h3 data-i18n="steps.1.title">حمّل ملف APK</h3>
-          <p data-i18n="steps.1.text">افتح هذه الصفحة على جهاز الأندرويد وحمّل ملف Aqar.apk من زر التحميل أعلاه.</p>
-        </div>
-        <div class="step">
-          <span class="step-num" aria-hidden="true">02</span>
-          <h3 data-i18n="steps.2.title">اسمح بالتثبيت</h3>
-          <p data-i18n="steps.2.text">عند ظهور تنبيه الأمان من أندرويد، اسمح بالتثبيت من المتصفح أو مدير الملفات.</p>
-        </div>
-        <div class="step">
-          <span class="step-num" aria-hidden="true">03</span>
-          <h3 data-i18n="steps.3.title">افتح وابدأ</h3>
-          <p data-i18n="steps.3.text">شغّل تطبيق عقار، تصفّح الإعلانات وتواصل مع المعلنين أو المكاتب مباشرة.</p>
-        </div>
+        <article class="step reveal">
+          <span class="step-n" aria-hidden="true">01</span>
+          <h3 data-i18n="how.1.title">حمّل التطبيق</h3>
+          <p data-i18n="how.1.text">زر واحد وملف APK مباشر — أو افتح نسخة الويب من متصفحك بدون تثبيت.</p>
+        </article>
+        <article class="step reveal" style="--d:100ms">
+          <span class="step-n" aria-hidden="true">02</span>
+          <h3 data-i18n="how.2.title">أنشئ حسابك</h3>
+          <p data-i18n="how.2.text">سجّل برقم هاتفك، وحدّد إن كنت باحثاً أو صاحب عقار أو مكتباً عقارياً.</p>
+        </article>
+        <article class="step reveal" style="--d:200ms">
+          <span class="step-n" aria-hidden="true">03</span>
+          <h3 data-i18n="how.3.title">ابحث أو أعلن</h3>
+          <p data-i18n="how.3.text">تصفّح الإعلانات الموثّقة أو أضف عقارك، وتواصل مباشرة من التطبيق.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- Features -->
-  <section class="section" id="features">
+  <!-- ================= DOWNLOAD ================= -->
+  <section class="section" id="download">
     <div class="wrap">
-      <div class="section-head">
-        <span class="sec-index" aria-hidden="true">02</span>
-        <div>
-          <p class="kicker" data-i18n="features.kicker">المميزات</p>
-          <h2 data-i18n="features.title">مصمم لبحث عقاري جاد</h2>
+      <div class="cta-panel reveal">
+        <div class="cta-grid">
+          <div class="cta-copy">
+            <p class="kicker" data-i18n="cta.kicker">ابدأ الآن</p>
+            <h2 data-i18n="cta.title">بيتك القادم على بُعد نقرة.</h2>
+            <p data-i18n="cta.text">حمّل تطبيق عقار لأجهزة أندرويد، أو استخدم نسخة الويب على أي جهاز آخر — إعلاناتك ومحفوظاتك معك أينما كنت.</p>
+
+            <div class="cta-actions">
+              <a class="btn btn--primary btn--lg" href="https://aqar-property.github.io/Aqar/releases/latest/Aqar.apk" download rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 3.5v10.5"/><path d="m7.6 10 4.4 4.4L16.4 10"/><path d="M4.5 19.5h15"/>
+                </svg>
+                <span class="btn-txt">
+                  <b data-i18n="cta.download">تحميل التطبيق (APK)</b>
+                  <small data-i18n="hero.downloadMeta">أندرويد · APK</small>
+                </span>
+              </a>
+              <a class="btn btn--ghost btn--lg" href="https://aqar-property.github.io/app/" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+                  <circle cx="12" cy="12" r="8.4"/>
+                  <path d="M3.6 12h16.8M12 3.6c2.4 2.5 2.4 14.3 0 16.8M12 3.6c-2.4 2.5-2.4 14.3 0 16.8"/>
+                </svg>
+                <span class="btn-txt">
+                  <b data-i18n="cta.web">فتح نسخة الويب</b>
+                  <small data-i18n="hero.webMeta">لكل الأجهزة</small>
+                </span>
+              </a>
+            </div>
+
+            <ul class="cta-notes">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
+                <span data-i18n="cta.note1">تحميل مباشر · دون متجر تطبيقات</span>
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
+                <span data-i18n="cta.note2">الويب يعمل على iOS وWindows وMac</span>
+              </li>
+            </ul>
+          </div>
+
+          <figure class="cta-photo">
+            <img src="assets/images/villa.jpg" alt="" width="1248" height="832" loading="lazy" decoding="async">
+            <span class="cta-pill">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
+              <span data-i18n="phone.verified">موثّق</span>
+            </span>
+            <figcaption>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20H4Z"/><path d="M9.5 20v-5h5v5"/></svg>
+              <span data-i18n="cta.photo">عقارات موثّقة، بصور أوضح.</span>
+            </figcaption>
+          </figure>
         </div>
-      </div>
-
-      <div class="features">
-
-        <article class="feature">
-          <div class="feature-head">
-            <span class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                <circle cx="11" cy="11" r="6.5"/>
-                <path d="m16 16 4.5 4.5"/>
-                <path d="M8.5 11h5M11 8.5v5"/>
-              </svg>
-            </span>
-            <span class="feature-idx" aria-hidden="true">01</span>
-          </div>
-          <h3 data-i18n="features.1.title">بحث وفلترة واضحة</h3>
-          <p data-i18n="features.1.text">فلترة حسب نوع العقار والمدينة والسعر والمساحة للوصول إلى النتيجة المناسبة بسرعة.</p>
-        </article>
-
-        <article class="feature">
-          <div class="feature-head">
-            <span class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                <path d="M12 3 4.5 6v6c0 4.2 3.1 7.6 7.5 9 4.4-1.4 7.5-4.8 7.5-9V6L12 3Z"/>
-                <path d="M8.8 12.2 11.2 14.5l4-4.3"/>
-              </svg>
-            </span>
-            <span class="feature-idx" aria-hidden="true">02</span>
-          </div>
-          <h3 data-i18n="features.2.title">حسابات موثقة</h3>
-          <p data-i18n="features.2.text">توثيق المعلنين والمكاتب العقارية لرفع مصداقية الإعلانات وثقة المتصفح.</p>
-        </article>
-
-        <article class="feature">
-          <div class="feature-head">
-            <span class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                <rect x="3.5" y="4" width="17" height="16"/>
-                <path d="M3.5 9.5h17M8 4v5.5"/>
-                <path d="M7 13h5M7 16.5h9"/>
-              </svg>
-            </span>
-            <span class="feature-idx" aria-hidden="true">03</span>
-          </div>
-          <h3 data-i18n="features.3.title">إدارة الإعلانات والباقات</h3>
-          <p data-i18n="features.3.text">لوحة واضحة لإدارة الإعلانات وحالاتها، مع باقات مرنة تناسب حجم النشاط.</p>
-        </article>
-
-        <article class="feature">
-          <div class="feature-head">
-            <span class="feature-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                <circle cx="12" cy="12" r="8.5"/>
-                <path d="M12 3.5v17a8.5 8.5 0 0 0 0-17Z" fill="currentColor" stroke="none"/>
-              </svg>
-            </span>
-            <span class="feature-idx" aria-hidden="true">04</span>
-          </div>
-          <h3 data-i18n="features.4.title">ثنائي اللغة والثيم</h3>
-          <p data-i18n="features.4.text">عربية وإنجليزية، داكن وفاتح؛ تتكيّف الواجهة مع تفضيلك وتتذكّره.</p>
-        </article>
-
       </div>
     </div>
   </section>
@@ -986,24 +1827,50 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap footer-inner">
-    <div class="footer-brand">
-      <span class="brand-tile" aria-hidden="true">
-        <img src="Materials/App_Icon.png" alt="" width="20" height="20" loading="lazy" decoding="async">
-      </span>
-      <div>
-        <p class="footer-name">عقار | Aqar Property</p>
-        <p class="copyright">© <span id="year">2026</span> <span data-i18n="footer.rights">عقار (Aqar Property). جميع الحقوق محفوظة.</span></p>
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M7 24.5V14.4L16 7l9 7.4v10.1"/>
+            <path d="M12.8 24.5v-6h6.4v6"/>
+          </svg>
+        </span>
+        <div>
+          <p class="footer-name">عقار | Aqar Property</p>
+          <p class="footer-tag" data-i18n="footer.tag">منصة الإعلانات العقارية — من المالك والمكتب إلى الباحث.</p>
+        </div>
       </div>
+
+      <nav class="footer-links" data-i18n-aria="a11y.footer" aria-label="روابط">
+        <a href="https://aqar-property.github.io/app/" target="_blank" rel="noopener" data-i18n="footer.web">نسخة الويب</a>
+        <a href="https://aqar-property.github.io/Aqar/releases/latest/Aqar.apk" download rel="noopener" data-i18n="footer.app">التطبيق</a>
+        <a href="https://github.com/Aqar-Property/Aqar" target="_blank" rel="noopener" data-i18n="footer.repo">المستودع</a>
+        <a href="https://github.com/Aqar-Property/Aqar/issues" target="_blank" rel="noopener" data-i18n="footer.support">الدعم</a>
+      </nav>
     </div>
 
-    <nav class="footer-links" data-i18n-aria="footer.links" aria-label="روابط الدعم">
-      <a href="https://github.com/Aqar-Property/Aqar" rel="noopener" data-i18n="footer.repo">المستودع</a>
-      <a href="releases/latest/Aqar.apk" download="Aqar.apk" data-i18n="footer.releases">الإصدارات</a>
-      <a href="https://github.com/Aqar-Property/Aqar/issues" rel="noopener" data-i18n="footer.support">الدعم</a>
-    </nav>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> Aqar Property · <span data-i18n="footer.rights">جميع الحقوق محفوظة.</span></span>
+      <span class="mono">v1.0.0 · Android APK</span>
+    </div>
   </div>
 </footer>
+
+<div class="mobile-bar">
+  <a class="btn btn--primary" href="https://aqar-property.github.io/Aqar/releases/latest/Aqar.apk" download rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 3.5v10.5"/><path d="m7.6 10 4.4 4.4L16.4 10"/><path d="M4.5 19.5h15"/>
+    </svg>
+    <span data-i18n="mobile.download">حمّل التطبيق</span>
+  </a>
+  <a class="btn btn--ghost" href="https://aqar-property.github.io/app/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <circle cx="12" cy="12" r="8.4"/><path d="M3.6 12h16.8M12 3.6c2.4 2.5 2.4 14.3 0 16.8M12 3.6c-2.4 2.5-2.4 14.3 0 16.8"/>
+    </svg>
+    <span data-i18n="mobile.web">نسخة الويب</span>
+  </a>
+</div>
 
 <script>
 (function () {
@@ -1015,108 +1882,263 @@
 
   var I18N = {
     ar: {
-      "meta.title": "عقار | Aqar Property — تحميل تطبيق الأندرويد",
-      "meta.description": "عقار (Aqar Property) منصة عقارية لتصفح الإعلانات الموثقة، الفلترة حسب النوع والمدينة والسعر، والتواصل مع المعلنين والمكاتب العقارية. حمّل تطبيق الأندرويد APK مباشرة.",
-      "meta.ogTitle": "عقار | Aqar Property — تحميل تطبيق الأندرويد",
-      "meta.ogDescription": "منصة عقارية ببحث واضح، حسابات موثقة، وباقات مرنة. تحميل تطبيق الأندرويد APK مباشرة.",
-      "meta.locale": "ar_AR",
+      "meta.title": "عقار — منصة الإعلانات العقارية | Aqar Property",
+      "meta.desc": "عقار (Aqar Property) منصّة للإعلانات العقارية الموثّقة: تصفّح، فلتر حسب النوع والمدينة والسعر، وتواصل مباشرة مع المالكين والمكاتب العقارية. حمّل تطبيق الأندرويد أو استخدم نسخة الويب.",
 
       "a11y.skip": "تجاوز إلى المحتوى",
+      "a11y.home": "عقار — Aqar Property",
+      "a11y.nav": "التنقل الرئيسي",
+      "a11y.footer": "روابط الدعم",
       "a11y.lang": "تبديل اللغة",
-      "a11y.theme": "تبديل مظهر الألوان",
-      "theme.label": "فاتح",
+      "a11y.theme": "تبديل المظهر",
 
-      "hero.eyebrow": "منصة عقارية · تطبيق أندرويد",
-      "hero.title": "ابحث عن عقارك القادم بوضوح وثقة.",
-      "hero.lead": "«عقار» منصة عقارية تجمع الإعلانات الموثقة من المعلنين والمكاتب العقارية في مكان واحد: تصفّح، فلتر، وتواصل مباشرة من تطبيق الأندرويد.",
-      "hero.download": "تحميل تطبيق الأندرويد (APK)",
-      "hero.more": "تعرّف على المميزات",
-      "hero.note": "تحميل مباشر · Aqar.apk",
+      "nav.audience": "لمن عقار",
+      "nav.features": "المميزات",
+      "nav.how": "كيف يعمل",
+      "nav.download": "التحميل",
+      "nav.cta": "حمّل التطبيق",
 
-      "spec.label": "بطاقة الإصدار",
-      "spec.status": "متاح الآن",
-      "spec.platform": "المنصة",
-      "spec.version": "الإصدار",
-      "spec.size": "اسم الملف",
-      "spec.note": "تثبيت مباشر دون الحاجة إلى متجر تطبيقات.",
+      "hero.eyebrow": "منصة عقارية · تطبيق أندرويد ونسخة ويب",
+      "hero.title": "بيتك القادم يبدأ من <em>عقار</em>.",
+      "hero.lead": "منصّة واحدة تجمع إعلانات العقارات الموثّقة من المالكين والمكاتب العقارية. تصفّح بذكاء، فلتر في ثوانٍ، وتواصل مباشرة — من التطبيق أو من أي متصفح.",
+      "hero.download": "حمّل التطبيق",
+      "hero.downloadMeta": "أندرويد · APK",
+      "hero.web": "نسخة الويب",
+      "hero.webMeta": "لكل الأجهزة",
+      "hero.proof1": "إعلانات موثّقة",
+      "hero.proof2": "بدون متجر تطبيقات",
+      "hero.proof3": "عربي / English",
+      "hero.phoneAlt": "واجهة تطبيق عقار على الهاتف",
+      "hero.float1": "مكتب عقاري موثّق",
+      "hero.float2": "شقة مفروشة حديثاً",
+      "hero.float2loc": "الرابية · عمّان",
 
-      "steps.kicker": "التثبيت",
-      "steps.title": "ثلاث خطوات للتثبيت",
-      "steps.1.title": "حمّل ملف APK",
-      "steps.1.text": "افتح هذه الصفحة على جهاز الأندرويد وحمّل ملف Aqar.apk من زر التحميل أعلاه.",
-      "steps.2.title": "اسمح بالتثبيت",
-      "steps.2.text": "عند ظهور تنبيه الأمان من أندرويد، اسمح بالتثبيت من المتصفح أو مدير الملفات.",
-      "steps.3.title": "افتح وابدأ",
-      "steps.3.text": "شغّل تطبيق عقار، تصفّح الإعلانات وتواصل مع المعلنين أو المكاتب مباشرة.",
+      "phone.search": "ابحث عن شقة، فيلا، أرض…",
+      "phone.chip1": "الكل",
+      "phone.chip2": "شقق",
+      "phone.chip3": "فلل",
+      "phone.chip4": "أراضٍ",
+      "phone.chip5": "مكاتب",
+      "phone.featured": "إعلانات مميزة",
+      "phone.viewall": "عرض الكل",
+      "phone.verified": "موثّق",
+      "phone.l1": "شقة بإطلالة بانورامية",
+      "phone.l1loc": "عبدون · عمّان",
+      "phone.l1price": "120,000 د.أ",
+      "phone.l1meta": "3 غرف · 145 م²",
+      "phone.l2": "شقة مفروشة حديثاً",
+      "phone.l2loc": "الرابية · عمّان",
+      "phone.l3": "فيلا بحديقة خاصة",
+      "phone.l3loc": "دابوق · عمّان",
+      "phone.tab1": "بحث",
+      "phone.tab2": "المحفوظة",
+      "phone.tab3": "إعلاناتي",
+      "phone.tab4": "حسابي",
 
-      "features.kicker": "المميزات",
-      "features.title": "مصمم لبحث عقاري جاد",
-      "features.1.title": "بحث وفلترة واضحة",
-      "features.1.text": "فلترة حسب نوع العقار والمدينة والسعر والمساحة للوصول إلى النتيجة المناسبة بسرعة.",
-      "features.2.title": "حسابات موثقة",
-      "features.2.text": "توثيق المعلنين والمكاتب العقارية لرفع مصداقية الإعلانات وثقة المتصفح.",
-      "features.3.title": "إدارة الإعلانات والباقات",
-      "features.3.text": "لوحة واضحة لإدارة الإعلانات وحالاتها، مع باقات مرنة تناسب حجم النشاط.",
-      "features.4.title": "ثنائي اللغة والثيم",
-      "features.4.text": "عربية وإنجليزية، داكن وفاتح؛ تتكيّف الواجهة مع تفضيلك وتتذكّره.",
+      "ticker.1": "شقق", "ticker.2": "فلل", "ticker.3": "أراضٍ", "ticker.4": "مكاتب",
+      "ticker.5": "محلات", "ticker.6": "مزارع", "ticker.7": "شاليهات", "ticker.8": "مستودعات",
 
-      "footer.rights": "عقار (Aqar Property). جميع الحقوق محفوظة.",
+      "aud.kicker": "لمن عقار",
+      "aud.title": "ثلاثة أدوار. منصة واحدة.",
+      "aud.lead": "سواء كنت تبيع، أو توسّع محفظتك العقارية، أو تبحث عن سكنك الأول — عقار مبني حول ما تحتاجه فعلاً.",
+      "aud.1.role": "لأصحاب العقارات",
+      "aud.1.title": "أعلن عن عقارك بثقة",
+      "aud.1.text": "أضف العقار، أدر إعلانك، واستقبل اهتمام الباحثين الجديين — بشفافية كاملة في كل خطوة.",
+      "aud.1.tag1": "إضافة عقار", "aud.1.tag2": "إدارة الإعلان", "aud.1.tag3": "ردود فورية",
+      "aud.2.role": "للمكاتب العقارية",
+      "aud.2.title": "محفظتك في لوحة واحدة",
+      "aud.2.text": "أطلق إعلانات موثّقة، تابع أداءها، وأدِر إعلانات مكتبك وباقاتك من مكان واحد يناسب حجم عملك.",
+      "aud.2.tag1": "حساب مكتب", "aud.2.tag2": "باقات مرنة", "aud.2.tag3": "إدارة إعلانات",
+      "aud.3.role": "للباحثين عن عقار",
+      "aud.3.title": "ابحث كما ينبغي",
+      "aud.3.text": "فلترة حسب النوع والمدينة والسعر والمساحة، حفظ المفضّلة، وتواصل مباشرة مع المعلن.",
+      "aud.3.tag1": "بحث متقدم", "aud.3.tag2": "المحفوظة", "aud.3.tag3": "تواصل مباشر",
+
+      "feat.kicker": "المميزات",
+      "feat.title": "كل ما تحتاجه للبحث والإعلان.",
+      "feat.lead": "أدوات واضحة، بلا ضجيج — من أول فلتر إلى آخر رسالة مع المعلن.",
+      "feat.1.title": "بحث وفلترة دقيقة",
+      "feat.1.text": "حدّد نوع العقار والمدينة والسعر والمساحة، ووصل إلى ما يناسبك في ثوانٍ.",
+      "feat.1.chip1": "شقة", "feat.1.chip2": "فيلا", "feat.1.chip3": "أرض", "feat.1.chip4": "مكتب",
+      "feat.2.title": "حسابات موثّقة",
+      "feat.2.text": "توثيق المعلنين والمكاتب يرفع مصداقية كل إعلان ويجعل قرارك أسهل.",
+      "feat.2.badge": "حساب موثّق",
+      "feat.2.sub": "تم التحقق من المعلن",
+      "feat.3.title": "باقات مرنة",
+      "feat.3.text": "باقة لإعلان واحد أو محفظة كاملة، مع إدارة واضحة لحالة كل إعلان.",
+      "feat.3.p1": "أساسي", "feat.3.p2": "احترافي", "feat.3.p3": "مكتب",
+      "feat.4.title": "لغتان وثيمان",
+      "feat.4.text": "العربية والإنجليزية، داكن وفاتح — الواجهة تتكيّف معك وتتذكّر اختيارك.",
+      "feat.4.ar": "العربية", "feat.4.dark": "داكن", "feat.4.light": "فاتح",
+      "feat.5.title": "تواصل مباشر",
+      "feat.5.text": "راسل المعلن أو المكتب من داخل التطبيق واتفق على المعاينة بسرعة.",
+      "feat.5.msg1": "هل الشقة متاحة للمعاينة السبت؟",
+      "feat.5.msg2": "أكيد، الساعة ١١ صباحاً.",
+      "feat.6.title": "تطبيق ونسخة ويب",
+      "feat.6.text": "نفس الحساب ونفس الإعلانات — على أندرويد وعلى أي متصفح.",
+      "feat.6.android": "أندرويد", "feat.6.web": "الويب",
+
+      "how.kicker": "البداية",
+      "how.title": "ثلاث خطوات وتبدأ.",
+      "how.lead": "لا تعقيد، لا خطوات زائدة — من التحميل إلى أول عقار في دقائق.",
+      "how.1.title": "حمّل التطبيق",
+      "how.1.text": "زر واحد وملف APK مباشر — أو افتح نسخة الويب من متصفحك بدون تثبيت.",
+      "how.2.title": "أنشئ حسابك",
+      "how.2.text": "سجّل برقم هاتفك، وحدّد إن كنت باحثاً أو صاحب عقار أو مكتباً عقارياً.",
+      "how.3.title": "ابحث أو أعلن",
+      "how.3.text": "تصفّح الإعلانات الموثّقة أو أضف عقارك، وتواصل مباشرة من التطبيق.",
+
+      "cta.kicker": "ابدأ الآن",
+      "cta.title": "بيتك القادم على بُعد نقرة.",
+      "cta.text": "حمّل تطبيق عقار لأجهزة أندرويد، أو استخدم نسخة الويب على أي جهاز آخر — إعلاناتك ومحفوظاتك معك أينما كنت.",
+      "cta.download": "تحميل التطبيق (APK)",
+      "cta.web": "فتح نسخة الويب",
+      "cta.note1": "تحميل مباشر · دون متجر تطبيقات",
+      "cta.note2": "الويب يعمل على iOS وWindows وMac",
+      "cta.photo": "عقارات موثّقة، بصور أوضح.",
+
+      "footer.tag": "منصة الإعلانات العقارية — من المالك والمكتب إلى الباحث.",
+      "footer.web": "نسخة الويب",
+      "footer.app": "التطبيق",
       "footer.repo": "المستودع",
-      "footer.releases": "الإصدارات",
       "footer.support": "الدعم",
-      "footer.links": "روابط الدعم"
+      "footer.rights": "جميع الحقوق محفوظة.",
+
+      "mobile.download": "حمّل التطبيق",
+      "mobile.web": "نسخة الويب",
+      "toggle.light": "فاتح",
+      "toggle.dark": "داكن",
+      "toggle.langNext": "EN"
     },
+
     en: {
-      "meta.title": "Aqar Property — Download the Android App",
-      "meta.description": "Aqar Property is a real estate platform for browsing verified listings, filtering by type, city and price, and connecting with advertisers and real estate offices. Download the Android APK.",
-      "meta.ogTitle": "Aqar Property — Download the Android App",
-      "meta.ogDescription": "A real estate platform with clear search, verified accounts and flexible listing plans. Download the Android APK.",
-      "meta.locale": "en_US",
+      "meta.title": "Aqar Property — Real Estate Listings Platform",
+      "meta.desc": "Aqar Property is a platform for verified real estate listings: browse, filter by type, city and price, and connect directly with owners and real estate offices. Download the Android app or use the web app.",
 
       "a11y.skip": "Skip to content",
+      "a11y.home": "Aqar Property",
+      "a11y.nav": "Main navigation",
+      "a11y.footer": "Footer links",
       "a11y.lang": "Switch language",
       "a11y.theme": "Switch color theme",
-      "theme.label": "Light",
 
-      "hero.eyebrow": "Real estate platform · Android app",
-      "hero.title": "Find your next property with clarity and confidence.",
-      "hero.lead": "Aqar brings verified listings from advertisers and real estate offices into one place: browse, filter, and get in touch directly from the Android app.",
-      "hero.download": "Download Android APK",
-      "hero.more": "Explore the features",
-      "hero.note": "Direct download · Aqar.apk",
+      "nav.audience": "Who it's for",
+      "nav.features": "Features",
+      "nav.how": "How it works",
+      "nav.download": "Download",
+      "nav.cta": "Get the app",
 
-      "spec.label": "Release card",
-      "spec.status": "Available now",
-      "spec.platform": "Platform",
-      "spec.version": "Version",
-      "spec.size": "File name",
-      "spec.note": "Installed directly, no app store required.",
+      "hero.eyebrow": "Real estate platform · Android app & web",
+      "hero.title": "Your next home starts with <em>Aqar</em>.",
+      "hero.lead": "One platform for verified property listings from owners and real estate offices. Browse smart, filter in seconds, and connect directly — in the app or in any browser.",
+      "hero.download": "Download the app",
+      "hero.downloadMeta": "Android · APK",
+      "hero.web": "Web app",
+      "hero.webMeta": "Any device",
+      "hero.proof1": "Verified listings",
+      "hero.proof2": "No app store needed",
+      "hero.proof3": "Arabic / English",
+      "hero.phoneAlt": "The Aqar app interface on a phone",
+      "hero.float1": "Verified real estate office",
+      "hero.float2": "Newly furnished apartment",
+      "hero.float2loc": "Al-Rabiah · Amman",
 
-      "steps.kicker": "Installation",
-      "steps.title": "Three steps to install",
-      "steps.1.title": "Download the APK",
-      "steps.1.text": "Open this page on your Android device and download Aqar.apk using the button above.",
-      "steps.2.title": "Allow the install",
-      "steps.2.text": "When Android shows its security prompt, allow the install from your browser or file manager.",
-      "steps.3.title": "Open and start",
-      "steps.3.text": "Launch Aqar, browse listings and contact advertisers or offices directly.",
+      "phone.search": "Search apartments, villas, land…",
+      "phone.chip1": "All",
+      "phone.chip2": "Apartments",
+      "phone.chip3": "Villas",
+      "phone.chip4": "Land",
+      "phone.chip5": "Offices",
+      "phone.featured": "Featured listings",
+      "phone.viewall": "See all",
+      "phone.verified": "Verified",
+      "phone.l1": "Apartment with a panoramic view",
+      "phone.l1loc": "Abdoun · Amman",
+      "phone.l1price": "JOD 120,000",
+      "phone.l1meta": "3 beds · 145 m²",
+      "phone.l2": "Newly furnished apartment",
+      "phone.l2loc": "Al-Rabiah · Amman",
+      "phone.l3": "Villa with a private garden",
+      "phone.l3loc": "Dabouq · Amman",
+      "phone.tab1": "Search",
+      "phone.tab2": "Saved",
+      "phone.tab3": "My ads",
+      "phone.tab4": "Account",
 
-      "features.kicker": "What you get",
-      "features.title": "Built for serious property search",
-      "features.1.title": "Clear search and filters",
-      "features.1.text": "Narrow listings by property type, city, price and area to reach the right match quickly.",
-      "features.2.title": "Verified accounts",
-      "features.2.text": "Verification for advertisers and real estate offices raises the credibility and trust of every listing.",
-      "features.3.title": "Listings and plans",
-      "features.3.text": "A clear dashboard to manage listings and their status, with flexible plans for any size of business.",
-      "features.4.title": "Bilingual, dual theme",
-      "features.4.text": "Arabic and English, dark and light — the interface follows your preference and remembers it.",
+      "ticker.1": "Apartments", "ticker.2": "Villas", "ticker.3": "Land", "ticker.4": "Offices",
+      "ticker.5": "Retail", "ticker.6": "Farms", "ticker.7": "Chalets", "ticker.8": "Warehouses",
 
-      "footer.rights": "Aqar Property. All rights reserved.",
+      "aud.kicker": "Who it's for",
+      "aud.title": "Three roles. One platform.",
+      "aud.lead": "Whether you're selling, growing a property portfolio, or looking for your first home — Aqar is built around what you actually need.",
+      "aud.1.role": "For property owners",
+      "aud.1.title": "List your property with confidence",
+      "aud.1.text": "Add the property, manage your listing and receive interest from serious buyers — with full transparency at every step.",
+      "aud.1.tag1": "Add property", "aud.1.tag2": "Manage listing", "aud.1.tag3": "Instant replies",
+      "aud.2.role": "For real estate offices",
+      "aud.2.title": "Your portfolio, one dashboard",
+      "aud.2.text": "Publish verified listings, track their performance and manage your office listings and plans from one place that fits your scale.",
+      "aud.2.tag1": "Office account", "aud.2.tag2": "Flexible plans", "aud.2.tag3": "Listing management",
+      "aud.3.role": "For property seekers",
+      "aud.3.title": "Search the way it should work",
+      "aud.3.text": "Filter by type, city, price and area, save your favourites, and contact the advertiser directly.",
+      "aud.3.tag1": "Advanced search", "aud.3.tag2": "Saved listings", "aud.3.tag3": "Direct contact",
+
+      "feat.kicker": "Features",
+      "feat.title": "Everything you need to search and list.",
+      "feat.lead": "Purposeful tools, no noise — from the first filter to the last message with the advertiser.",
+      "feat.1.title": "Precise search and filters",
+      "feat.1.text": "Set the property type, city, price and area, and reach the right match in seconds.",
+      "feat.1.chip1": "Apartment", "feat.1.chip2": "Villa", "feat.1.chip3": "Land", "feat.1.chip4": "Office",
+      "feat.2.title": "Verified accounts",
+      "feat.2.text": "Verification for advertisers and offices raises the credibility of every listing and makes your decision easier.",
+      "feat.2.badge": "Verified account",
+      "feat.2.sub": "Advertiser verified",
+      "feat.3.title": "Flexible plans",
+      "feat.3.text": "A plan for a single listing or an entire portfolio, with clear management for each listing's status.",
+      "feat.3.p1": "Basic", "feat.3.p2": "Pro", "feat.3.p3": "Office",
+      "feat.4.title": "Two languages, two themes",
+      "feat.4.text": "Arabic and English, dark and light — the interface adapts to you and remembers your choice.",
+      "feat.4.ar": "العربية", "feat.4.dark": "Dark", "feat.4.light": "Light",
+      "feat.5.title": "Direct contact",
+      "feat.5.text": "Message the advertiser or office from inside the app and arrange a viewing quickly.",
+      "feat.5.msg1": "Is the apartment available to view on Saturday?",
+      "feat.5.msg2": "Sure, 11 AM.",
+      "feat.6.title": "App and web app",
+      "feat.6.text": "The same account and the same listings — on Android and in any browser.",
+      "feat.6.android": "Android", "feat.6.web": "Web",
+
+      "how.kicker": "Getting started",
+      "how.title": "Three steps and you're in.",
+      "how.lead": "No friction, no extra steps — from download to your first property in minutes.",
+      "how.1.title": "Download the app",
+      "how.1.text": "One tap and a direct APK file — or open the web app in your browser with nothing to install.",
+      "how.2.title": "Create your account",
+      "how.2.text": "Sign up with your phone number and tell us whether you're a seeker, an owner or a real estate office.",
+      "how.3.title": "Search or list",
+      "how.3.text": "Browse verified listings or add your property, and get in touch directly from the app.",
+
+      "cta.kicker": "Start now",
+      "cta.title": "Your next home is one tap away.",
+      "cta.text": "Download Aqar for Android, or use the web app on any other device — your listings and saved properties stay with you.",
+      "cta.download": "Download the app (APK)",
+      "cta.web": "Open the web app",
+      "cta.note1": "Direct download · no app store",
+      "cta.note2": "The web app runs on iOS, Windows and Mac",
+      "cta.photo": "Verified listings, clearer photos.",
+
+      "footer.tag": "The real estate listings platform — from owner and office to buyer.",
+      "footer.web": "Web app",
+      "footer.app": "Android app",
       "footer.repo": "Repository",
-      "footer.releases": "Releases",
       "footer.support": "Support",
-      "footer.links": "Support links"
+      "footer.rights": "All rights reserved.",
+
+      "mobile.download": "Get the app",
+      "mobile.web": "Web app",
+      "toggle.light": "Light",
+      "toggle.dark": "Dark",
+      "toggle.langNext": "AR"
     }
   };
 
@@ -1126,6 +2148,13 @@
   var themeLabel = document.getElementById("themeLabel");
   var yearEl = document.getElementById("year");
 
+  var state = {
+    theme: root.getAttribute("data-theme") === "light" ? "light" : "dark",
+    lang: root.lang === "en" ? "en" : "ar"
+  };
+
+  function dict() { return I18N[state.lang]; }
+
   function safeGet(key) {
     try { return localStorage.getItem(key); } catch (e) { return null; }
   }
@@ -1133,28 +2162,18 @@
     try { localStorage.setItem(key, value); } catch (e) {}
   }
 
-  var state = {
-    theme: root.getAttribute("data-theme") === "dark" ? "dark" : "light",
-    lang: root.lang === "en" ? "en" : "ar"
-  };
-
-  function dict() { return I18N[state.lang]; }
-
-  function meta(selector) {
-    return document.querySelector(selector);
-  }
-
-  function applyTheme(theme) {
-    state.theme = theme === "dark" ? "dark" : "light";
+  function applyTheme(theme, persist) {
+    state.theme = theme === "light" ? "light" : "dark";
     root.setAttribute("data-theme", state.theme);
     root.style.colorScheme = state.theme;
     themeToggle.setAttribute("aria-pressed", state.theme === "dark" ? "true" : "false");
-    themeToggle.setAttribute("aria-label", dict()["a11y.theme"]);
-    themeToggle.setAttribute("title", dict()["a11y.theme"]);
-    if (themeLabel) themeLabel.textContent = state.theme === "dark" ? (state.lang === "ar" ? "داكن" : "Dark") : dict()["theme.label"];
+    var d = dict();
+    themeToggle.setAttribute("aria-label", d["a11y.theme"]);
+    if (themeLabel) themeLabel.textContent = d[state.theme === "dark" ? "toggle.dark" : "toggle.light"];
+    if (persist) safeSet(KEY_THEME, state.theme);
   }
 
-  function applyLang(lang) {
+  function applyLang(lang, persist) {
     state.lang = lang === "en" ? "en" : "ar";
     var d = dict();
 
@@ -1166,48 +2185,83 @@
       if (typeof value === "string") el.textContent = value;
     });
 
+    document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
+      var value = d[el.getAttribute("data-i18n-html")];
+      if (typeof value === "string") el.innerHTML = value;
+    });
+
     document.querySelectorAll("[data-i18n-aria]").forEach(function (el) {
       var value = d[el.getAttribute("data-i18n-aria")];
       if (typeof value === "string") el.setAttribute("aria-label", value);
     });
 
     document.title = d["meta.title"];
-    var desc = meta('meta[name="description"]');
-    if (desc) desc.setAttribute("content", d["meta.description"]);
-    var ogTitle = meta('meta[property="og:title"]');
-    if (ogTitle) ogTitle.setAttribute("content", d["meta.ogTitle"]);
-    var ogDesc = meta('meta[property="og:description"]');
-    if (ogDesc) ogDesc.setAttribute("content", d["meta.ogDescription"]);
-    var ogLocale = meta('meta[property="og:locale"]');
-    if (ogLocale) ogLocale.setAttribute("content", d["meta.locale"]);
-    var twTitle = meta('meta[name="twitter:title"]');
-    if (twTitle) twTitle.setAttribute("content", d["meta.ogTitle"]);
-    var twDesc = meta('meta[name="twitter:description"]');
-    if (twDesc) twDesc.setAttribute("content", d["meta.ogDescription"]);
+    var desc = document.querySelector('meta[name="description"]');
+    if (desc) desc.setAttribute("content", d["meta.desc"]);
 
-    langLabel.textContent = state.lang === "ar" ? "EN" : "AR";
-    langLabel.setAttribute("lang", state.lang === "ar" ? "en" : "ar");
-    langToggle.setAttribute("aria-label", state.lang === "ar" ? "Switch language" : "تبديل اللغة");
-    langToggle.setAttribute("title", d["a11y.lang"]);
+    if (langLabel) {
+      langLabel.textContent = d["toggle.langNext"];
+      langLabel.setAttribute("lang", state.lang === "ar" ? "en" : "ar");
+    }
 
-    applyTheme(state.theme);
+    applyTheme(state.theme, false);
+    if (persist) safeSet(KEY_LANG, state.lang);
   }
 
   langToggle.addEventListener("click", function () {
-    var next = state.lang === "ar" ? "en" : "ar";
-    safeSet(KEY_LANG, next);
-    applyLang(next);
+    applyLang(state.lang === "ar" ? "en" : "ar", true);
   });
 
   themeToggle.addEventListener("click", function () {
-    var next = state.theme === "dark" ? "light" : "dark";
-    safeSet(KEY_THEME, next);
-    applyTheme(next);
+    applyTheme(state.theme === "dark" ? "light" : "dark", true);
   });
+
+  /* Header elevation + reading progress */
+  var header = document.querySelector(".site-header");
+  var progress = document.getElementById("progress");
+  var ticking = false;
+
+  function onScroll() {
+    var y = window.scrollY || window.pageYOffset;
+    if (header) header.classList.toggle("is-stuck", y > 8);
+    if (progress) {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var ratio = max > 0 ? Math.min(1, y / max) : 0;
+      progress.style.transform = "scaleX(" + ratio + ")";
+    }
+    ticking = false;
+  }
+
+  window.addEventListener("scroll", function () {
+    if (!ticking) {
+      ticking = true;
+      window.requestAnimationFrame(onScroll);
+    }
+  }, { passive: true });
+  onScroll();
+
+  /* Reveal on scroll */
+  var items = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add("is-in"); });
+  }
 
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  applyLang(state.lang);
+  var savedLang = safeGet(KEY_LANG);
+  var savedTheme = safeGet(KEY_THEME);
+  if (savedTheme === "light" || savedTheme === "dark") state.theme = savedTheme;
+  applyLang(savedLang === "en" ? "en" : "ar", false);
 })();
 </script>
 </body>
