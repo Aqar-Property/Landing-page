@@ -400,24 +400,14 @@
   .spec-plate {
     display: flex;
     align-items: center;
-    gap: 16px;
-    padding: 16px 18px;
+    justify-content: center;
+    padding: 20px 18px;
     border-bottom: 1px solid var(--line);
   }
-  .spec-tile {
-    flex: 0 0 auto;
-    width: 64px;
-    height: 64px;
-    display: grid;
-    place-items: center;
-    background: var(--tile);
-    border: 1px solid var(--tile-line);
-    border-radius: var(--radius);
-  }
-  .spec-tile img { width: 42px; height: 42px; object-fit: contain; }
   .spec-plate-text {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 1px;
     min-width: 0;
   }
@@ -728,7 +718,7 @@
     #themeToggle .ctrl-label { display: none; }
     .brand-latin { font-size: 8.5px; }
     .spec-row, .spec-top, .spec-foot { padding-inline: 14px; }
-    .spec-plate { padding-inline: 14px; gap: 12px; }
+    .spec-plate { padding-inline: 14px; }
     .spec-plate-text .wordmark { width: 82px; height: 82px; margin-block: -20px; }
     .hero-watermark { display: none; }
   }
@@ -804,8 +794,8 @@
 
         <div class="hero-actions">
           <a class="btn-primary"
-             href="releases/latest/aqar.apk"
-             download="aqar.apk"
+             href="releases/latest/Aqar.apk"
+             download="Aqar.apk"
              rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="square" aria-hidden="true">
               <path d="M12 3v11"/>
@@ -824,7 +814,7 @@
         </div>
 
         <p class="hero-sub">
-          <span data-i18n="hero.note">تحميل مباشر · aqar.apk</span>
+          <span data-i18n="hero.note">تحميل مباشر · Aqar.apk</span>
           <span class="dot-sep" aria-hidden="true"></span>
           <span>v1.0.0</span>
           <span class="dot-sep" aria-hidden="true"></span>
@@ -834,9 +824,6 @@
 
       <aside class="spec" aria-labelledby="specLabel">
         <div class="spec-plate">
-          <span class="spec-tile" aria-hidden="true">
-            <img src="Materials/App_Icon.png" alt="" width="42" height="42" decoding="async">
-          </span>
           <div class="spec-plate-text">
             <img class="wordmark wordmark--black" src="Materials/Aqar_logo_Black.png" alt="عقار" width="94" height="94" decoding="async">
             <img class="wordmark wordmark--white" src="Materials/Aqar_logo.png" alt="عقار" width="94" height="94" decoding="async">
@@ -862,7 +849,7 @@
         </div>
         <div class="spec-row">
           <span class="spec-key" data-i18n="spec.size">اسم الملف</span>
-          <span class="spec-val" dir="ltr">aqar.apk</span>
+          <span class="spec-val" dir="ltr">Aqar.apk</span>
         </div>
 
         <p class="spec-foot">
@@ -892,7 +879,7 @@
         <div class="step">
           <span class="step-num" aria-hidden="true">01</span>
           <h3 data-i18n="steps.1.title">حمّل ملف APK</h3>
-          <p data-i18n="steps.1.text">افتح هذه الصفحة على جهاز الأندرويد وحمّل ملف aqar.apk من زر التحميل أعلاه.</p>
+          <p data-i18n="steps.1.text">افتح هذه الصفحة على جهاز الأندرويد وحمّل ملف Aqar.apk من زر التحميل أعلاه.</p>
         </div>
         <div class="step">
           <span class="step-num" aria-hidden="true">02</span>
@@ -999,7 +986,7 @@
 
     <nav class="footer-links" data-i18n-aria="footer.links" aria-label="روابط الدعم">
       <a href="https://github.com/Aqar-Property/Aqar" rel="noopener" data-i18n="footer.repo">المستودع</a>
-      <a href="releases/latest/aqar.apk" download="aqar.apk" data-i18n="footer.releases">الإصدارات</a>
+      <a href="releases/latest/Aqar.apk" download="Aqar.apk" data-i18n="footer.releases">الإصدارات</a>
       <a href="https://github.com/Aqar-Property/Aqar/issues" rel="noopener" data-i18n="footer.support">الدعم</a>
     </nav>
   </div>
@@ -1031,7 +1018,7 @@
       "hero.lead": "«عقار» منصة عقارية تجمع الإعلانات الموثقة من المعلنين والمكاتب العقارية في مكان واحد: تصفّح، فلتر، وتواصل مباشرة من تطبيق الأندرويد.",
       "hero.download": "تحميل تطبيق الأندرويد (APK)",
       "hero.more": "تعرّف على المميزات",
-      "hero.note": "تحميل مباشر · aqar.apk",
+      "hero.note": "تحميل مباشر · Aqar.apk",
 
       "spec.label": "بطاقة الإصدار",
       "spec.status": "متاح الآن",
@@ -1043,7 +1030,7 @@
       "steps.kicker": "التثبيت",
       "steps.title": "ثلاث خطوات للتثبيت",
       "steps.1.title": "حمّل ملف APK",
-      "steps.1.text": "افتح هذه الصفحة على جهاز الأندرويد وحمّل ملف aqar.apk من زر التحميل أعلاه.",
+      "steps.1.text": "افتح هذه الصفحة على جهاز الأندرويد وحمّل ملف Aqar.apk من زر التحميل أعلاه.",
       "steps.2.title": "اسمح بالتثبيت",
       "steps.2.text": "عند ظهور تنبيه الأمان من أندرويد، اسمح بالتثبيت من المتصفح أو مدير الملفات.",
       "steps.3.title": "افتح وابدأ",
@@ -1083,7 +1070,7 @@
       "hero.lead": "Aqar brings verified listings from advertisers and real estate offices into one place: browse, filter, and get in touch directly from the Android app.",
       "hero.download": "Download Android APK",
       "hero.more": "Explore the features",
-      "hero.note": "Direct download · aqar.apk",
+      "hero.note": "Direct download · Aqar.apk",
 
       "spec.label": "Release card",
       "spec.status": "Available now",
@@ -1095,7 +1082,7 @@
       "steps.kicker": "Installation",
       "steps.title": "Three steps to install",
       "steps.1.title": "Download the APK",
-      "steps.1.text": "Open this page on your Android device and download aqar.apk using the button above.",
+      "steps.1.text": "Open this page on your Android device and download Aqar.apk using the button above.",
       "steps.2.title": "Allow the install",
       "steps.2.text": "When Android shows its security prompt, allow the install from your browser or file manager.",
       "steps.3.title": "Open and start",
