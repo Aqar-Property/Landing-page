@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title>عقار — منصة الإعلانات العقارية | Aqar Property</title>
-<meta name="description" content="عقار (Aqar Property) منصّة للإعلانات العقارية الموثّقة: تصفّح، فلتر حسب النوع والمدينة والسعر، وتواصل مباشرة مع المالكين والمكاتب العقارية. حمّل تطبيق الأندرويد أو استخدم نسخة الويب.">
+<title>عقار — قريباً | منصة الإعلانات العقارية | Aqar Property</title>
+<meta name="description" content="عقار (Aqar Property) منصّة للإعلانات العقارية الموثّقة — قيد التجهيز للإطلاق. التطبيق ونسخة الويب سيتوفّران قريباً. انتظرونا.">
 <meta name="author" content="Aqar Property">
 <meta name="theme-color" content="#0B0F0E" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#F7F5EE" media="(prefers-color-scheme: light)">
@@ -17,15 +17,15 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="عقار | Aqar Property">
-<meta property="og:title" content="عقار — منصة الإعلانات العقارية">
-<meta property="og:description" content="إعلانات عقارية موثّقة من المالكين والمكاتب، في تطبيق واحد ونسخة ويب لكل الأجهزة.">
+<meta property="og:title" content="عقار — قريباً | منصة الإعلانات العقارية">
+<meta property="og:description" content="إعلانات عقارية موثّقة من المالكين والمكاتب، في تطبيق واحد ونسخة ويب لكل الأجهزة — قيد التجهيز للإطلاق. انتظرونا قريباً.">
 <meta property="og:url" content="https://aqar-property.github.io/">
 <meta property="og:locale" content="ar_AR">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:image" content="https://aqar-property.github.io/Materials/aqar-icon.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="عقار — منصة الإعلانات العقارية">
-<meta name="twitter:description" content="إعلانات عقارية موثّقة من المالكين والمكاتب، في تطبيق واحد ونسخة ويب لكل الأجهزة.">
+<meta name="twitter:title" content="عقار — قريباً | منصة الإعلانات العقارية">
+<meta name="twitter:description" content="إعلانات عقارية موثّقة من المالكين والمكاتب، في تطبيق واحد ونسخة ويب لكل الأجهزة — قيد التجهيز للإطلاق. انتظرونا قريباً.">
 <meta name="twitter:image" content="https://aqar-property.github.io/Materials/aqar-icon.png">
 
 <link rel="icon" type="image/png" sizes="32x32" href="Materials/favicon-32.png">
@@ -243,6 +243,52 @@
   .btn-txt b { font-size: 15px; font-weight: 800; }
   .btn-txt small { font-size: 11px; font-weight: 600; opacity: .72; }
   html[dir="rtl"] .btn-txt small { letter-spacing: 0; }
+
+  /* ---------- Coming soon ---------- */
+  .soon-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding-inline: 14px;
+    border-radius: 11px;
+    border: 1px solid var(--brand-line);
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .soon-pill .dot,
+  .soon-tag .dot,
+  .mobile-soon .dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--brand);
+    box-shadow: 0 0 0 4px var(--brand-soft);
+    animation: pulse 2.6s ease-in-out infinite;
+    flex: 0 0 auto;
+  }
+
+  .soon-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    max-width: 100%;
+    min-height: 62px;
+    padding: 11px 18px;
+    border-radius: 14px;
+    border: 1px dashed var(--brand-line);
+    background: var(--brand-soft);
+    color: var(--ink);
+    cursor: default;
+  }
+  .soon-tag > svg { width: 22px; height: 22px; color: var(--brand); flex: 0 0 auto; }
+  .soon-tag-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; }
+  .soon-tag-txt b { font-size: 15px; font-weight: 800; line-height: 1.35; }
+  .soon-tag-txt small { font-size: 11.5px; font-weight: 600; color: var(--muted); line-height: 1.5; }
 
   /* ---------- Header ---------- */
   .site-header {
@@ -1202,6 +1248,22 @@
   /* ---------- Mobile bar ---------- */
   .mobile-bar { display: none; }
 
+  .mobile-soon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 10px;
+    border-radius: 11px;
+    border: 1px dashed var(--brand-line);
+    background: var(--brand-soft);
+    color: var(--brand);
+    font-size: 12.5px;
+    font-weight: 800;
+    line-height: 1.3;
+    text-align: center;
+  }
+
   /* ---------- Reveal ---------- */
   .js .reveal {
     opacity: 0;
@@ -1258,6 +1320,7 @@
     .header-actions .ctrl { padding-inline: 10px; }
     .header-actions .btn--sm span { display: none; }
     .header-actions .btn--sm { padding: 10px; }
+    .soon-pill { min-height: 38px; padding-inline: 10px; font-size: 12px; }
     .site-header { padding-block: 8px; }
     .float--a { inset-inline-end: 0; top: 28%; }
     .float--b { inset-inline-start: 0; bottom: 4%; }
@@ -1265,6 +1328,9 @@
 
   @media (max-width: 559px) {
     .hero-stage { margin-top: 6px; }
+    .hero-cta { flex-direction: column; align-items: stretch; }
+    .hero-cta .btn { justify-content: center; }
+    .hero-cta .soon-tag { width: 100%; }
     .float { font-size: 10.5px; }
     .float--a { inset-inline-end: -2px; }
     .aud-num { font-size: 42px; }
@@ -1321,7 +1387,7 @@
       <a href="#audience" data-i18n="nav.audience">لمن عقار</a>
       <a href="#features" data-i18n="nav.features">المميزات</a>
       <a href="#how" data-i18n="nav.how">كيف يعمل</a>
-      <a href="#download" data-i18n="nav.download">التحميل</a>
+      <a href="#download" data-i18n="nav.download">قريباً</a>
     </nav>
 
     <div class="header-actions">
@@ -1344,12 +1410,10 @@
         <span class="ctrl-label" id="themeLabel">فاتح</span>
       </button>
 
-      <a class="btn btn--primary btn--sm" href="https://aqar-property.github.io/Landing-page/releases/latest/Aqar.apk" download rel="noopener">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 3.5v10.5"/><path d="m7.6 10 4.4 4.4L16.4 10"/><path d="M4.5 19.5h15"/>
-        </svg>
-        <span data-i18n="nav.cta">حمّل التطبيق</span>
-      </a>
+      <span class="soon-pill">
+        <span class="dot" aria-hidden="true"></span>
+        <span data-i18n="nav.cta">قريباً</span>
+      </span>
     </div>
   </div>
 </header>
@@ -1370,31 +1434,31 @@
 
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.eyebrow">منصة عقارية · تطبيق أندرويد ونسخة ويب</span></p>
+        <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.eyebrow">قريباً · منصة عقارية قيد التجهيز للإطلاق</span></p>
 
-        <h1 class="reveal" style="--d:80ms" data-i18n-html="hero.title">بيتك القادم يبدأ من <em>عقار</em>.</h1>
+        <h1 class="reveal" style="--d:80ms" data-i18n-html="hero.title">بيتك القادم يبدأ من <em>عقار</em> — قريباً.</h1>
 
-        <p class="lead reveal" style="--d:160ms" data-i18n="hero.lead">منصّة واحدة تجمع إعلانات العقارات الموثّقة من المالكين والمكاتب العقارية. تصفّح بذكاء، فلتر في ثوانٍ، وتواصل مباشرة — من التطبيق أو من أي متصفح.</p>
+        <p class="lead reveal" style="--d:160ms" data-i18n="hero.lead">منصّة واحدة ستجمع إعلانات العقارات الموثّقة من المالكين والمكاتب العقارية. نضع اللمسات الأخيرة قبل الإطلاق — تصفّح بذكاء، فلتر في ثوانٍ، وتواصل مباشرة، قريباً على التطبيق وأي متصفح.</p>
 
         <div class="hero-cta reveal" style="--d:240ms">
-          <a class="btn btn--primary btn--lg" href="https://aqar-property.github.io/Landing-page/releases/latest/Aqar.apk" download rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 3.5v10.5"/><path d="m7.6 10 4.4 4.4L16.4 10"/><path d="M4.5 19.5h15"/>
-            </svg>
-            <span class="btn-txt">
-              <b data-i18n="hero.download">حمّل التطبيق</b>
-              <small data-i18n="hero.downloadMeta">أندرويد · APK</small>
-            </span>
-          </a>
-
-          <a class="btn btn--ghost btn--lg" href="https://aqar-property.github.io/app/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+          <span class="soon-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
               <circle cx="12" cy="12" r="8.4"/>
-              <path d="M3.6 12h16.8M12 3.6c2.4 2.5 2.4 14.3 0 16.8M12 3.6c-2.4 2.5-2.4 14.3 0 16.8"/>
+              <path d="M12 7.5V12l3 1.8"/>
+            </svg>
+            <span class="soon-tag-txt">
+              <b data-i18n="hero.soon">قريباً — قيد التجهيز للإطلاق</b>
+              <small data-i18n="hero.soonMeta">انتظرونا على أندرويد والويب</small>
+            </span>
+          </span>
+
+          <a class="btn btn--ghost btn--lg" href="#features">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 4.5v14"/><path d="m6.8 13.3 5.2 5.2 5.2-5.2"/>
             </svg>
             <span class="btn-txt">
-              <b data-i18n="hero.web">نسخة الويب</b>
-              <small data-i18n="hero.webMeta">لكل الأجهزة</small>
+              <b data-i18n="hero.explore">اكتشف عقار</b>
+              <small data-i18n="hero.exploreMeta">تعرّف على المميزات</small>
             </span>
           </a>
         </div>
@@ -1406,7 +1470,7 @@
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
-            <span data-i18n="hero.proof2">بدون متجر تطبيقات</span>
+            <span data-i18n="hero.proof2">إطلاق قريب · انتظرونا</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
@@ -1706,7 +1770,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="13" height="10" rx="2"/><path d="M6 17h7"/><path d="M18 9h3v9a2 2 0 0 1-2 2h-7"/></svg>
           </span>
           <h3 data-i18n="feat.6.title">تطبيق ونسخة ويب</h3>
-          <p data-i18n="feat.6.text">نفس الحساب ونفس الإعلانات — على أندرويد وعلى أي متصفح.</p>
+          <p data-i18n="feat.6.text">نفس الحساب ونفس الإعلانات — على أندرويد وعلى أي متصفح عند الإطلاق.</p>
           <div class="card-vis">
             <div class="platforms">
               <span>
@@ -1730,27 +1794,27 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <div>
-          <p class="kicker" data-i18n="how.kicker">البداية</p>
-          <h2 data-i18n="how.title">ثلاث خطوات وتبدأ.</h2>
+          <p class="kicker" data-i18n="how.kicker">عند الإطلاق</p>
+          <h2 data-i18n="how.title">عند الإطلاق، ثلاث خطوات وتبدأ.</h2>
         </div>
-        <p class="sec-lead" data-i18n="how.lead">لا تعقيد، لا خطوات زائدة — من التحميل إلى أول عقار في دقائق.</p>
+        <p class="sec-lead" data-i18n="how.lead">لا تعقيد، لا خطوات زائدة — من أول دخول إلى أول عقار في دقائق. انتظرونا قريباً.</p>
       </div>
 
       <div class="steps">
         <article class="step reveal">
           <span class="step-n" aria-hidden="true">01</span>
-          <h3 data-i18n="how.1.title">حمّل التطبيق</h3>
-          <p data-i18n="how.1.text">زر واحد وملف APK مباشر — أو افتح نسخة الويب من متصفحك بدون تثبيت.</p>
+          <h3 data-i18n="how.1.title">انتظر الإطلاق</h3>
+          <p data-i18n="how.1.text">سنعلن موعد الإطلاق هنا. سيصبح التطبيق ونسخة الويب متاحين في الوقت نفسه.</p>
         </article>
         <article class="step reveal" style="--d:100ms">
           <span class="step-n" aria-hidden="true">02</span>
-          <h3 data-i18n="how.2.title">أنشئ حسابك</h3>
-          <p data-i18n="how.2.text">سجّل برقم هاتفك، وحدّد إن كنت باحثاً أو صاحب عقار أو مكتباً عقارياً.</p>
+          <h3 data-i18n="how.2.title">جهّز حسابك</h3>
+          <p data-i18n="how.2.text">عند الإطلاق، سجّل برقم هاتفك وحدّد إن كنت باحثاً أو صاحب عقار أو مكتباً عقارياً.</p>
         </article>
         <article class="step reveal" style="--d:200ms">
           <span class="step-n" aria-hidden="true">03</span>
           <h3 data-i18n="how.3.title">ابحث أو أعلن</h3>
-          <p data-i18n="how.3.text">تصفّح الإعلانات الموثّقة أو أضف عقارك، وتواصل مباشرة من التطبيق.</p>
+          <p data-i18n="how.3.text">بعد الإطلاق، تصفّح الإعلانات الموثّقة أو أضف عقارك وتواصل مباشرة من التطبيق.</p>
         </article>
       </div>
     </div>
@@ -1762,40 +1826,31 @@
       <div class="cta-panel reveal">
         <div class="cta-grid">
           <div class="cta-copy">
-            <p class="kicker" data-i18n="cta.kicker">ابدأ الآن</p>
-            <h2 data-i18n="cta.title">بيتك القادم على بُعد نقرة.</h2>
-            <p data-i18n="cta.text">حمّل تطبيق عقار لأجهزة أندرويد، أو استخدم نسخة الويب على أي جهاز آخر — إعلاناتك ومحفوظاتك معك أينما كنت.</p>
+            <p class="kicker" data-i18n="cta.kicker">قريباً</p>
+            <h2 data-i18n="cta.title">بيتك القادم... قريباً جداً.</h2>
+            <p data-i18n="cta.text">نضع اللمسات الأخيرة على عقار. سيصبح تطبيق أندرويد ونسخة الويب متاحين فور الإطلاق — إعلاناتك ومحفوظاتك ستبقى معك أينما كنت.</p>
 
             <div class="cta-actions">
-              <a class="btn btn--primary btn--lg" href="https://aqar-property.github.io/Landing-page/releases/latest/Aqar.apk" download rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                  <path d="M12 3.5v10.5"/><path d="m7.6 10 4.4 4.4L16.4 10"/><path d="M4.5 19.5h15"/>
-                </svg>
-                <span class="btn-txt">
-                  <b data-i18n="cta.download">تحميل التطبيق (APK)</b>
-                  <small data-i18n="hero.downloadMeta">أندرويد · APK</small>
-                </span>
-              </a>
-              <a class="btn btn--ghost btn--lg" href="https://aqar-property.github.io/app/" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+              <span class="soon-tag">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
                   <circle cx="12" cy="12" r="8.4"/>
-                  <path d="M3.6 12h16.8M12 3.6c2.4 2.5 2.4 14.3 0 16.8M12 3.6c-2.4 2.5-2.4 14.3 0 16.8"/>
+                  <path d="M12 7.5V12l3 1.8"/>
                 </svg>
-                <span class="btn-txt">
-                  <b data-i18n="cta.web">فتح نسخة الويب</b>
-                  <small data-i18n="hero.webMeta">لكل الأجهزة</small>
+                <span class="soon-tag-txt">
+                  <b data-i18n="cta.soon">قريباً — قيد التجهيز للإطلاق</b>
+                  <small data-i18n="cta.soonMeta">تابع هذه الصفحة لمعرفة موعد الإطلاق</small>
                 </span>
-              </a>
+              </span>
             </div>
 
             <ul class="cta-notes">
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
-                <span data-i18n="cta.note1">تحميل مباشر · دون متجر تطبيقات</span>
+                <span data-i18n="cta.note1">أندرويد والويب · إطلاق متزامن</span>
               </li>
               <li>
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
-                <span data-i18n="cta.note2">الويب يعمل على iOS وWindows وMac</span>
+                <span data-i18n="cta.note2">الويب يعمل على iOS وWindows وMac عند الإطلاق</span>
               </li>
             </ul>
           </div>
@@ -1833,8 +1888,8 @@
       </div>
 
       <nav class="footer-links" data-i18n-aria="a11y.footer" aria-label="روابط">
-        <a href="https://aqar-property.github.io/app/" target="_blank" rel="noopener" data-i18n="footer.web">نسخة الويب</a>
-        <a href="https://aqar-property.github.io/Landing-page/releases/latest/Aqar.apk" download rel="noopener" data-i18n="footer.app">التطبيق</a>
+        <a href="#audience" data-i18n="nav.audience">لمن عقار</a>
+        <a href="#features" data-i18n="nav.features">المميزات</a>
         <a href="https://github.com/Aqar-Property/Aqar" target="_blank" rel="noopener" data-i18n="footer.repo">المستودع</a>
         <a href="https://github.com/Aqar-Property/Aqar/issues" target="_blank" rel="noopener" data-i18n="footer.support">الدعم</a>
       </nav>
@@ -1842,23 +1897,21 @@
 
     <div class="footer-bottom">
       <span>© <span id="year">2026</span> Aqar Property · <span data-i18n="footer.rights">جميع الحقوق محفوظة.</span></span>
-      <span class="mono">v1.0.0 · Android APK</span>
+      <span class="mono" data-i18n="footer.version">الإصدار الأول · قريباً</span>
     </div>
   </div>
 </footer>
 
 <div class="mobile-bar">
-  <a class="btn btn--primary" href="https://aqar-property.github.io/Landing-page/releases/latest/Aqar.apk" download rel="noopener">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M12 3.5v10.5"/><path d="m7.6 10 4.4 4.4L16.4 10"/><path d="M4.5 19.5h15"/>
+  <span class="mobile-soon">
+    <span class="dot" aria-hidden="true"></span>
+    <span data-i18n="mobile.soon">قريباً — انتظرونا</span>
+  </span>
+  <a class="btn btn--ghost" href="#features">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 4.5v14"/><path d="m6.8 13.3 5.2 5.2 5.2-5.2"/>
     </svg>
-    <span data-i18n="mobile.download">حمّل التطبيق</span>
-  </a>
-  <a class="btn btn--ghost" href="https://aqar-property.github.io/app/" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-      <circle cx="12" cy="12" r="8.4"/><path d="M3.6 12h16.8M12 3.6c2.4 2.5 2.4 14.3 0 16.8M12 3.6c-2.4 2.5-2.4 14.3 0 16.8"/>
-    </svg>
-    <span data-i18n="mobile.web">نسخة الويب</span>
+    <span data-i18n="mobile.explore">اكتشف عقار</span>
   </a>
 </div>
 
@@ -1872,8 +1925,8 @@
 
   var I18N = {
     ar: {
-      "meta.title": "عقار — منصة الإعلانات العقارية | Aqar Property",
-      "meta.desc": "عقار (Aqar Property) منصّة للإعلانات العقارية الموثّقة: تصفّح، فلتر حسب النوع والمدينة والسعر، وتواصل مباشرة مع المالكين والمكاتب العقارية. حمّل تطبيق الأندرويد أو استخدم نسخة الويب.",
+      "meta.title": "عقار — قريباً | منصة الإعلانات العقارية | Aqar Property",
+      "meta.desc": "عقار (Aqar Property) منصّة للإعلانات العقارية الموثّقة — قيد التجهيز للإطلاق. التطبيق ونسخة الويب سيتوفّران قريباً. انتظرونا.",
 
       "a11y.skip": "تجاوز إلى المحتوى",
       "a11y.home": "عقار — Aqar Property",
@@ -1885,18 +1938,18 @@
       "nav.audience": "لمن عقار",
       "nav.features": "المميزات",
       "nav.how": "كيف يعمل",
-      "nav.download": "التحميل",
-      "nav.cta": "حمّل التطبيق",
+      "nav.download": "قريباً",
+      "nav.cta": "قريباً",
 
-      "hero.eyebrow": "منصة عقارية · تطبيق أندرويد ونسخة ويب",
-      "hero.title": "بيتك القادم يبدأ من <em>عقار</em>.",
-      "hero.lead": "منصّة واحدة تجمع إعلانات العقارات الموثّقة من المالكين والمكاتب العقارية. تصفّح بذكاء، فلتر في ثوانٍ، وتواصل مباشرة — من التطبيق أو من أي متصفح.",
-      "hero.download": "حمّل التطبيق",
-      "hero.downloadMeta": "أندرويد · APK",
-      "hero.web": "نسخة الويب",
-      "hero.webMeta": "لكل الأجهزة",
+      "hero.eyebrow": "قريباً · منصة عقارية قيد التجهيز للإطلاق",
+      "hero.title": "بيتك القادم يبدأ من <em>عقار</em> — قريباً.",
+      "hero.lead": "منصّة واحدة ستجمع إعلانات العقارات الموثّقة من المالكين والمكاتب العقارية. نضع اللمسات الأخيرة قبل الإطلاق — تصفّح بذكاء، فلتر في ثوانٍ، وتواصل مباشرة، قريباً على التطبيق وأي متصفح.",
+      "hero.soon": "قريباً — قيد التجهيز للإطلاق",
+      "hero.soonMeta": "انتظرونا على أندرويد والويب",
+      "hero.explore": "اكتشف عقار",
+      "hero.exploreMeta": "تعرّف على المميزات",
       "hero.proof1": "إعلانات موثّقة",
-      "hero.proof2": "بدون متجر تطبيقات",
+      "hero.proof2": "إطلاق قريب · انتظرونا",
       "hero.proof3": "عربي / English",
       "hero.phoneAlt": "واجهة تطبيق عقار على الهاتف",
       "hero.float1": "مكتب عقاري موثّق",
@@ -1965,45 +2018,44 @@
       "feat.5.msg1": "هل الشقة متاحة للمعاينة السبت؟",
       "feat.5.msg2": "أكيد، الساعة ١١ صباحاً.",
       "feat.6.title": "تطبيق ونسخة ويب",
-      "feat.6.text": "نفس الحساب ونفس الإعلانات — على أندرويد وعلى أي متصفح.",
+      "feat.6.text": "نفس الحساب ونفس الإعلانات — على أندرويد وعلى أي متصفح عند الإطلاق.",
       "feat.6.android": "أندرويد", "feat.6.web": "الويب",
 
-      "how.kicker": "البداية",
-      "how.title": "ثلاث خطوات وتبدأ.",
-      "how.lead": "لا تعقيد، لا خطوات زائدة — من التحميل إلى أول عقار في دقائق.",
-      "how.1.title": "حمّل التطبيق",
-      "how.1.text": "زر واحد وملف APK مباشر — أو افتح نسخة الويب من متصفحك بدون تثبيت.",
-      "how.2.title": "أنشئ حسابك",
-      "how.2.text": "سجّل برقم هاتفك، وحدّد إن كنت باحثاً أو صاحب عقار أو مكتباً عقارياً.",
+      "how.kicker": "عند الإطلاق",
+      "how.title": "عند الإطلاق، ثلاث خطوات وتبدأ.",
+      "how.lead": "لا تعقيد، لا خطوات زائدة — من أول دخول إلى أول عقار في دقائق. انتظرونا قريباً.",
+      "how.1.title": "انتظر الإطلاق",
+      "how.1.text": "سنعلن موعد الإطلاق هنا. سيصبح التطبيق ونسخة الويب متاحين في الوقت نفسه.",
+      "how.2.title": "جهّز حسابك",
+      "how.2.text": "عند الإطلاق، سجّل برقم هاتفك وحدّد إن كنت باحثاً أو صاحب عقار أو مكتباً عقارياً.",
       "how.3.title": "ابحث أو أعلن",
-      "how.3.text": "تصفّح الإعلانات الموثّقة أو أضف عقارك، وتواصل مباشرة من التطبيق.",
+      "how.3.text": "بعد الإطلاق، تصفّح الإعلانات الموثّقة أو أضف عقارك وتواصل مباشرة من التطبيق.",
 
-      "cta.kicker": "ابدأ الآن",
-      "cta.title": "بيتك القادم على بُعد نقرة.",
-      "cta.text": "حمّل تطبيق عقار لأجهزة أندرويد، أو استخدم نسخة الويب على أي جهاز آخر — إعلاناتك ومحفوظاتك معك أينما كنت.",
-      "cta.download": "تحميل التطبيق (APK)",
-      "cta.web": "فتح نسخة الويب",
-      "cta.note1": "تحميل مباشر · دون متجر تطبيقات",
-      "cta.note2": "الويب يعمل على iOS وWindows وMac",
+      "cta.kicker": "قريباً",
+      "cta.title": "بيتك القادم... قريباً جداً.",
+      "cta.text": "نضع اللمسات الأخيرة على عقار. سيصبح تطبيق أندرويد ونسخة الويب متاحين فور الإطلاق — إعلاناتك ومحفوظاتك ستبقى معك أينما كنت.",
+      "cta.soon": "قريباً — قيد التجهيز للإطلاق",
+      "cta.soonMeta": "تابع هذه الصفحة لمعرفة موعد الإطلاق",
+      "cta.note1": "أندرويد والويب · إطلاق متزامن",
+      "cta.note2": "الويب يعمل على iOS وWindows وMac عند الإطلاق",
       "cta.photo": "عقارات موثّقة، بصور أوضح.",
 
       "footer.tag": "منصة الإعلانات العقارية — من المالك والمكتب إلى الباحث.",
-      "footer.web": "نسخة الويب",
-      "footer.app": "التطبيق",
       "footer.repo": "المستودع",
       "footer.support": "الدعم",
       "footer.rights": "جميع الحقوق محفوظة.",
+      "footer.version": "الإصدار الأول · قريباً",
 
-      "mobile.download": "حمّل التطبيق",
-      "mobile.web": "نسخة الويب",
+      "mobile.soon": "قريباً — انتظرونا",
+      "mobile.explore": "اكتشف عقار",
       "toggle.light": "فاتح",
       "toggle.dark": "داكن",
       "toggle.langNext": "EN"
     },
 
     en: {
-      "meta.title": "Aqar Property — Real Estate Listings Platform",
-      "meta.desc": "Aqar Property is a platform for verified real estate listings: browse, filter by type, city and price, and connect directly with owners and real estate offices. Download the Android app or use the web app.",
+      "meta.title": "Aqar Property — Coming Soon | Real Estate Listings Platform",
+      "meta.desc": "Aqar Property is a platform for verified real estate listings — currently in the works and launching soon. The Android app and web app will be available shortly. Stay tuned.",
 
       "a11y.skip": "Skip to content",
       "a11y.home": "Aqar Property",
@@ -2015,18 +2067,18 @@
       "nav.audience": "Who it's for",
       "nav.features": "Features",
       "nav.how": "How it works",
-      "nav.download": "Download",
-      "nav.cta": "Get the app",
+      "nav.download": "Coming soon",
+      "nav.cta": "Coming soon",
 
-      "hero.eyebrow": "Real estate platform · Android app & web",
-      "hero.title": "Your next home starts with <em>Aqar</em>.",
-      "hero.lead": "One platform for verified property listings from owners and real estate offices. Browse smart, filter in seconds, and connect directly — in the app or in any browser.",
-      "hero.download": "Download the app",
-      "hero.downloadMeta": "Android · APK",
-      "hero.web": "Web app",
-      "hero.webMeta": "Any device",
+      "hero.eyebrow": "Coming soon · A real estate platform in the works",
+      "hero.title": "Your next home starts with <em>Aqar</em> — coming soon.",
+      "hero.lead": "One platform that will bring together verified property listings from owners and real estate offices. We're putting the final touches before launch — browse smart, filter in seconds, and connect directly, coming soon in the app and in any browser.",
+      "hero.soon": "Coming soon — in the works",
+      "hero.soonMeta": "Stay tuned for Android and web",
+      "hero.explore": "Discover Aqar",
+      "hero.exploreMeta": "Explore the features",
       "hero.proof1": "Verified listings",
-      "hero.proof2": "No app store needed",
+      "hero.proof2": "Launching soon · stay tuned",
       "hero.proof3": "Arabic / English",
       "hero.phoneAlt": "The Aqar app interface on a phone",
       "hero.float1": "Verified real estate office",
@@ -2095,37 +2147,36 @@
       "feat.5.msg1": "Is the apartment available to view on Saturday?",
       "feat.5.msg2": "Sure, 11 AM.",
       "feat.6.title": "App and web app",
-      "feat.6.text": "The same account and the same listings — on Android and in any browser.",
+      "feat.6.text": "The same account and the same listings — on Android and in any browser at launch.",
       "feat.6.android": "Android", "feat.6.web": "Web",
 
-      "how.kicker": "Getting started",
-      "how.title": "Three steps and you're in.",
-      "how.lead": "No friction, no extra steps — from download to your first property in minutes.",
-      "how.1.title": "Download the app",
-      "how.1.text": "One tap and a direct APK file — or open the web app in your browser with nothing to install.",
-      "how.2.title": "Create your account",
-      "how.2.text": "Sign up with your phone number and tell us whether you're a seeker, an owner or a real estate office.",
+      "how.kicker": "At launch",
+      "how.title": "At launch, three steps and you're in.",
+      "how.lead": "No friction, no extra steps — from your first visit to your first property in minutes. Stay tuned.",
+      "how.1.title": "Wait for launch",
+      "how.1.text": "We'll announce the launch date here. The app and the web app will become available at the same time.",
+      "how.2.title": "Prepare your account",
+      "how.2.text": "At launch, sign up with your phone number and tell us whether you're a seeker, an owner or a real estate office.",
       "how.3.title": "Search or list",
-      "how.3.text": "Browse verified listings or add your property, and get in touch directly from the app.",
+      "how.3.text": "After launch, browse verified listings or add your property, and get in touch directly from the app.",
 
-      "cta.kicker": "Start now",
-      "cta.title": "Your next home is one tap away.",
-      "cta.text": "Download Aqar for Android, or use the web app on any other device — your listings and saved properties stay with you.",
-      "cta.download": "Download the app (APK)",
-      "cta.web": "Open the web app",
-      "cta.note1": "Direct download · no app store",
-      "cta.note2": "The web app runs on iOS, Windows and Mac",
+      "cta.kicker": "Coming soon",
+      "cta.title": "Your next home... coming very soon.",
+      "cta.text": "We're putting the final touches on Aqar. The Android app and web app will be available as soon as we launch — your listings and saved properties will stay with you.",
+      "cta.soon": "Coming soon — in the works",
+      "cta.soonMeta": "Follow this page for the launch date",
+      "cta.note1": "Android and web · launching together",
+      "cta.note2": "The web app runs on iOS, Windows and Mac at launch",
       "cta.photo": "Verified listings, clearer photos.",
 
       "footer.tag": "The real estate listings platform — from owner and office to buyer.",
-      "footer.web": "Web app",
-      "footer.app": "Android app",
       "footer.repo": "Repository",
       "footer.support": "Support",
       "footer.rights": "All rights reserved.",
+      "footer.version": "First release · coming soon",
 
-      "mobile.download": "Get the app",
-      "mobile.web": "Web app",
+      "mobile.soon": "Coming soon — stay tuned",
+      "mobile.explore": "Discover Aqar",
       "toggle.light": "Light",
       "toggle.dark": "Dark",
       "toggle.langNext": "AR"
