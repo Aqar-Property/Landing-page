@@ -489,9 +489,27 @@
   .hero-cta {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    align-items: center;
+    gap: 10px 18px;
     margin-top: clamp(26px, 3.4vw, 34px);
   }
+
+  /* النسخة الويب رابط نصي لا زر ثانٍ: إجراء واحد أساسي في الواجهة. */
+  .hero-web {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 2px;
+    color: var(--brand);
+    font-size: 13.5px;
+    font-weight: 800;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s, gap .2s var(--ease);
+  }
+  .hero-web:hover { border-color: var(--brand-line); gap: 12px; }
+  .hero-web svg { width: 15px; height: 15px; flex: 0 0 auto; }
+  html[dir="rtl"] .hero-web svg { transform: scaleX(-1); }
 
   .hero-hint {
     display: flex;
@@ -1523,9 +1541,6 @@
   }
   .footer-bottom .mono { font-family: var(--mono); letter-spacing: .04em; }
 
-  /* ---------- Mobile bar ---------- */
-  .mobile-bar { display: none; }
-
   /* ---------- Reveal ---------- */
   .js .reveal {
     opacity: 0;
@@ -1591,29 +1606,11 @@
     .hero-stage { margin-top: 6px; }
     .hero-cta { flex-direction: column; align-items: stretch; }
     .hero-cta .btn { justify-content: center; }
+    .hero-cta .hero-web { justify-content: center; }
     .float { font-size: 10.5px; }
     .float--a { inset-inline-end: -2px; }
     .listings { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
     .listing-spec { display: none; }
-    body { padding-bottom: 76px; }
-    .mobile-bar {
-      position: fixed;
-      z-index: 55;
-      inset-inline: 10px;
-      bottom: 10px;
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 8px;
-      padding: 8px;
-      border-radius: 16px;
-      border: 1px solid var(--line-2);
-      background: var(--glass);
-      -webkit-backdrop-filter: blur(20px) saturate(1.6);
-      backdrop-filter: blur(20px) saturate(1.6);
-      box-shadow: 0 20px 40px -20px rgba(0, 0, 0, .7);
-    }
-    .mobile-bar .btn { justify-content: center; padding: 11px 10px; font-size: 13px; border-radius: 11px; gap: 7px; }
-    .mobile-bar .btn svg { width: 16px; height: 16px; }
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -1648,6 +1645,7 @@
       <a href="#demo" data-i18n="nav.demo">جرّب البحث</a>
       <a href="#features" data-i18n="nav.features">المميزات</a>
       <a href="#how" data-i18n="nav.how">كيف تبدأ</a>
+      <a href="#download" data-i18n="nav.download">تحميل</a>
       <a href="#faq" data-i18n="nav.faq">الأسئلة</a>
     </nav>
 
@@ -1671,12 +1669,6 @@
         <span class="ctrl-label" id="themeLabel">داكن</span>
       </button>
 
-      <a class="btn btn--primary btn--sm" href="releases/latest/Aqar.apk" download>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M12 3.6v11.2"/><path d="m7.4 10.2 4.6 4.6 4.6-4.6"/><path d="M4.8 19.4h14.4"/>
-        </svg>
-        <span data-i18n="nav.cta">حمّل التطبيق</span>
-      </a>
     </div>
   </div>
 </header>
@@ -1714,20 +1706,16 @@
             </span>
           </a>
 
-          <a class="btn btn--ghost btn--lg" href="app/" target="_blank" rel="noopener">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="8.4"/><path d="M3.6 12h16.8M12 3.6c2.4 2.5 2.4 14.3 0 16.8M12 3.6c-2.4 2.5-2.4 14.3 0 16.8"/>
+          <a class="hero-web" href="app/" target="_blank" rel="noopener">
+            <span data-i18n="hero.webLink">أو استخدم عقار من متصفحك</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M5 12h14"/><path d="m13 6 6 6-6 6"/>
             </svg>
-            <span class="btn-txt">
-              <b data-i18n="hero.web">افتح النسخة الويب</b>
-              <small data-i18n="hero.webMeta">تعمل من أي متصفح</small>
-            </span>
           </a>
         </div>
 
         <p class="hero-hint reveal" style="--d:280ms">
-          <span data-i18n="hero.hint">النشر مجاني تماماً.</span>
-          <a href="releases/latest/Aqar-32bit.apk" download data-i18n="hero.hint32">جهاز قديم؟ نسخة 32-bit</a>
+          <span data-i18n="hero.hint">النشر مجاني تماماً، والتصفح بلا حساب.</span>
         </p>
 
         <ul class="hero-proof reveal" style="--d:320ms">
@@ -2320,20 +2308,6 @@
   </div>
 </footer>
 
-<div class="mobile-bar">
-  <a class="btn btn--primary" href="releases/latest/Aqar.apk" download>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M12 3.6v11.2"/><path d="m7.4 10.2 4.6 4.6 4.6-4.6"/><path d="M4.8 19.4h14.4"/>
-    </svg>
-    <span data-i18n="mobile.dl">حمّل التطبيق</span>
-  </a>
-  <a class="btn btn--ghost" href="app/" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
-      <circle cx="12" cy="12" r="8.4"/><path d="M3.6 12h16.8"/><path d="M12 3.6c2.4 2.5 2.4 14.3 0 16.8M12 3.6c-2.4 2.5-2.4 14.3 0 16.8"/>
-    </svg>
-    <span data-i18n="mobile.web">الويب</span>
-  </a>
-</div>
 
 <script>
 (function () {
@@ -2370,8 +2344,8 @@
       "hero.dlMeta": "APK مباشر · 21 ميغابايت",
       "hero.web": "افتح النسخة الويب",
       "hero.webMeta": "تعمل من أي متصفح",
-      "hero.hint": "النشر مجاني تماماً.",
-      "hero.hint32": "جهاز قديم؟ نسخة 32 بت",
+      "hero.webLink": "أو استخدم عقار من متصفحك",
+      "hero.hint": "النشر مجاني تماماً، والتصفح بلا حساب.",
       "hero.proof1": "إعلانات موثّقة",
       "hero.proof2": "نشر مجاني بلا رسوم",
       "hero.proof3": "عربي / English",
@@ -2548,8 +2522,8 @@
       "hero.dlMeta": "Direct APK · 21 MB",
       "hero.web": "Open the web app",
       "hero.webMeta": "Works in any browser",
-      "hero.hint": "Publishing is completely free.",
-      "hero.hint32": "Older device? 32-bit build",
+      "hero.webLink": "Or use Aqar in your browser",
+      "hero.hint": "Publishing is completely free, and browsing needs no account.",
       "hero.proof1": "Verified listings",
       "hero.proof2": "Free publishing, no fees",
       "hero.proof3": "Arabic / English",
@@ -2715,11 +2689,11 @@
       title: { ar: "مكتب تجاري مجهّز", en: "Fitted commercial office" } },
     { id: 6, type: "apartment", city: "aleppo", price: 70000, area: 110, rooms: 3, img: "assets/images/building.jpg",
       title: { ar: "شقة في بناء حديث", en: "Apartment in a new building" } },
-    { id: 7, type: "villa", city: "latakia", price: 210000, area: 260, rooms: 4, img: "assets/images/villa.jpg",
+    { id: 7, type: "villa", city: "latakia", price: 210000, area: 260, rooms: 4, img: "assets/images/villa-coast.jpg",
       title: { ar: "فيلا قريبة من البحر", en: "Villa near the sea" } },
-    { id: 8, type: "land", city: "tartus", price: 95000, area: 1200, rooms: 0, img: "assets/images/land.jpg",
+    { id: 8, type: "land", city: "tartus", price: 95000, area: 1200, rooms: 0, img: "assets/images/land-plain.jpg",
       title: { ar: "أرض مطلّة على السهل", en: "Plot overlooking the plain" } },
-    { id: 9, type: "office", city: "aleppo", price: 55000, area: 80, rooms: 2, img: "assets/images/office.jpg",
+    { id: 9, type: "office", city: "aleppo", price: 55000, area: 80, rooms: 2, img: "assets/images/office-small.jpg",
       title: { ar: "مكتب صغير في مركز المدينة", en: "Small office downtown" } }
   ];
 
