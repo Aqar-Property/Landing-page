@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 
-<title>عقار — قريباً | منصة الإعلانات العقارية | Aqar Property</title>
-<meta name="description" content="عقار (Aqar Property) منصّة للإعلانات العقارية الموثّقة — قيد التجهيز للإطلاق. التطبيق ونسخة الويب سيتوفّران قريباً. انتظرونا.">
+<title>عقار — أُطلق الآن | منصة الإعلانات العقارية | Aqar Property</title>
+<meta name="description" content="عقار (Aqar Property) منصّة الإعلانات العقارية: أعلن عن عقارك مجاناً، ابحث وفلتر بين الإعلانات الموثّقة، وتواصل مباشرة. التطبيق متاح لأندرويد، والنسخة الويب تعمل من أي متصفح.">
 <meta name="author" content="Aqar Property">
 <meta name="theme-color" content="#0B0F0E" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#F7F5EE" media="(prefers-color-scheme: light)">
@@ -17,15 +17,15 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="عقار | Aqar Property">
-<meta property="og:title" content="عقار — قريباً | منصة الإعلانات العقارية">
-<meta property="og:description" content="إعلانات عقارية موثّقة من المالكين والمكاتب، في تطبيق واحد ونسخة ويب لكل الأجهزة — قيد التجهيز للإطلاق. انتظرونا قريباً.">
+<meta property="og:title" content="عقار — بيتك القادم يبدأ من عقار">
+<meta property="og:description" content="أعلن عن عقارك مجاناً، وابحث بين الإعلانات الموثّقة وتواصل مباشرة. أندرويد ونسخة ويب — الآن.">
 <meta property="og:url" content="https://aqar-property.github.io/">
 <meta property="og:locale" content="ar_AR">
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:image" content="https://aqar-property.github.io/Materials/aqar-icon.png">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="عقار — قريباً | منصة الإعلانات العقارية">
-<meta name="twitter:description" content="إعلانات عقارية موثّقة من المالكين والمكاتب، في تطبيق واحد ونسخة ويب لكل الأجهزة — قيد التجهيز للإطلاق. انتظرونا قريباً.">
+<meta name="twitter:title" content="عقار — بيتك القادم يبدأ من عقار">
+<meta name="twitter:description" content="منصة الإعلانات العقارية: نشر مجاني، إعلانات موثّقة، وتواصل مباشر. أندرويد والويب الآن.">
 <meta name="twitter:image" content="https://aqar-property.github.io/Materials/aqar-icon.png">
 
 <link rel="icon" type="image/png" sizes="32x32" href="Materials/favicon-32.png">
@@ -94,6 +94,7 @@
     --brand-ink: #04180F;
     --brand-soft: rgba(34, 199, 126, .13);
     --brand-line: rgba(34, 199, 126, .42);
+    --brand-glow: rgba(34, 199, 126, .34);
     --ghost: rgba(255, 255, 255, .035);
     --ghost-strong: rgba(255, 255, 255, .07);
     --shadow: 0 34px 80px -34px rgba(0, 0, 0, .9);
@@ -115,6 +116,7 @@
     --brand-ink: #FFFFFF;
     --brand-soft: rgba(14, 158, 96, .10);
     --brand-line: rgba(14, 158, 96, .34);
+    --brand-glow: rgba(14, 158, 96, .22);
     --ghost: rgba(12, 23, 19, .035);
     --ghost-strong: rgba(12, 23, 19, .065);
     --shadow: 0 34px 80px -40px rgba(12, 23, 19, .4);
@@ -147,7 +149,7 @@
   a { color: inherit; }
   ::selection { background: var(--brand); color: var(--brand-ink); }
 
-  :where(a, button):focus-visible {
+  :where(a, button, input, select, summary):focus-visible {
     outline: 2px solid var(--brand);
     outline-offset: 3px;
     border-radius: 8px;
@@ -241,11 +243,10 @@
 
   .btn-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; }
   .btn-txt b { font-size: 15px; font-weight: 800; }
-  .btn-txt small { font-size: 11px; font-weight: 600; opacity: .72; }
-  html[dir="rtl"] .btn-txt small { letter-spacing: 0; }
+  .btn-txt small { font-size: 11px; font-weight: 600; opacity: .78; }
 
-  /* ---------- Coming soon ---------- */
-  .soon-pill {
+  /* ---------- Pills ---------- */
+  .live-pill {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -260,10 +261,8 @@
     line-height: 1;
     white-space: nowrap;
   }
-
-  .soon-pill .dot,
-  .soon-tag .dot,
-  .mobile-soon .dot {
+  .live-pill .dot,
+  .eyebrow .dot {
     width: 7px; height: 7px;
     border-radius: 50%;
     background: var(--brand);
@@ -271,24 +270,10 @@
     animation: pulse 2.6s ease-in-out infinite;
     flex: 0 0 auto;
   }
-
-  .soon-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 13px;
-    max-width: 100%;
-    min-height: 62px;
-    padding: 11px 18px;
-    border-radius: 14px;
-    border: 1px dashed var(--brand-line);
-    background: var(--brand-soft);
-    color: var(--ink);
-    cursor: default;
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: .4; }
   }
-  .soon-tag > svg { width: 22px; height: 22px; color: var(--brand); flex: 0 0 auto; }
-  .soon-tag-txt { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; }
-  .soon-tag-txt b { font-size: 15px; font-weight: 800; line-height: 1.35; }
-  .soon-tag-txt small { font-size: 11.5px; font-weight: 600; color: var(--muted); line-height: 1.5; }
 
   /* ---------- Header ---------- */
   .site-header {
@@ -347,12 +332,12 @@
   .nav {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 2px;
   }
   .nav a {
-    padding: 8px 13px;
+    padding: 8px 12px;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: 13.5px;
     font-weight: 700;
     color: var(--muted);
     text-decoration: none;
@@ -392,7 +377,7 @@
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    padding-block: clamp(26px, 4.4vw, 54px) clamp(48px, 7vw, 96px);
+    padding-block: clamp(26px, 4.4vw, 54px) clamp(48px, 7vw, 92px);
   }
 
   .hero-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
@@ -420,18 +405,16 @@
     width: 620px; height: 620px;
     inset-block-start: -260px;
     inset-inline-end: -140px;
-    background: radial-gradient(circle, rgba(34, 199, 126, .34), transparent 70%);
+    background: radial-gradient(circle, var(--brand-glow), transparent 70%);
   }
   .blob--b {
     width: 520px; height: 520px;
     inset-block-end: -220px;
     inset-inline-start: -180px;
-    background: radial-gradient(circle, rgba(34, 199, 126, .16), transparent 70%);
+    background: radial-gradient(circle, var(--brand-glow), transparent 70%);
+    opacity: .4;
   }
-  html[data-theme="light"] .blob { opacity: .5; }
-  html[data-theme="light"] .blob--a { background: radial-gradient(circle, rgba(14, 158, 96, .22), transparent 70%); }
 
-  /* Brand wordmark watermark */
   .hero-ghost {
     position: absolute;
     z-index: -1;
@@ -458,7 +441,7 @@
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    margin: 0 0 22px;
+    margin: 0 0 20px;
     padding: 7px 13px 7px 10px;
     border-radius: 999px;
     border: 1px solid var(--line);
@@ -468,28 +451,16 @@
     color: var(--ink-2);
   }
   html[dir="rtl"] .eyebrow { padding: 7px 10px 7px 13px; }
-  .eyebrow .dot {
-    width: 7px; height: 7px;
-    border-radius: 50%;
-    background: var(--brand);
-    box-shadow: 0 0 0 4px var(--brand-soft);
-    animation: pulse 2.6s ease-in-out infinite;
-    flex: 0 0 auto;
-  }
-  @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: .4; }
-  }
 
   h1 {
     margin: 0;
-    max-width: 16ch;
-    font-size: clamp(36px, 6vw, 70px);
+    max-width: 15ch;
+    font-size: clamp(38px, 6.4vw, 74px);
     font-weight: 900;
-    line-height: 1.2;
-    letter-spacing: -.01em;
+    line-height: 1.18;
+    letter-spacing: -.012em;
   }
-  html[dir="ltr"] h1 { line-height: 1.05; letter-spacing: -.035em; }
+  html[dir="ltr"] h1 { line-height: 1.04; letter-spacing: -.035em; max-width: 17ch; }
 
   h1 em {
     position: relative;
@@ -510,7 +481,7 @@
 
   .lead {
     margin: 22px 0 0;
-    max-width: 50ch;
+    max-width: 52ch;
     font-size: clamp(15px, 1.5vw, 17px);
     color: var(--muted);
   }
@@ -521,6 +492,19 @@
     gap: 12px;
     margin-top: clamp(26px, 3.4vw, 34px);
   }
+
+  .hero-hint {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 14px;
+    margin: 14px 0 0;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--muted);
+  }
+  .hero-hint a { color: var(--brand); font-weight: 800; text-decoration: none; }
+  .hero-hint a:hover { text-decoration: underline; }
 
   .hero-proof {
     display: flex;
@@ -560,7 +544,9 @@
     border-radius: 50%;
     border: 1px dashed var(--line-2);
     opacity: .55;
+    animation: spin 46s linear infinite;
   }
+  @keyframes spin { to { transform: rotate(360deg); } }
 
   .phone {
     position: relative;
@@ -833,7 +819,7 @@
   }
 
   /* ---------- Sections ---------- */
-  .section { padding-block: clamp(58px, 8.5vw, 112px); }
+  .section { padding-block: clamp(58px, 8.5vw, 104px); }
   .section--tint {
     background: var(--bg-2);
     border-block: 1px solid var(--line);
@@ -842,7 +828,7 @@
   .sec-head {
     display: grid;
     gap: 18px;
-    margin-bottom: clamp(30px, 4.5vw, 52px);
+    margin-bottom: clamp(30px, 4.5vw, 48px);
   }
 
   .kicker {
@@ -880,85 +866,301 @@
     font-size: 15px;
   }
 
-  /* ---------- Audience ---------- */
-  .aud-grid {
+  /* ---------- Stats ---------- */
+  .stats {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .aud {
-    position: relative;
-    isolation: isolate;
-    overflow: hidden;
-    padding: clamp(24px, 3vw, 32px);
-    border-radius: var(--r-lg);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1px;
     border: 1px solid var(--line);
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    background: var(--line);
+  }
+  .stat {
     background: var(--surface);
-    transition: transform .35s var(--ease), border-color .35s, box-shadow .35s;
-  }
-  .aud::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    background: radial-gradient(120% 90% at 100% 0, var(--brand-soft), transparent 58%);
-    opacity: 0;
-    transition: opacity .4s;
-  }
-  .aud:hover { transform: translateY(-4px); border-color: var(--brand-line); box-shadow: var(--shadow); }
-  .aud:hover::before { opacity: 1; }
-
-  .aud-num {
-    position: absolute;
-    top: 14px;
-    inset-inline-end: 20px;
-    font-size: 54px;
-    font-weight: 900;
-    line-height: 1;
-    color: var(--ghost-strong);
-    letter-spacing: -.04em;
-  }
-
-  .aud-role {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    font-size: 11.5px;
-    font-weight: 800;
-    letter-spacing: .04em;
-    color: var(--brand);
-  }
-  .aud-role svg { width: 15px; height: 15px; }
-
-  .aud h3 {
-    margin: 14px 0 9px;
-    font-size: clamp(19px, 2vw, 23px);
-    font-weight: 900;
-    line-height: 1.35;
-    max-width: 16ch;
-  }
-  .aud p { margin: 0; font-size: 14px; color: var(--muted); }
-
-  .aud-tags {
+    padding: clamp(18px, 2.6vw, 26px);
     display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 20px;
-    padding-top: 18px;
-    border-top: 1px solid var(--line);
+    flex-direction: column;
+    gap: 4px;
   }
-  .aud-tags span {
-    padding: 5px 9px;
-    border-radius: 8px;
+  .stat b {
+    font-size: clamp(26px, 3.4vw, 38px);
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--brand);
+    letter-spacing: -.02em;
+    font-variant-numeric: tabular-nums;
+  }
+  .stat span { font-size: 12.5px; font-weight: 700; color: var(--ink-2); }
+  .stat small { font-size: 11px; color: var(--muted); }
+
+  /* ---------- Demo ---------- */
+  .demo-shell {
+    border: 1px solid var(--line);
+    border-radius: var(--r-xl);
+    background:
+      radial-gradient(90% 120% at 100% 0, var(--brand-soft), transparent 58%),
+      var(--surface);
+    padding: clamp(18px, 3vw, 30px);
+  }
+
+  .demo-bar {
+    display: grid;
+    gap: 14px;
+    padding-bottom: clamp(16px, 2.4vw, 22px);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .filter-row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+
+  .chip-btn {
+    padding: 8px 15px;
+    border-radius: 999px;
     border: 1px solid var(--line);
     background: var(--bg-2);
-    font-size: 10.5px;
-    font-weight: 700;
     color: var(--ink-2);
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color .2s, color .2s, border-color .2s, transform .2s var(--ease);
+  }
+  .chip-btn:hover { border-color: var(--brand-line); color: var(--brand); }
+  .chip-btn[aria-pressed="true"] {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: var(--brand-ink);
   }
 
-  /* ---------- Bento ---------- */
+  .select-wrap {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--bg-2);
+  }
+  .select-wrap svg { width: 15px; height: 15px; color: var(--brand); flex: 0 0 auto; }
+  .select-wrap select {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    color: var(--ink-2);
+    font-family: inherit;
+    font-size: 12.5px;
+    font-weight: 800;
+    padding: 4px 2px;
+    cursor: pointer;
+  }
+  .select-wrap select option { background: var(--surface); color: var(--ink); }
+
+  .range-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 240px;
+    flex: 1 1 260px;
+  }
+  .range-wrap label {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--muted);
+    white-space: nowrap;
+  }
+  .range-wrap output {
+    font-size: 12.5px;
+    font-weight: 900;
+    color: var(--brand);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+    min-width: 72px;
+  }
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 22px;
+    background: transparent;
+    cursor: pointer;
+    direction: ltr;
+  }
+  input[type="range"]::-webkit-slider-runnable-track {
+    height: 4px;
+    border-radius: 99px;
+    background: linear-gradient(to right, var(--brand) var(--fill, 50%), var(--line-2) var(--fill, 50%));
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px; height: 18px;
+    margin-top: -7px;
+    border-radius: 50%;
+    background: var(--brand);
+    border: 3px solid var(--surface);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .35);
+  }
+  input[type="range"]::-moz-range-track {
+    height: 4px;
+    border-radius: 99px;
+    background: var(--line-2);
+  }
+  input[type="range"]::-moz-range-progress {
+    height: 4px;
+    border-radius: 99px;
+    background: var(--brand);
+  }
+  input[type="range"]::-moz-range-thumb {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: var(--brand);
+    border: 3px solid var(--surface);
+  }
+
+  .demo-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 16px 0 14px;
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--muted);
+  }
+  .demo-meta b { color: var(--ink); }
+  .demo-saved { display: inline-flex; align-items: center; gap: 7px; color: var(--brand); }
+  .demo-saved svg { width: 15px; height: 15px; }
+  .demo-reset {
+    border: 0;
+    background: transparent;
+    color: var(--muted);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 800;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .demo-reset:hover { color: var(--brand); }
+
+  .listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(228px, 1fr));
+    gap: 12px;
+    min-height: 120px;
+  }
+
+  .listing {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--r);
+    border: 1px solid var(--line);
+    background: var(--surface-2);
+    overflow: hidden;
+    transition: transform .3s var(--ease), border-color .3s, box-shadow .3s;
+    animation: listIn .45s var(--ease) both;
+  }
+  .listing:hover { transform: translateY(-4px); border-color: var(--brand-line); box-shadow: var(--shadow); }
+  @keyframes listIn {
+    from { opacity: 0; transform: translateY(10px) scale(.985); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .listing-media { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
+  .listing-media img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s var(--ease); }
+  .listing:hover .listing-media img { transform: scale(1.05); }
+
+  .listing-type {
+    position: absolute;
+    inset-block-start: 9px;
+    inset-inline-start: 9px;
+    padding: 4px 9px;
+    border-radius: 999px;
+    background: rgba(8, 16, 13, .62);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(34, 199, 126, .42);
+    color: #CFF7E3;
+    font-size: 10px;
+    font-weight: 800;
+  }
+
+  .fav-btn {
+    position: absolute;
+    inset-block-start: 8px;
+    inset-inline-end: 8px;
+    width: 30px; height: 30px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .2);
+    background: rgba(8, 16, 13, .5);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    color: #E9F1EC;
+    cursor: pointer;
+    transition: transform .2s var(--ease), background-color .2s, color .2s, border-color .2s;
+  }
+  .fav-btn svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 2; }
+  .fav-btn:hover { transform: scale(1.08); }
+  .fav-btn[aria-pressed="true"] {
+    background: var(--brand);
+    border-color: var(--brand);
+    color: var(--brand-ink);
+  }
+  .fav-btn[aria-pressed="true"] svg { fill: currentColor; }
+
+  .listing-body { padding: 11px 12px 13px; display: flex; flex-direction: column; gap: 3px; }
+  .listing-body h3 { margin: 0; font-size: 13.5px; font-weight: 800; line-height: 1.4; }
+  .listing-loc {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+    font-size: 11px;
+    color: var(--muted);
+  }
+  .listing-loc svg { width: 12px; height: 12px; }
+  .listing-foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--line);
+  }
+  .listing-price {
+    font-size: 13px;
+    font-weight: 900;
+    color: var(--brand);
+    font-variant-numeric: tabular-nums;
+  }
+  .listing-spec { font-size: 10.5px; color: var(--muted); white-space: nowrap; }
+
+  .listing-empty {
+    grid-column: 1 / -1;
+    display: grid;
+    place-items: center;
+    gap: 8px;
+    padding: 34px 18px;
+    text-align: center;
+    border: 1px dashed var(--line-2);
+    border-radius: var(--r);
+    color: var(--muted);
+    font-size: 13px;
+  }
+  .listing-empty svg { width: 26px; height: 26px; color: var(--brand); }
+
+  .demo-note {
+    margin: 14px 0 0;
+    font-size: 11.5px;
+    color: var(--muted);
+  }
+
+  /* ---------- Cards / Bento ---------- */
   .bento {
     display: grid;
     grid-template-columns: 1fr;
@@ -1030,7 +1232,7 @@
 
   .plans { display: grid; gap: 9px; }
   .plan-row { display: flex; align-items: center; gap: 9px; font-size: 10.5px; font-weight: 700; color: var(--muted); }
-  .plan-row span { width: 44px; flex: 0 0 auto; }
+  .plan-row span:first-child { width: 48px; flex: 0 0 auto; }
   .plan-track { flex: 1; height: 6px; border-radius: 99px; background: var(--line); overflow: hidden; }
   .plan-track i { display: block; height: 100%; border-radius: 99px; background: var(--brand); }
   .plan-row:nth-child(1) .plan-track i { width: 42%; opacity: .55; }
@@ -1076,7 +1278,7 @@
     font-weight: 700;
   }
 
-  .platforms { display: flex; gap: 8px; }
+  .platforms { display: flex; gap: 8px; flex-wrap: wrap; }
   .platforms span {
     display: inline-flex;
     align-items: center;
@@ -1114,10 +1316,10 @@
     letter-spacing: -.03em;
   }
   .step h3 { margin: 0; font-size: 19px; font-weight: 800; }
-  .step p { margin: 0; max-width: 38ch; font-size: 14px; color: var(--muted); }
+  .step p { margin: 0; max-width: 40ch; font-size: 14px; color: var(--muted); }
 
-  /* ---------- CTA ---------- */
-  .cta-panel {
+  /* ---------- Download ---------- */
+  .dl-panel {
     position: relative;
     overflow: hidden;
     border-radius: var(--r-xl);
@@ -1125,45 +1327,87 @@
     background:
       radial-gradient(90% 120% at 0% 0%, var(--brand-soft), transparent 55%),
       var(--surface);
-    padding: clamp(24px, 4.4vw, 56px);
+    padding: clamp(24px, 4.4vw, 52px);
   }
-  .cta-grid {
-    display: grid;
-    gap: 28px;
-    align-items: center;
-  }
-  .cta-copy h2 { max-width: 18ch; }
-  .cta-copy p { margin: 16px 0 0; max-width: 44ch; color: var(--muted); font-size: 15px; }
-  .cta-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
-  .cta-notes {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 7px 18px;
-    margin: 20px 0 0;
-    padding: 0;
-    list-style: none;
-    font-size: 11.5px;
-    font-weight: 600;
-    color: var(--muted);
-  }
-  .cta-notes li { display: inline-flex; align-items: center; gap: 6px; }
-  .cta-notes svg { width: 14px; height: 14px; color: var(--brand); }
 
-  .cta-photo {
+  .dl-copy h2 { max-width: 18ch; }
+  .dl-copy p { margin: 16px 0 0; max-width: 46ch; color: var(--muted); font-size: 15px; }
+
+  .dl-grid {
+    display: grid;
+    gap: 12px;
+    margin-top: 26px;
+  }
+
+  .dl-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px;
+    border-radius: var(--r);
+    border: 1px solid var(--line);
+    background: var(--bg-2);
+    text-decoration: none;
+    color: var(--ink);
+    transition: transform .25s var(--ease), border-color .25s, box-shadow .25s;
+  }
+  .dl-card:hover { transform: translateY(-3px); border-color: var(--brand); box-shadow: var(--shadow); }
+  .dl-card--primary {
+    border-color: var(--brand-line);
+    background:
+      linear-gradient(140deg, var(--brand-soft), transparent 70%),
+      var(--bg-2);
+  }
+  .dl-ico {
+    width: 46px; height: 46px;
+    flex: 0 0 auto;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    border: 1px solid var(--brand-line);
+    background: var(--brand-soft);
+    color: var(--brand);
+  }
+  .dl-ico svg { width: 22px; height: 22px; }
+  .dl-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+  .dl-txt b { font-size: 14.5px; font-weight: 800; }
+  .dl-txt small { font-size: 11.5px; color: var(--muted); }
+  .dl-arrow { margin-inline-start: auto; color: var(--brand); flex: 0 0 auto; }
+  .dl-arrow svg { width: 18px; height: 18px; }
+  html[dir="rtl"] .dl-arrow svg { transform: scaleX(-1); }
+
+  .install-steps {
+    margin: 22px 0 0;
+    padding: 16px 18px;
+    border-radius: var(--r);
+    border: 1px dashed var(--brand-line);
+    background: var(--brand-soft);
+    font-size: 12px;
+    line-height: 1.9;
+    color: var(--ink-2);
+  }
+  .install-steps b { display: block; margin-bottom: 4px; color: var(--brand); font-size: 12.5px; }
+
+  .dl-aside {
+    display: grid;
+    gap: 14px;
+    margin-top: 26px;
+  }
+  .dl-photo {
     position: relative;
-    min-height: 300px;
+    min-height: 260px;
     border-radius: 20px;
     overflow: hidden;
     border: 1px solid var(--line);
   }
-  .cta-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-  .cta-photo::after {
+  .dl-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .dl-photo::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(4, 12, 9, .82), rgba(4, 12, 9, .05) 62%);
+    background: linear-gradient(to top, rgba(4, 12, 9, .84), rgba(4, 12, 9, .05) 62%);
   }
-  .cta-photo figcaption {
+  .dl-photo figcaption {
     position: absolute;
     z-index: 2;
     inset-block-end: 16px;
@@ -1175,8 +1419,8 @@
     font-size: 12px;
     font-weight: 700;
   }
-  .cta-photo figcaption svg { width: 16px; height: 16px; color: #34E39A; flex: 0 0 auto; }
-  .cta-pill {
+  .dl-photo figcaption svg { width: 16px; height: 16px; color: #34E39A; flex: 0 0 auto; }
+  .dl-pill {
     position: absolute;
     z-index: 2;
     inset-block-start: 14px;
@@ -1194,7 +1438,41 @@
     font-size: 9.5px;
     font-weight: 700;
   }
-  .cta-pill svg { width: 11px; height: 11px; }
+  .dl-pill svg { width: 11px; height: 11px; }
+
+  /* ---------- FAQ ---------- */
+  .faq { display: grid; gap: 10px; }
+  .faq details {
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    background: var(--surface);
+    padding: 4px 18px;
+    transition: border-color .25s, background-color .25s;
+  }
+  .faq details[open] { border-color: var(--brand-line); background: var(--surface-2); }
+  .faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding-block: 15px;
+    cursor: pointer;
+    list-style: none;
+    font-size: 14.5px;
+    font-weight: 800;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+";
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--brand);
+    line-height: 1;
+    transition: transform .25s var(--ease);
+    flex: 0 0 auto;
+  }
+  .faq details[open] summary::after { transform: rotate(45deg); }
+  .faq details p { margin: 0 0 16px; font-size: 13.5px; color: var(--muted); max-width: 70ch; }
 
   /* ---------- Footer ---------- */
   .site-footer {
@@ -1248,22 +1526,6 @@
   /* ---------- Mobile bar ---------- */
   .mobile-bar { display: none; }
 
-  .mobile-soon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 11px 10px;
-    border-radius: 11px;
-    border: 1px dashed var(--brand-line);
-    background: var(--brand-soft);
-    color: var(--brand);
-    font-size: 12.5px;
-    font-weight: 800;
-    line-height: 1.3;
-    text-align: center;
-  }
-
   /* ---------- Reveal ---------- */
   .js .reveal {
     opacity: 0;
@@ -1278,12 +1540,12 @@
 
   /* ---------- Responsive ---------- */
   @media (min-width: 600px) {
-    .hero-cta { gap: 12px; }
-    .aud-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
     .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .step { grid-template-columns: 92px 1fr; align-items: start; gap: 8px 20px; padding: 30px 0; }
     .step h3, .step p { grid-column: 2; }
     .step .step-n { grid-row: 1 / span 2; }
+    .dl-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .stats { grid-template-columns: repeat(4, minmax(0, 1fr)); }
   }
 
   @media (min-width: 860px) {
@@ -1292,12 +1554,12 @@
     .hero-inner { grid-template-columns: minmax(0, 1.04fr) minmax(0, .96fr); }
     .sec-head { grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr); align-items: end; }
     .sec-head .sec-lead { justify-self: end; }
-    .cta-grid { grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr); }
+    .dl-inner { display: grid; grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr); gap: clamp(24px, 4vw, 44px); align-items: start; }
+    .demo-bar { grid-template-columns: 1fr auto; align-items: center; }
   }
 
   @media (min-width: 1000px) {
     .bento { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .bento .card:nth-child(1) { grid-row: span 1; }
     .steps { grid-template-columns: repeat(3, minmax(0, 1fr)); border-bottom: 1px solid var(--line); }
     .step {
       border-bottom: 0;
@@ -1307,8 +1569,7 @@
     }
     .step:first-child { border-inline-start: 0; }
     .step h3, .step p { grid-column: 1; }
-    .step .step-n { grid-row: auto; }
-    .step .step-n { margin-bottom: 12px; }
+    .step .step-n { grid-row: auto; margin-bottom: 12px; }
   }
 
   @media (max-width: 859px) {
@@ -1318,9 +1579,9 @@
   @media (max-width: 700px) {
     .header-actions .ctrl-label, #themeLabel { display: none; }
     .header-actions .ctrl { padding-inline: 10px; }
-    .header-actions .btn--sm span { display: none; }
+    .header-actions .btn--sm span.btn-txt { display: none; }
     .header-actions .btn--sm { padding: 10px; }
-    .soon-pill { min-height: 38px; padding-inline: 10px; font-size: 12px; }
+    .live-pill { min-height: 38px; padding-inline: 10px; font-size: 12px; }
     .site-header { padding-block: 8px; }
     .float--a { inset-inline-end: 0; top: 28%; }
     .float--b { inset-inline-start: 0; bottom: 4%; }
@@ -1330,11 +1591,11 @@
     .hero-stage { margin-top: 6px; }
     .hero-cta { flex-direction: column; align-items: stretch; }
     .hero-cta .btn { justify-content: center; }
-    .hero-cta .soon-tag { width: 100%; }
     .float { font-size: 10.5px; }
     .float--a { inset-inline-end: -2px; }
-    .aud-num { font-size: 42px; }
-    body { padding-bottom: 74px; }
+    .listings { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+    .listing-spec { display: none; }
+    body { padding-bottom: 76px; }
     .mobile-bar {
       position: fixed;
       z-index: 55;
@@ -1384,10 +1645,10 @@
     </a>
 
     <nav class="nav" data-i18n-aria="a11y.nav" aria-label="التنقل">
-      <a href="#audience" data-i18n="nav.audience">لمن عقار</a>
+      <a href="#demo" data-i18n="nav.demo">جرّب البحث</a>
       <a href="#features" data-i18n="nav.features">المميزات</a>
-      <a href="#how" data-i18n="nav.how">كيف يعمل</a>
-      <a href="#download" data-i18n="nav.download">قريباً</a>
+      <a href="#how" data-i18n="nav.how">كيف تبدأ</a>
+      <a href="#faq" data-i18n="nav.faq">الأسئلة</a>
     </nav>
 
     <div class="header-actions">
@@ -1407,13 +1668,15 @@
           <circle cx="12" cy="12" r="4.2"/>
           <path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4 17 7M7 17l-1.6 1.6"/>
         </svg>
-        <span class="ctrl-label" id="themeLabel">فاتح</span>
+        <span class="ctrl-label" id="themeLabel">داكن</span>
       </button>
 
-      <span class="soon-pill">
-        <span class="dot" aria-hidden="true"></span>
-        <span data-i18n="nav.cta">قريباً</span>
-      </span>
+      <a class="btn btn--primary btn--sm" href="releases/latest/Aqar.apk" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3.6v11.2"/><path d="m7.4 10.2 4.6 4.6 4.6-4.6"/><path d="M4.8 19.4h14.4"/>
+        </svg>
+        <span data-i18n="nav.cta">حمّل التطبيق</span>
+      </a>
     </div>
   </div>
 </header>
@@ -1434,34 +1697,38 @@
 
     <div class="wrap hero-inner">
       <div class="hero-copy">
-        <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.eyebrow">قريباً · منصة عقارية قيد التجهيز للإطلاق</span></p>
+        <p class="eyebrow reveal"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.eyebrow">أُطلق الآن · أندرويد والويب</span></p>
 
-        <h1 class="reveal" style="--d:80ms" data-i18n-html="hero.title">بيتك القادم يبدأ من <em>عقار</em> — قريباً.</h1>
+        <h1 class="reveal" style="--d:80ms" data-i18n-html="hero.title">بيتك القادم يبدأ من <em>عقار</em>.</h1>
 
-        <p class="lead reveal" style="--d:160ms" data-i18n="hero.lead">منصّة واحدة ستجمع إعلانات العقارات الموثّقة من المالكين والمكاتب العقارية. نضع اللمسات الأخيرة قبل الإطلاق — تصفّح بذكاء، فلتر في ثوانٍ، وتواصل مباشرة، قريباً على التطبيق وأي متصفح.</p>
+        <p class="lead reveal" style="--d:160ms" data-i18n="hero.lead">منصّة واحدة تجمع إعلانات العقارات الموثّقة من المالكين والمكاتب العقارية. تصفّح بذكاء، فلتر في ثوانٍ، وتواصل مباشرة — على التطبيق أو من متصفحك، الآن.</p>
 
         <div class="hero-cta reveal" style="--d:240ms">
-          <span class="soon-tag">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-              <circle cx="12" cy="12" r="8.4"/>
-              <path d="M12 7.5V12l3 1.8"/>
-            </svg>
-            <span class="soon-tag-txt">
-              <b data-i18n="hero.soon">قريباً — قيد التجهيز للإطلاق</b>
-              <small data-i18n="hero.soonMeta">انتظرونا على أندرويد والويب</small>
-            </span>
-          </span>
-
-          <a class="btn btn--ghost btn--lg" href="#features">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M12 4.5v14"/><path d="m6.8 13.3 5.2 5.2 5.2-5.2"/>
+          <a class="btn btn--primary btn--lg" href="releases/latest/Aqar.apk" download>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 3.6v11.2"/><path d="m7.4 10.2 4.6 4.6 4.6-4.6"/><path d="M4.8 19.4h14.4"/>
             </svg>
             <span class="btn-txt">
-              <b data-i18n="hero.explore">اكتشف عقار</b>
-              <small data-i18n="hero.exploreMeta">تعرّف على المميزات</small>
+              <b data-i18n="hero.dl">حمّل تطبيق أندرويد</b>
+              <small data-i18n="hero.dlMeta">APK مباشر · 21 ميغابايت</small>
+            </span>
+          </a>
+
+          <a class="btn btn--ghost btn--lg" href="app/" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="8.4"/><path d="M3.6 12h16.8M12 3.6c2.4 2.5 2.4 14.3 0 16.8M12 3.6c-2.4 2.5-2.4 14.3 0 16.8"/>
+            </svg>
+            <span class="btn-txt">
+              <b data-i18n="hero.web">افتح النسخة الويب</b>
+              <small data-i18n="hero.webMeta">تعمل من أي متصفح</small>
             </span>
           </a>
         </div>
+
+        <p class="hero-hint reveal" style="--d:280ms">
+          <span data-i18n="hero.hint">النشر مجاني تماماً.</span>
+          <a href="releases/latest/Aqar-32bit.apk" download data-i18n="hero.hint32">جهاز قديم؟ نسخة 32-bit</a>
+        </p>
 
         <ul class="hero-proof reveal" style="--d:320ms">
           <li>
@@ -1470,7 +1737,7 @@
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
-            <span data-i18n="hero.proof2">إطلاق قريب · انتظرونا</span>
+            <span data-i18n="hero.proof2">نشر مجاني بلا رسوم</span>
           </li>
           <li>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
@@ -1527,7 +1794,7 @@
               </div>
               <div class="ph-card-body">
                 <b data-i18n="phone.l1">شقة بإطلالة بانورامية</b>
-                <span class="loc" data-i18n="phone.l1loc">عبدون · عمّان</span>
+                <span class="loc" data-i18n="phone.l1loc">المزة · دمشق</span>
                 <div class="ph-card-foot">
                   <span class="ph-price" data-i18n="phone.l1price">120,000 $</span>
                   <span class="ph-meta" data-i18n="phone.l1meta">3 غرف · 145 م²</span>
@@ -1539,7 +1806,7 @@
               <img src="assets/images/interior.jpg" alt="" width="80" height="68" loading="lazy" decoding="async">
               <span>
                 <b data-i18n="phone.l2">شقة مفروشة حديثاً</b>
-                <span data-i18n="phone.l2loc">الرابية · عمّان</span>
+                <span data-i18n="phone.l2loc">الشعلان · دمشق</span>
               </span>
             </div>
 
@@ -1547,7 +1814,7 @@
               <img src="assets/images/villa.jpg" alt="" width="80" height="68" loading="lazy" decoding="async">
               <span>
                 <b data-i18n="phone.l3">فيلا بحديقة خاصة</b>
-                <span data-i18n="phone.l3loc">دابوق · عمّان</span>
+                <span data-i18n="phone.l3loc">دمر · دمشق</span>
               </span>
             </div>
 
@@ -1581,7 +1848,7 @@
           <img src="assets/images/interior.jpg" alt="" width="72" height="72" loading="lazy" decoding="async">
           <span>
             <span data-i18n="hero.float2">شقة مفروشة حديثاً</span>
-            <small data-i18n="hero.float2loc">الرابية · عمّان</small>
+            <small data-i18n="hero.float2loc">الشعلان · دمشق</small>
           </span>
         </div>
       </div>
@@ -1614,6 +1881,92 @@
     </div>
   </div>
 
+  <!-- ================= STATS ================= -->
+  <section class="section" aria-label="أرقام عقار">
+    <div class="wrap">
+      <div class="stats reveal">
+        <div class="stat">
+          <b><span class="count" data-count="0">0</span></b>
+          <span data-i18n="stats.1">رسوم على النشر</span>
+          <small data-i18n="stats.1s">النشر مجاني دائماً</small>
+        </div>
+        <div class="stat">
+          <b><span class="count" data-count="30">30</span></b>
+          <span data-i18n="stats.2">يوماً مدة الإعلان</span>
+          <small data-i18n="stats.2s">لكل إعلان مجاني</small>
+        </div>
+        <div class="stat">
+          <b><span class="count" data-count="10">10</span></b>
+          <span data-i18n="stats.3">إعلانات سقف المكتب</span>
+          <small data-i18n="stats.3s">وقابل للزيادة بالاشتراك</small>
+        </div>
+        <div class="stat">
+          <b><span class="count" data-count="2">2</span></b>
+          <span data-i18n="stats.4">منصتان الآن</span>
+          <small data-i18n="stats.4s">أندرويد + الويب</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DEMO ================= -->
+  <section class="section section--tint" id="demo">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <p class="kicker" data-i18n="demo.kicker">جرّب الآن</p>
+          <h2 data-i18n="demo.title">جرّب البحث قبل أن تحمّل.</h2>
+        </div>
+        <p class="sec-lead" data-i18n="demo.lead">هذه إعلانات تجريبية تعمل داخل صفحتك: اختر النوع والمدينة والحد الأعلى للسعر، واحفظ ما يعجبك — تماماً كما في التطبيق.</p>
+      </div>
+
+      <div class="demo-shell reveal">
+        <div class="demo-bar">
+          <div class="filter-row" role="group" aria-label="نوع العقار">
+            <button class="chip-btn" type="button" data-type="all" aria-pressed="true" data-i18n="demo.all">الكل</button>
+            <button class="chip-btn" type="button" data-type="apartment" aria-pressed="false" data-i18n="demo.apartment">شقة</button>
+            <button class="chip-btn" type="button" data-type="villa" aria-pressed="false" data-i18n="demo.villa">فيلا</button>
+            <button class="chip-btn" type="button" data-type="land" aria-pressed="false" data-i18n="demo.land">أرض</button>
+            <button class="chip-btn" type="button" data-type="office" aria-pressed="false" data-i18n="demo.office">مكتب</button>
+          </div>
+
+          <div class="filter-row">
+            <span class="select-wrap">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" aria-hidden="true"><path d="M12 21s-6.4-5.4-6.4-10a6.4 6.4 0 1 1 12.8 0c0 4.6-6.4 10-6.4 10Z"/><circle cx="12" cy="11" r="2.4"/></svg>
+              <select id="cityFilter" aria-label="المدينة">
+                <option value="all" data-i18n="demo.allCities">كل المدن</option>
+                <option value="damascus" data-i18n="demo.damascus">دمشق</option>
+                <option value="aleppo" data-i18n="demo.aleppo">حلب</option>
+                <option value="latakia" data-i18n="demo.latakia">اللاذقية</option>
+                <option value="homs" data-i18n="demo.homs">حمص</option>
+                <option value="tartus" data-i18n="demo.tartus">طرطوس</option>
+              </select>
+            </span>
+
+            <span class="range-wrap">
+              <label for="priceFilter" data-i18n="demo.maxPrice">الحد الأعلى</label>
+              <input type="range" id="priceFilter" min="50000" max="400000" step="25000" value="400000">
+              <output id="priceOut" for="priceFilter">400,000 $</output>
+            </span>
+          </div>
+        </div>
+
+        <div class="demo-meta">
+          <span><b id="resultCount">0</b> <span data-i18n="demo.results">عقارات مطابقة</span></span>
+          <span class="demo-saved">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20s-7-4.2-7-9a3.9 3.9 0 0 1 7-2.4A3.9 3.9 0 0 1 19 11c0 4.8-7 9-7 9Z"/></svg>
+            <span><b id="savedCount">0</b> <span data-i18n="demo.saved">في المفضلة</span></span>
+          </span>
+          <button class="demo-reset" type="button" id="resetDemo" data-i18n="demo.reset">إعادة الضبط</button>
+        </div>
+
+        <div class="listings" id="listings" aria-live="polite"></div>
+
+        <p class="demo-note" data-i18n="demo.note">إعلانات توضيحية لعرض تجربة البحث؛ العقارات الحقيقية تُنشر من التطبيق بعد إنشاء حساب.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= AUDIENCE ================= -->
   <section class="section" id="audience">
     <div class="wrap">
@@ -1625,49 +1978,49 @@
         <p class="sec-lead" data-i18n="aud.lead">سواء كنت تبيع، أو توسّع محفظتك العقارية، أو تبحث عن سكنك الأول — عقار مبني حول ما تحتاجه فعلاً.</p>
       </div>
 
-      <div class="aud-grid">
-        <article class="aud reveal" style="--d:60ms">
-          <span class="aud-num" aria-hidden="true">01</span>
-          <span class="aud-role">
+      <div class="aud-grid" style="display:grid;gap:14px">
+        <article class="card aud reveal" style="--d:60ms">
+          <span class="card-ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20H4Z"/><path d="M9.5 20v-5h5v5"/></svg>
-            <span data-i18n="aud.1.role">لأصحاب العقارات</span>
           </span>
           <h3 data-i18n="aud.1.title">أعلن عن عقارك بثقة</h3>
-          <p data-i18n="aud.1.text">أضف العقار، أدر إعلانك، واستقبل اهتمام الباحثين الجديين — بشفافية كاملة في كل خطوة.</p>
-          <div class="aud-tags">
-            <span data-i18n="aud.1.tag1">إضافة عقار</span>
-            <span data-i18n="aud.1.tag2">إدارة الإعلان</span>
-            <span data-i18n="aud.1.tag3">ردود فورية</span>
+          <p data-i18n="aud.1.text">أضف العقار مجاناً، أدر إعلانك، واستقبل اهتمام الباحثين الجديين — بشفافية كاملة في كل خطوة.</p>
+          <div class="card-vis">
+            <div class="chips">
+              <span class="on" data-i18n="aud.1.tag1">نشر مجاني</span>
+              <span data-i18n="aud.1.tag2">إدارة الإعلان</span>
+              <span data-i18n="aud.1.tag3">ردود فورية</span>
+            </div>
           </div>
         </article>
 
-        <article class="aud reveal" style="--d:140ms">
-          <span class="aud-num" aria-hidden="true">02</span>
-          <span class="aud-role">
+        <article class="card aud reveal" style="--d:140ms">
+          <span class="card-ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="4" y="3.5" width="16" height="17" rx="2.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
-            <span data-i18n="aud.2.role">للمكاتب العقارية</span>
           </span>
           <h3 data-i18n="aud.2.title">محفظتك في لوحة واحدة</h3>
           <p data-i18n="aud.2.text">أطلق إعلانات موثّقة، تابع أداءها، وأدِر إعلانات مكتبك وباقاتك من مكان واحد يناسب حجم عملك.</p>
-          <div class="aud-tags">
-            <span data-i18n="aud.2.tag1">حساب مكتب</span>
-            <span data-i18n="aud.2.tag2">باقات مرنة</span>
-            <span data-i18n="aud.2.tag3">إدارة إعلانات</span>
+          <div class="card-vis">
+            <div class="chips">
+              <span class="on" data-i18n="aud.2.tag1">حساب مكتب</span>
+              <span data-i18n="aud.2.tag2">باقات مرنة</span>
+              <span data-i18n="aud.2.tag3">توثيق الحساب</span>
+            </div>
           </div>
         </article>
 
-        <article class="aud reveal" style="--d:220ms">
-          <span class="aud-num" aria-hidden="true">03</span>
-          <span class="aud-role">
+        <article class="card aud reveal" style="--d:220ms">
+          <span class="card-ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="6.4"/><path d="m16 16 4.5 4.5"/><path d="M8.5 11h5M11 8.5v5"/></svg>
-            <span data-i18n="aud.3.role">للباحثين عن عقار</span>
           </span>
           <h3 data-i18n="aud.3.title">ابحث كما ينبغي</h3>
           <p data-i18n="aud.3.text">فلترة حسب النوع والمدينة والسعر والمساحة، حفظ المفضّلة، وتواصل مباشرة مع المعلن.</p>
-          <div class="aud-tags">
-            <span data-i18n="aud.3.tag1">بحث متقدم</span>
-            <span data-i18n="aud.3.tag2">المحفوظة</span>
-            <span data-i18n="aud.3.tag3">تواصل مباشر</span>
+          <div class="card-vis">
+            <div class="chips">
+              <span class="on" data-i18n="aud.3.tag1">بحث متقدم</span>
+              <span data-i18n="aud.3.tag2">المفضلة</span>
+              <span data-i18n="aud.3.tag3">تواصل مباشر</span>
+            </div>
           </div>
         </article>
       </div>
@@ -1726,12 +2079,12 @@
           <span class="card-ico">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3.5" y="5" width="17" height="14" rx="2.5"/><path d="M3.5 9.5h17M8 5v4.5"/><path d="M7 13h5M7 16h8"/></svg>
           </span>
-          <h3 data-i18n="feat.3.title">باقات مرنة</h3>
-          <p data-i18n="feat.3.text">باقة لإعلان واحد أو محفظة كاملة، مع إدارة واضحة لحالة كل إعلان.</p>
+          <h3 data-i18n="feat.3.title">سقف واضح لكل حساب</h3>
+          <p data-i18n="feat.3.text">سقف مجاني للمستخدم العادي، وسقف أكبر للمكتب، واشتراك يرفعه أكثر — تعرف حدك قبل أن تنشر.</p>
           <div class="card-vis">
             <div class="plans" aria-hidden="true">
-              <div class="plan-row"><span data-i18n="feat.3.p1">أساسي</span><span class="plan-track"><i></i></span></div>
-              <div class="plan-row"><span data-i18n="feat.3.p2">احترافي</span><span class="plan-track"><i></i></span></div>
+              <div class="plan-row"><span data-i18n="feat.3.p1">فردي</span><span class="plan-track"><i></i></span></div>
+              <div class="plan-row"><span data-i18n="feat.3.p2">موثّق</span><span class="plan-track"><i></i></span></div>
               <div class="plan-row"><span data-i18n="feat.3.p3">مكتب</span><span class="plan-track"><i></i></span></div>
             </div>
           </div>
@@ -1756,7 +2109,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M20 15.5a3 3 0 0 1-3 3H8.6L4.5 21.5V6.5a3 3 0 0 1 3-3h9.5a3 3 0 0 1 3 3Z"/></svg>
           </span>
           <h3 data-i18n="feat.5.title">تواصل مباشر</h3>
-          <p data-i18n="feat.5.text">راسل المعلن أو المكتب من داخل التطبيق واتفق على المعاينة بسرعة.</p>
+          <p data-i18n="feat.5.text">اتصل بالمعلن أو راسله على واتساب من داخل التطبيق واتفق على المعاينة بسرعة.</p>
           <div class="card-vis">
             <div class="chats" aria-hidden="true">
               <span class="bub" data-i18n="feat.5.msg1">هل الشقة متاحة للمعاينة السبت؟</span>
@@ -1770,7 +2123,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="4" width="13" height="10" rx="2"/><path d="M6 17h7"/><path d="M18 9h3v9a2 2 0 0 1-2 2h-7"/></svg>
           </span>
           <h3 data-i18n="feat.6.title">تطبيق ونسخة ويب</h3>
-          <p data-i18n="feat.6.text">نفس الحساب ونفس الإعلانات — على أندرويد وعلى أي متصفح عند الإطلاق.</p>
+          <p data-i18n="feat.6.text">نفس الحساب ونفس الإعلانات — على أندرويد وعلى أي متصفح، بلا انتظار.</p>
           <div class="card-vis">
             <div class="platforms">
               <span>
@@ -1794,79 +2147,143 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <div>
-          <p class="kicker" data-i18n="how.kicker">عند الإطلاق</p>
-          <h2 data-i18n="how.title">عند الإطلاق، ثلاث خطوات وتبدأ.</h2>
+          <p class="kicker" data-i18n="how.kicker">كيف تبدأ</p>
+          <h2 data-i18n="how.title">ثلاث خطوات وتبدأ.</h2>
         </div>
-        <p class="sec-lead" data-i18n="how.lead">لا تعقيد، لا خطوات زائدة — من أول دخول إلى أول عقار في دقائق. انتظرونا قريباً.</p>
+        <p class="sec-lead" data-i18n="how.lead">لا تعقيد، لا خطوات زائدة — من أول دخول إلى أول عقار في دقائق.</p>
       </div>
 
       <div class="steps">
         <article class="step reveal">
           <span class="step-n" aria-hidden="true">01</span>
-          <h3 data-i18n="how.1.title">انتظر الإطلاق</h3>
-          <p data-i18n="how.1.text">سنعلن موعد الإطلاق هنا. سيصبح التطبيق ونسخة الويب متاحين في الوقت نفسه.</p>
+          <h3 data-i18n="how.1.title">حمّل التطبيق أو افتح الويب</h3>
+          <p data-i18n="how.1.text">نزّل ملف APK وثبّته على أندرويد، أو افتح النسخة الويب من أي متصفح — بلا حساب أولاً.</p>
         </article>
         <article class="step reveal" style="--d:100ms">
           <span class="step-n" aria-hidden="true">02</span>
-          <h3 data-i18n="how.2.title">جهّز حسابك</h3>
-          <p data-i18n="how.2.text">عند الإطلاق، سجّل برقم هاتفك وحدّد إن كنت باحثاً أو صاحب عقار أو مكتباً عقارياً.</p>
+          <h3 data-i18n="how.2.title">أنشئ حسابك برقم هاتفك</h3>
+          <p data-i18n="how.2.text">سجّل برقم هاتفك وحدّد إن كنت باحثاً أو صاحب عقار أو مكتباً عقارياً — ووثّق حسابك لترفع سقفك.</p>
         </article>
         <article class="step reveal" style="--d:200ms">
           <span class="step-n" aria-hidden="true">03</span>
           <h3 data-i18n="how.3.title">ابحث أو أعلن</h3>
-          <p data-i18n="how.3.text">بعد الإطلاق، تصفّح الإعلانات الموثّقة أو أضف عقارك وتواصل مباشرة من التطبيق.</p>
+          <p data-i18n="how.3.text">تصفّح الإعلانات الموثّقة، احفظ المفضلة، أو أضف عقارك مجاناً وتواصل مباشرة.</p>
         </article>
       </div>
     </div>
   </section>
 
   <!-- ================= DOWNLOAD ================= -->
-  <section class="section" id="download">
+  <section class="section section--tint" id="download">
     <div class="wrap">
-      <div class="cta-panel reveal">
-        <div class="cta-grid">
-          <div class="cta-copy">
-            <p class="kicker" data-i18n="cta.kicker">قريباً</p>
-            <h2 data-i18n="cta.title">بيتك القادم... قريباً جداً.</h2>
-            <p data-i18n="cta.text">نضع اللمسات الأخيرة على عقار. سيصبح تطبيق أندرويد ونسخة الويب متاحين فور الإطلاق — إعلاناتك ومحفوظاتك ستبقى معك أينما كنت.</p>
+      <div class="dl-panel reveal">
+        <div class="dl-inner">
+          <div class="dl-copy">
+            <p class="kicker" data-i18n="cta.kicker">جاهز الآن</p>
+            <h2 data-i18n="cta.title">بيتك القادم يبدأ من عقار.</h2>
+            <p data-i18n="cta.text">اختر الطريقة الأنسب لك: تطبيق أندرويد بملف مباشر بلا متجر، أو النسخة الويب التي تعمل على أي جهاز. النشر مجاني، والتصفح بلا حساب.</p>
 
-            <div class="cta-actions">
-              <span class="soon-tag">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true">
-                  <circle cx="12" cy="12" r="8.4"/>
-                  <path d="M12 7.5V12l3 1.8"/>
-                </svg>
-                <span class="soon-tag-txt">
-                  <b data-i18n="cta.soon">قريباً — قيد التجهيز للإطلاق</b>
-                  <small data-i18n="cta.soonMeta">تابع هذه الصفحة لمعرفة موعد الإطلاق</small>
+            <div class="dl-grid">
+              <a class="dl-card dl-card--primary" href="releases/latest/Aqar.apk" download>
+                <span class="dl-ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 19h3"/></svg>
                 </span>
-              </span>
+                <span class="dl-txt">
+                  <b data-i18n="dl.android">أندرويد · 64-bit</b>
+                  <small data-i18n="dl.androidMeta">APK · 21 ميغابايت · أحدث إصدار</small>
+                </span>
+                <span class="dl-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5v14"/><path d="m6.8 13.3 5.2 5.2 5.2-5.2"/></svg>
+                </span>
+              </a>
+
+              <a class="dl-card" href="releases/latest/Aqar-32bit.apk" download>
+                <span class="dl-ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 19h3"/></svg>
+                </span>
+                <span class="dl-txt">
+                  <b data-i18n="dl.android32">أندرويد · 32-bit</b>
+                  <small data-i18n="dl.android32Meta">APK · 20 ميغابايت · للأجهزة الأقدم</small>
+                </span>
+                <span class="dl-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4.5v14"/><path d="m6.8 13.3 5.2 5.2 5.2-5.2"/></svg>
+                </span>
+              </a>
+
+              <a class="dl-card" href="app/" target="_blank" rel="noopener">
+                <span class="dl-ico">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><circle cx="12" cy="12" r="8.4"/><path d="M3.6 12h16.8M12 3.6c2.4 2.5 2.4 14.3 0 16.8M12 3.6c-2.4 2.5-2.4 14.3 0 16.8"/></svg>
+                </span>
+                <span class="dl-txt">
+                  <b data-i18n="dl.web">النسخة الويب</b>
+                  <small data-i18n="dl.webMeta">أي متصفح · آيفون وويندوز وماك</small>
+                </span>
+                <span class="dl-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></svg>
+                </span>
+              </a>
             </div>
 
-            <ul class="cta-notes">
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
-                <span data-i18n="cta.note1">أندرويد والويب · إطلاق متزامن</span>
-              </li>
-              <li>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
-                <span data-i18n="cta.note2">الويب يعمل على iOS وWindows وMac عند الإطلاق</span>
-              </li>
-            </ul>
+            <div class="install-steps">
+              <b data-i18n="dl.installTitle">طريقة التثبيت على أندرويد</b>
+              <span data-i18n="dl.installText">نزّل الملف، ثم افتحه من شريط التنزيلات. إن ظهر تحذير «تثبيت من مصدر غير معروف» فاسمح بهذا التطبيق فقط، ثم اضغط «تثبيت». بعدها ستتلقّى التحديثات من داخل التطبيق.</span>
+            </div>
           </div>
 
-          <figure class="cta-photo">
-            <img src="assets/images/villa.jpg" alt="" width="1248" height="832" loading="lazy" decoding="async">
-            <span class="cta-pill">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
-              <span data-i18n="phone.verified">موثّق</span>
-            </span>
-            <figcaption>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20H4Z"/><path d="M9.5 20v-5h5v5"/></svg>
-              <span data-i18n="cta.photo">عقارات موثّقة، بصور أوضح.</span>
-            </figcaption>
-          </figure>
+          <div class="dl-aside">
+            <figure class="dl-photo">
+              <img src="assets/images/building.jpg" alt="" width="1184" height="880" loading="lazy" decoding="async">
+              <span class="dl-pill">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true"><path d="m5 12.5 4.4 4.4L19 7.4"/></svg>
+                <span data-i18n="phone.verified">موثّق</span>
+              </span>
+              <figcaption>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20H4Z"/><path d="M9.5 20v-5h5v5"/></svg>
+                <span data-i18n="cta.photo">عقارات موثّقة، بصور أوضح.</span>
+              </figcaption>
+            </figure>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="sec-head reveal">
+        <div>
+          <p class="kicker" data-i18n="faq.kicker">الأسئلة الشائعة</p>
+          <h2 data-i18n="faq.title">أسئلة يسألها الجميع.</h2>
+        </div>
+        <p class="sec-lead" data-i18n="faq.lead">إن لم تجد إجابتك، تواصل معنا من رابط الدعم في الأسفل.</p>
+      </div>
+
+      <div class="faq reveal">
+        <details open>
+          <summary data-i18n="faq.1.q">هل النشر مجاني فعلاً؟</summary>
+          <p data-i18n="faq.1.a">نعم. النشر مجاني دائماً، ولا تُطلب منك أي رسوم لإضافة إعلان. لكل حساب سقف واضح لعدد الإعلانات النشطة، ويظهر لك داخل التطبيق قبل النشر.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.2.q">كيف أثبّت التطبيق على أندرويد؟</summary>
+          <p data-i18n="faq.2.a">حمّل ملف APK من هذه الصفحة وافتحه؛ سيطلب أندرويد السماح بالتثبيت من هذا المصدر مرة واحدة. لا يلزم متجر تطبيقات، والملف موقّع رسمياً باسم عقار.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.3.q">هل يعمل على آيفون؟</summary>
+          <p data-i18n="faq.3.a">نعم، عبر النسخة الويب التي تعمل على Safari وأي متصفح آخر. يمكنك أيضاً إضافتها إلى الشاشة الرئيسية لتعمل كتطبيق.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.4.q">ما الفرق بين حساب عادي وحساب مكتب؟</summary>
+          <p data-i18n="faq.4.a">الحساب العادي مخصّص لمن يعلن عن عقار أو عقارين، وحساب المكتب لمكاتب العقارات التي تدير محفظة إعلانات أكبر مع صفحة مكتب وباقات.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.5.q">كيف أوثّق حسابي؟</summary>
+          <p data-i18n="faq.5.a">اطلب التوثيق من داخل التطبيق أو من الدعم؛ بعد التحقق يظهر شعار «موثّق» على حسابك وإعلاناتك، ويرتفع سقف نشرك.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.6.q">ماذا يحدث لإعلاني بعد مدة العرض؟</summary>
+          <p data-i18n="faq.6.a">ينتهي الإعلان تلقائياً بعد المدة المحددة (30 يوماً للإعلان المجاني)، ويمكنك تجديده من «عقاراتي» في أي وقت.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -1888,8 +2305,9 @@
       </div>
 
       <nav class="footer-links" data-i18n-aria="a11y.footer" aria-label="روابط">
-        <a href="#audience" data-i18n="nav.audience">لمن عقار</a>
-        <a href="#features" data-i18n="nav.features">المميزات</a>
+        <a href="#demo" data-i18n="nav.demo">جرّب البحث</a>
+        <a href="#download" data-i18n="nav.download">تحميل</a>
+        <a href="releases/latest/Aqar.apk" download data-i18n="footer.apk">ملف APK</a>
         <a href="https://github.com/Aqar-Property/Aqar" target="_blank" rel="noopener" data-i18n="footer.repo">المستودع</a>
         <a href="https://github.com/Aqar-Property/Aqar/issues" target="_blank" rel="noopener" data-i18n="footer.support">الدعم</a>
       </nav>
@@ -1897,21 +2315,23 @@
 
     <div class="footer-bottom">
       <span>© <span id="year">2026</span> Aqar Property · <span data-i18n="footer.rights">جميع الحقوق محفوظة.</span></span>
-      <span class="mono" data-i18n="footer.version">الإصدار الأول · قريباً</span>
+      <span class="mono" data-i18n="footer.version">الإصدار 1.0.0 · أُطلق الآن</span>
     </div>
   </div>
 </footer>
 
 <div class="mobile-bar">
-  <span class="mobile-soon">
-    <span class="dot" aria-hidden="true"></span>
-    <span data-i18n="mobile.soon">قريباً — انتظرونا</span>
-  </span>
-  <a class="btn btn--ghost" href="#features">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M12 4.5v14"/><path d="m6.8 13.3 5.2 5.2 5.2-5.2"/>
+  <a class="btn btn--primary" href="releases/latest/Aqar.apk" download>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 3.6v11.2"/><path d="m7.4 10.2 4.6 4.6 4.6-4.6"/><path d="M4.8 19.4h14.4"/>
     </svg>
-    <span data-i18n="mobile.explore">اكتشف عقار</span>
+    <span data-i18n="mobile.dl">حمّل التطبيق</span>
+  </a>
+  <a class="btn btn--ghost" href="app/" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true">
+      <circle cx="12" cy="12" r="8.4"/><path d="M3.6 12h16.8"/><path d="M12 3.6c2.4 2.5 2.4 14.3 0 16.8M12 3.6c-2.4 2.5-2.4 14.3 0 16.8"/>
+    </svg>
+    <span data-i18n="mobile.web">الويب</span>
   </a>
 </div>
 
@@ -1922,11 +2342,12 @@
   var root = document.documentElement;
   var KEY_THEME = "aqar:theme";
   var KEY_LANG = "aqar:lang";
+  var KEY_FAV = "aqar:demo-favs";
 
   var I18N = {
     ar: {
-      "meta.title": "عقار — قريباً | منصة الإعلانات العقارية | Aqar Property",
-      "meta.desc": "عقار (Aqar Property) منصّة للإعلانات العقارية الموثّقة — قيد التجهيز للإطلاق. التطبيق ونسخة الويب سيتوفّران قريباً. انتظرونا.",
+      "meta.title": "عقار — أُطلق الآن | منصة الإعلانات العقارية | Aqar Property",
+      "meta.desc": "عقار (Aqar Property) منصّة الإعلانات العقارية: أعلن عن عقارك مجاناً، ابحث وفلتر بين الإعلانات الموثّقة، وتواصل مباشرة. التطبيق متاح لأندرويد، والنسخة الويب تعمل من أي متصفح.",
 
       "a11y.skip": "تجاوز إلى المحتوى",
       "a11y.home": "عقار — Aqar Property",
@@ -1935,26 +2356,29 @@
       "a11y.lang": "تبديل اللغة",
       "a11y.theme": "تبديل المظهر",
 
-      "nav.audience": "لمن عقار",
+      "nav.demo": "جرّب البحث",
       "nav.features": "المميزات",
-      "nav.how": "كيف يعمل",
-      "nav.download": "قريباً",
-      "nav.cta": "قريباً",
+      "nav.how": "كيف تبدأ",
+      "nav.faq": "الأسئلة",
+      "nav.download": "تحميل",
+      "nav.cta": "حمّل التطبيق",
 
-      "hero.eyebrow": "قريباً · منصة عقارية قيد التجهيز للإطلاق",
-      "hero.title": "بيتك القادم يبدأ من <em>عقار</em> — قريباً.",
-      "hero.lead": "منصّة واحدة ستجمع إعلانات العقارات الموثّقة من المالكين والمكاتب العقارية. نضع اللمسات الأخيرة قبل الإطلاق — تصفّح بذكاء، فلتر في ثوانٍ، وتواصل مباشرة، قريباً على التطبيق وأي متصفح.",
-      "hero.soon": "قريباً — قيد التجهيز للإطلاق",
-      "hero.soonMeta": "انتظرونا على أندرويد والويب",
-      "hero.explore": "اكتشف عقار",
-      "hero.exploreMeta": "تعرّف على المميزات",
+      "hero.eyebrow": "أُطلق الآن · أندرويد والويب",
+      "hero.title": "بيتك القادم يبدأ من <em>عقار</em>.",
+      "hero.lead": "منصّة واحدة تجمع إعلانات العقارات الموثّقة من المالكين والمكاتب العقارية. تصفّح بذكاء، فلتر في ثوانٍ، وتواصل مباشرة — على التطبيق أو من متصفحك، الآن.",
+      "hero.dl": "حمّل تطبيق أندرويد",
+      "hero.dlMeta": "APK مباشر · 21 ميغابايت",
+      "hero.web": "افتح النسخة الويب",
+      "hero.webMeta": "تعمل من أي متصفح",
+      "hero.hint": "النشر مجاني تماماً.",
+      "hero.hint32": "جهاز قديم؟ نسخة 32 بت",
       "hero.proof1": "إعلانات موثّقة",
-      "hero.proof2": "إطلاق قريب · انتظرونا",
+      "hero.proof2": "نشر مجاني بلا رسوم",
       "hero.proof3": "عربي / English",
       "hero.phoneAlt": "واجهة تطبيق عقار على الهاتف",
       "hero.float1": "مكتب عقاري موثّق",
       "hero.float2": "شقة مفروشة حديثاً",
-      "hero.float2loc": "الرابية · عمّان",
+      "hero.float2loc": "الشعلان · دمشق",
 
       "phone.search": "ابحث عن شقة، فيلا، أرض…",
       "phone.chip1": "الكل",
@@ -1966,13 +2390,13 @@
       "phone.viewall": "عرض الكل",
       "phone.verified": "موثّق",
       "phone.l1": "شقة بإطلالة بانورامية",
-      "phone.l1loc": "عبدون · عمّان",
+      "phone.l1loc": "المزة · دمشق",
       "phone.l1price": "120,000 $",
       "phone.l1meta": "3 غرف · 145 م²",
       "phone.l2": "شقة مفروشة حديثاً",
-      "phone.l2loc": "الرابية · عمّان",
+      "phone.l2loc": "الشعلان · دمشق",
       "phone.l3": "فيلا بحديقة خاصة",
-      "phone.l3loc": "دابوق · عمّان",
+      "phone.l3loc": "دمر · دمشق",
       "phone.tab1": "بحث",
       "phone.tab2": "المحفوظة",
       "phone.tab3": "إعلاناتي",
@@ -1981,21 +2405,46 @@
       "ticker.1": "شقق", "ticker.2": "فلل", "ticker.3": "أراضٍ", "ticker.4": "مكاتب",
       "ticker.5": "محلات", "ticker.6": "مزارع", "ticker.7": "شاليهات", "ticker.8": "مستودعات",
 
+      "stats.1": "رسوم على النشر", "stats.1s": "النشر مجاني دائماً",
+      "stats.2": "يوماً مدة الإعلان", "stats.2s": "لكل إعلان مجاني",
+      "stats.3": "إعلانات سقف المكتب", "stats.3s": "وقابل للزيادة بالاشتراك",
+      "stats.4": "منصتان الآن", "stats.4s": "أندرويد + الويب",
+
+      "demo.kicker": "جرّب الآن",
+      "demo.title": "جرّب البحث قبل أن تحمّل.",
+      "demo.lead": "هذه إعلانات تجريبية تعمل داخل صفحتك: اختر النوع والمدينة والحد الأعلى للسعر، واحفظ ما يعجبك — تماماً كما في التطبيق.",
+      "demo.all": "الكل",
+      "demo.apartment": "شقة",
+      "demo.villa": "فيلا",
+      "demo.land": "أرض",
+      "demo.office": "مكتب",
+      "demo.allCities": "كل المدن",
+      "demo.damascus": "دمشق",
+      "demo.aleppo": "حلب",
+      "demo.latakia": "اللاذقية",
+      "demo.homs": "حمص",
+      "demo.tartus": "طرطوس",
+      "demo.maxPrice": "الحد الأعلى",
+      "demo.results": "عقارات مطابقة",
+      "demo.saved": "في المفضلة",
+      "demo.reset": "إعادة الضبط",
+      "demo.note": "إعلانات توضيحية لعرض تجربة البحث؛ العقارات الحقيقية تُنشر من التطبيق بعد إنشاء حساب.",
+      "demo.none": "لا يوجد إعلان بهذه المعايير — جرّب رفع الحد الأعلى أو تغيير المدينة.",
+      "demo.save": "حفظ في المفضلة",
+      "demo.remove": "إزالة من المفضلة",
+
       "aud.kicker": "لمن عقار",
       "aud.title": "ثلاثة أدوار. منصة واحدة.",
       "aud.lead": "سواء كنت تبيع، أو توسّع محفظتك العقارية، أو تبحث عن سكنك الأول — عقار مبني حول ما تحتاجه فعلاً.",
-      "aud.1.role": "لأصحاب العقارات",
       "aud.1.title": "أعلن عن عقارك بثقة",
-      "aud.1.text": "أضف العقار، أدر إعلانك، واستقبل اهتمام الباحثين الجديين — بشفافية كاملة في كل خطوة.",
-      "aud.1.tag1": "إضافة عقار", "aud.1.tag2": "إدارة الإعلان", "aud.1.tag3": "ردود فورية",
-      "aud.2.role": "للمكاتب العقارية",
+      "aud.1.text": "أضف العقار مجاناً، أدر إعلانك، واستقبل اهتمام الباحثين الجديين — بشفافية كاملة في كل خطوة.",
+      "aud.1.tag1": "نشر مجاني", "aud.1.tag2": "إدارة الإعلان", "aud.1.tag3": "ردود فورية",
       "aud.2.title": "محفظتك في لوحة واحدة",
       "aud.2.text": "أطلق إعلانات موثّقة، تابع أداءها، وأدِر إعلانات مكتبك وباقاتك من مكان واحد يناسب حجم عملك.",
-      "aud.2.tag1": "حساب مكتب", "aud.2.tag2": "باقات مرنة", "aud.2.tag3": "إدارة إعلانات",
-      "aud.3.role": "للباحثين عن عقار",
+      "aud.2.tag1": "حساب مكتب", "aud.2.tag2": "باقات مرنة", "aud.2.tag3": "توثيق الحساب",
       "aud.3.title": "ابحث كما ينبغي",
       "aud.3.text": "فلترة حسب النوع والمدينة والسعر والمساحة، حفظ المفضّلة، وتواصل مباشرة مع المعلن.",
-      "aud.3.tag1": "بحث متقدم", "aud.3.tag2": "المحفوظة", "aud.3.tag3": "تواصل مباشر",
+      "aud.3.tag1": "بحث متقدم", "aud.3.tag2": "المفضلة", "aud.3.tag3": "تواصل مباشر",
 
       "feat.kicker": "المميزات",
       "feat.title": "كل ما تحتاجه للبحث والإعلان.",
@@ -2007,55 +2456,76 @@
       "feat.2.text": "توثيق المعلنين والمكاتب يرفع مصداقية كل إعلان ويجعل قرارك أسهل.",
       "feat.2.badge": "حساب موثّق",
       "feat.2.sub": "تم التحقق من المعلن",
-      "feat.3.title": "باقات مرنة",
-      "feat.3.text": "باقة لإعلان واحد أو محفظة كاملة، مع إدارة واضحة لحالة كل إعلان.",
-      "feat.3.p1": "أساسي", "feat.3.p2": "احترافي", "feat.3.p3": "مكتب",
+      "feat.3.title": "سقف واضح لكل حساب",
+      "feat.3.text": "سقف مجاني للمستخدم العادي، وسقف أكبر للمكتب، واشتراك يرفعه أكثر — تعرف حدك قبل أن تنشر.",
+      "feat.3.p1": "فردي", "feat.3.p2": "موثّق", "feat.3.p3": "مكتب",
       "feat.4.title": "لغتان وثيمان",
       "feat.4.text": "العربية والإنجليزية، داكن وفاتح — الواجهة تتكيّف معك وتتذكّر اختيارك.",
       "feat.4.ar": "العربية", "feat.4.dark": "داكن", "feat.4.light": "فاتح",
       "feat.5.title": "تواصل مباشر",
-      "feat.5.text": "راسل المعلن أو المكتب من داخل التطبيق واتفق على المعاينة بسرعة.",
+      "feat.5.text": "اتصل بالمعلن أو راسله على واتساب من داخل التطبيق واتفق على المعاينة بسرعة.",
       "feat.5.msg1": "هل الشقة متاحة للمعاينة السبت؟",
       "feat.5.msg2": "أكيد، الساعة ١١ صباحاً.",
       "feat.6.title": "تطبيق ونسخة ويب",
-      "feat.6.text": "نفس الحساب ونفس الإعلانات — على أندرويد وعلى أي متصفح عند الإطلاق.",
+      "feat.6.text": "نفس الحساب ونفس الإعلانات — على أندرويد وعلى أي متصفح، بلا انتظار.",
       "feat.6.android": "أندرويد", "feat.6.web": "الويب",
 
-      "how.kicker": "عند الإطلاق",
-      "how.title": "عند الإطلاق، ثلاث خطوات وتبدأ.",
-      "how.lead": "لا تعقيد، لا خطوات زائدة — من أول دخول إلى أول عقار في دقائق. انتظرونا قريباً.",
-      "how.1.title": "انتظر الإطلاق",
-      "how.1.text": "سنعلن موعد الإطلاق هنا. سيصبح التطبيق ونسخة الويب متاحين في الوقت نفسه.",
-      "how.2.title": "جهّز حسابك",
-      "how.2.text": "عند الإطلاق، سجّل برقم هاتفك وحدّد إن كنت باحثاً أو صاحب عقار أو مكتباً عقارياً.",
+      "how.kicker": "كيف تبدأ",
+      "how.title": "ثلاث خطوات وتبدأ.",
+      "how.lead": "لا تعقيد، لا خطوات زائدة — من أول دخول إلى أول عقار في دقائق.",
+      "how.1.title": "حمّل التطبيق أو افتح الويب",
+      "how.1.text": "نزّل ملف APK وثبّته على أندرويد، أو افتح النسخة الويب من أي متصفح — بلا حساب أولاً.",
+      "how.2.title": "أنشئ حسابك برقم هاتفك",
+      "how.2.text": "سجّل برقم هاتفك وحدّد إن كنت باحثاً أو صاحب عقار أو مكتباً عقارياً — ووثّق حسابك لترفع سقفك.",
       "how.3.title": "ابحث أو أعلن",
-      "how.3.text": "بعد الإطلاق، تصفّح الإعلانات الموثّقة أو أضف عقارك وتواصل مباشرة من التطبيق.",
+      "how.3.text": "تصفّح الإعلانات الموثّقة، احفظ المفضلة، أو أضف عقارك مجاناً وتواصل مباشرة.",
 
-      "cta.kicker": "قريباً",
-      "cta.title": "بيتك القادم... قريباً جداً.",
-      "cta.text": "نضع اللمسات الأخيرة على عقار. سيصبح تطبيق أندرويد ونسخة الويب متاحين فور الإطلاق — إعلاناتك ومحفوظاتك ستبقى معك أينما كنت.",
-      "cta.soon": "قريباً — قيد التجهيز للإطلاق",
-      "cta.soonMeta": "تابع هذه الصفحة لمعرفة موعد الإطلاق",
-      "cta.note1": "أندرويد والويب · إطلاق متزامن",
-      "cta.note2": "الويب يعمل على iOS وWindows وMac عند الإطلاق",
+      "cta.kicker": "جاهز الآن",
+      "cta.title": "بيتك القادم يبدأ من عقار.",
+      "cta.text": "اختر الطريقة الأنسب لك: تطبيق أندرويد بملف مباشر بلا متجر، أو النسخة الويب التي تعمل على أي جهاز. النشر مجاني، والتصفح بلا حساب.",
       "cta.photo": "عقارات موثّقة، بصور أوضح.",
+      "dl.android": "أندرويد · 64 بت",
+      "dl.androidMeta": "APK · 21 ميغابايت · أحدث إصدار",
+      "dl.android32": "أندرويد · 32 بت",
+      "dl.android32Meta": "APK · 20 ميغابايت · للأجهزة الأقدم",
+      "dl.web": "النسخة الويب",
+      "dl.webMeta": "أي متصفح · آيفون وويندوز وماك",
+      "dl.installTitle": "طريقة التثبيت على أندرويد",
+      "dl.installText": "نزّل الملف، ثم افتحه من شريط التنزيلات. إن ظهر تحذير «تثبيت من مصدر غير معروف» فاسمح بهذا التطبيق فقط، ثم اضغط «تثبيت». بعدها ستتلقّى التحديثات من داخل التطبيق.",
+
+      "faq.kicker": "الأسئلة الشائعة",
+      "faq.title": "أسئلة يسألها الجميع.",
+      "faq.lead": "إن لم تجد إجابتك، تواصل معنا من رابط الدعم في الأسفل.",
+      "faq.1.q": "هل النشر مجاني فعلاً؟",
+      "faq.1.a": "نعم. النشر مجاني دائماً، ولا تُطلب منك أي رسوم لإضافة إعلان. لكل حساب سقف واضح لعدد الإعلانات النشطة، ويظهر لك داخل التطبيق قبل النشر.",
+      "faq.2.q": "كيف أثبّت التطبيق على أندرويد؟",
+      "faq.2.a": "حمّل ملف APK من هذه الصفحة وافتحه؛ سيطلب أندرويد السماح بالتثبيت من هذا المصدر مرة واحدة. لا يلزم متجر تطبيقات، والملف موقّع رسمياً باسم عقار.",
+      "faq.3.q": "هل يعمل على آيفون؟",
+      "faq.3.a": "نعم، عبر النسخة الويب التي تعمل على Safari وأي متصفح آخر. يمكنك أيضاً إضافتها إلى الشاشة الرئيسية لتعمل كتطبيق.",
+      "faq.4.q": "ما الفرق بين حساب عادي وحساب مكتب؟",
+      "faq.4.a": "الحساب العادي مخصّص لمن يعلن عن عقار أو عقارين، وحساب المكتب لمكاتب العقارات التي تدير محفظة إعلانات أكبر مع صفحة مكتب وباقات.",
+      "faq.5.q": "كيف أوثّق حسابي؟",
+      "faq.5.a": "اطلب التوثيق من داخل التطبيق أو من الدعم؛ بعد التحقق يظهر شعار «موثّق» على حسابك وإعلاناتك، ويرتفع سقف نشرك.",
+      "faq.6.q": "ماذا يحدث لإعلاني بعد مدة العرض؟",
+      "faq.6.a": "ينتهي الإعلان تلقائياً بعد المدة المحددة (30 يوماً للإعلان المجاني)، ويمكنك تجديده من «عقاراتي» في أي وقت.",
 
       "footer.tag": "منصة الإعلانات العقارية — من المالك والمكتب إلى الباحث.",
+      "footer.apk": "ملف APK",
       "footer.repo": "المستودع",
       "footer.support": "الدعم",
       "footer.rights": "جميع الحقوق محفوظة.",
-      "footer.version": "الإصدار الأول · قريباً",
+      "footer.version": "الإصدار 1.0.0 · أُطلق الآن",
 
-      "mobile.soon": "قريباً — انتظرونا",
-      "mobile.explore": "اكتشف عقار",
+      "mobile.dl": "حمّل التطبيق",
+      "mobile.web": "الويب",
       "toggle.light": "فاتح",
       "toggle.dark": "داكن",
       "toggle.langNext": "EN"
     },
 
     en: {
-      "meta.title": "Aqar Property — Coming Soon | Real Estate Listings Platform",
-      "meta.desc": "Aqar Property is a platform for verified real estate listings — currently in the works and launching soon. The Android app and web app will be available shortly. Stay tuned.",
+      "meta.title": "Aqar Property — Now Live | Real Estate Listings Platform",
+      "meta.desc": "Aqar Property is a real estate listings platform: publish for free, search verified listings and contact advertisers directly. Available on Android, and in any browser.",
 
       "a11y.skip": "Skip to content",
       "a11y.home": "Aqar Property",
@@ -2064,26 +2534,29 @@
       "a11y.lang": "Switch language",
       "a11y.theme": "Switch color theme",
 
-      "nav.audience": "Who it's for",
+      "nav.demo": "Try the search",
       "nav.features": "Features",
       "nav.how": "How it works",
-      "nav.download": "Coming soon",
-      "nav.cta": "Coming soon",
+      "nav.faq": "FAQ",
+      "nav.download": "Download",
+      "nav.cta": "Get the app",
 
-      "hero.eyebrow": "Coming soon · A real estate platform in the works",
-      "hero.title": "Your next home starts with <em>Aqar</em> — coming soon.",
-      "hero.lead": "One platform that will bring together verified property listings from owners and real estate offices. We're putting the final touches before launch — browse smart, filter in seconds, and connect directly, coming soon in the app and in any browser.",
-      "hero.soon": "Coming soon — in the works",
-      "hero.soonMeta": "Stay tuned for Android and web",
-      "hero.explore": "Discover Aqar",
-      "hero.exploreMeta": "Explore the features",
+      "hero.eyebrow": "Now live · Android and web",
+      "hero.title": "Your next home starts with <em>Aqar</em>.",
+      "hero.lead": "One platform bringing together verified property listings from owners and real estate offices. Browse smart, filter in seconds, and connect directly — in the app or in your browser, right now.",
+      "hero.dl": "Download the Android app",
+      "hero.dlMeta": "Direct APK · 21 MB",
+      "hero.web": "Open the web app",
+      "hero.webMeta": "Works in any browser",
+      "hero.hint": "Publishing is completely free.",
+      "hero.hint32": "Older device? 32-bit build",
       "hero.proof1": "Verified listings",
-      "hero.proof2": "Launching soon · stay tuned",
+      "hero.proof2": "Free publishing, no fees",
       "hero.proof3": "Arabic / English",
       "hero.phoneAlt": "The Aqar app interface on a phone",
       "hero.float1": "Verified real estate office",
       "hero.float2": "Newly furnished apartment",
-      "hero.float2loc": "Al-Rabiah · Amman",
+      "hero.float2loc": "Al-Shaalan · Damascus",
 
       "phone.search": "Search apartments, villas, land…",
       "phone.chip1": "All",
@@ -2095,13 +2568,13 @@
       "phone.viewall": "See all",
       "phone.verified": "Verified",
       "phone.l1": "Apartment with a panoramic view",
-      "phone.l1loc": "Abdoun · Amman",
+      "phone.l1loc": "Al-Mazzeh · Damascus",
       "phone.l1price": "$120,000",
       "phone.l1meta": "3 beds · 145 m²",
       "phone.l2": "Newly furnished apartment",
-      "phone.l2loc": "Al-Rabiah · Amman",
+      "phone.l2loc": "Al-Shaalan · Damascus",
       "phone.l3": "Villa with a private garden",
-      "phone.l3loc": "Dabouq · Amman",
+      "phone.l3loc": "Dummar · Damascus",
       "phone.tab1": "Search",
       "phone.tab2": "Saved",
       "phone.tab3": "My ads",
@@ -2110,21 +2583,46 @@
       "ticker.1": "Apartments", "ticker.2": "Villas", "ticker.3": "Land", "ticker.4": "Offices",
       "ticker.5": "Retail", "ticker.6": "Farms", "ticker.7": "Chalets", "ticker.8": "Warehouses",
 
+      "stats.1": "Fees to publish", "stats.1s": "Publishing is always free",
+      "stats.2": "days per listing", "stats.2s": "for every free listing",
+      "stats.3": "listings per office", "stats.3s": "and more with a plan",
+      "stats.4": "platforms live", "stats.4s": "Android + web",
+
+      "demo.kicker": "Try it now",
+      "demo.title": "Try the search before you download.",
+      "demo.lead": "These are demo listings running in your page: pick the type, the city and a maximum price, and save what you like — exactly like the app.",
+      "demo.all": "All",
+      "demo.apartment": "Apartment",
+      "demo.villa": "Villa",
+      "demo.land": "Land",
+      "demo.office": "Office",
+      "demo.allCities": "All cities",
+      "demo.damascus": "Damascus",
+      "demo.aleppo": "Aleppo",
+      "demo.latakia": "Latakia",
+      "demo.homs": "Homs",
+      "demo.tartus": "Tartus",
+      "demo.maxPrice": "Max price",
+      "demo.results": "matching listings",
+      "demo.saved": "saved",
+      "demo.reset": "Reset",
+      "demo.note": "Illustrative listings for the search experience; real properties are published from the app after signing up.",
+      "demo.none": "No listing matches these filters — try a higher price or another city.",
+      "demo.save": "Save to favourites",
+      "demo.remove": "Remove from favourites",
+
       "aud.kicker": "Who it's for",
       "aud.title": "Three roles. One platform.",
       "aud.lead": "Whether you're selling, growing a property portfolio, or looking for your first home — Aqar is built around what you actually need.",
-      "aud.1.role": "For property owners",
       "aud.1.title": "List your property with confidence",
-      "aud.1.text": "Add the property, manage your listing and receive interest from serious buyers — with full transparency at every step.",
-      "aud.1.tag1": "Add property", "aud.1.tag2": "Manage listing", "aud.1.tag3": "Instant replies",
-      "aud.2.role": "For real estate offices",
+      "aud.1.text": "Add the property for free, manage your listing and receive interest from serious buyers — with full transparency at every step.",
+      "aud.1.tag1": "Free publishing", "aud.1.tag2": "Listing control", "aud.1.tag3": "Instant replies",
       "aud.2.title": "Your portfolio, one dashboard",
       "aud.2.text": "Publish verified listings, track their performance and manage your office listings and plans from one place that fits your scale.",
-      "aud.2.tag1": "Office account", "aud.2.tag2": "Flexible plans", "aud.2.tag3": "Listing management",
-      "aud.3.role": "For property seekers",
+      "aud.2.tag1": "Office account", "aud.2.tag2": "Flexible plans", "aud.2.tag3": "Account verification",
       "aud.3.title": "Search the way it should work",
       "aud.3.text": "Filter by type, city, price and area, save your favourites, and contact the advertiser directly.",
-      "aud.3.tag1": "Advanced search", "aud.3.tag2": "Saved listings", "aud.3.tag3": "Direct contact",
+      "aud.3.tag1": "Advanced search", "aud.3.tag2": "Favourites", "aud.3.tag3": "Direct contact",
 
       "feat.kicker": "Features",
       "feat.title": "Everything you need to search and list.",
@@ -2136,51 +2634,108 @@
       "feat.2.text": "Verification for advertisers and offices raises the credibility of every listing and makes your decision easier.",
       "feat.2.badge": "Verified account",
       "feat.2.sub": "Advertiser verified",
-      "feat.3.title": "Flexible plans",
-      "feat.3.text": "A plan for a single listing or an entire portfolio, with clear management for each listing's status.",
-      "feat.3.p1": "Basic", "feat.3.p2": "Pro", "feat.3.p3": "Office",
+      "feat.3.title": "A clear cap for every account",
+      "feat.3.text": "A free cap for individuals, a larger one for offices, and a plan that raises it further — you know your limit before you publish.",
+      "feat.3.p1": "Individual", "feat.3.p2": "Verified", "feat.3.p3": "Office",
       "feat.4.title": "Two languages, two themes",
       "feat.4.text": "Arabic and English, dark and light — the interface adapts to you and remembers your choice.",
       "feat.4.ar": "العربية", "feat.4.dark": "Dark", "feat.4.light": "Light",
       "feat.5.title": "Direct contact",
-      "feat.5.text": "Message the advertiser or office from inside the app and arrange a viewing quickly.",
+      "feat.5.text": "Call the advertiser or message them on WhatsApp from inside the app and arrange a viewing quickly.",
       "feat.5.msg1": "Is the apartment available to view on Saturday?",
       "feat.5.msg2": "Sure, 11 AM.",
       "feat.6.title": "App and web app",
-      "feat.6.text": "The same account and the same listings — on Android and in any browser at launch.",
+      "feat.6.text": "The same account and the same listings — on Android and in any browser, no waiting.",
       "feat.6.android": "Android", "feat.6.web": "Web",
 
-      "how.kicker": "At launch",
-      "how.title": "At launch, three steps and you're in.",
-      "how.lead": "No friction, no extra steps — from your first visit to your first property in minutes. Stay tuned.",
-      "how.1.title": "Wait for launch",
-      "how.1.text": "We'll announce the launch date here. The app and the web app will become available at the same time.",
-      "how.2.title": "Prepare your account",
-      "how.2.text": "At launch, sign up with your phone number and tell us whether you're a seeker, an owner or a real estate office.",
+      "how.kicker": "How to start",
+      "how.title": "Three steps and you're in.",
+      "how.lead": "No friction, no extra steps — from your first visit to your first property in minutes.",
+      "how.1.title": "Download the app or open the web",
+      "how.1.text": "Download the APK and install it on Android, or open the web app in any browser — no account needed first.",
+      "how.2.title": "Create your account with your phone",
+      "how.2.text": "Sign up with your phone number and tell us whether you're a seeker, an owner or an office — then verify to raise your cap.",
       "how.3.title": "Search or list",
-      "how.3.text": "After launch, browse verified listings or add your property, and get in touch directly from the app.",
+      "how.3.text": "Browse verified listings, save your favourites, or add your property for free and get in touch directly.",
 
-      "cta.kicker": "Coming soon",
-      "cta.title": "Your next home... coming very soon.",
-      "cta.text": "We're putting the final touches on Aqar. The Android app and web app will be available as soon as we launch — your listings and saved properties will stay with you.",
-      "cta.soon": "Coming soon — in the works",
-      "cta.soonMeta": "Follow this page for the launch date",
-      "cta.note1": "Android and web · launching together",
-      "cta.note2": "The web app runs on iOS, Windows and Mac at launch",
+      "cta.kicker": "Ready now",
+      "cta.title": "Your next home starts with Aqar.",
+      "cta.text": "Pick whichever suits you: the Android app as a direct file with no store, or the web app that runs on any device. Publishing is free, and browsing needs no account.",
       "cta.photo": "Verified listings, clearer photos.",
+      "dl.android": "Android · 64-bit",
+      "dl.androidMeta": "APK · 21 MB · latest release",
+      "dl.android32": "Android · 32-bit",
+      "dl.android32Meta": "APK · 20 MB · for older devices",
+      "dl.web": "The web app",
+      "dl.webMeta": "Any browser · iPhone, Windows and Mac",
+      "dl.installTitle": "How to install on Android",
+      "dl.installText": "Download the file, then open it from your downloads. If Android warns about installing from an unknown source, allow it for this app only, then tap Install. Updates arrive from inside the app.",
+
+      "faq.kicker": "FAQ",
+      "faq.title": "Questions everyone asks.",
+      "faq.lead": "If your answer isn't here, reach us from the support link below.",
+      "faq.1.q": "Is publishing really free?",
+      "faq.1.a": "Yes. Publishing is always free and no fee is requested to add a listing. Every account has a clear cap on active listings, shown inside the app before you publish.",
+      "faq.2.q": "How do I install the Android app?",
+      "faq.2.a": "Download the APK from this page and open it; Android will ask once to allow installs from this source. No app store is needed, and the file is officially signed as Aqar.",
+      "faq.3.q": "Does it work on iPhone?",
+      "faq.3.a": "Yes, through the web app, which runs in Safari and any other browser. You can also add it to your home screen so it behaves like an app.",
+      "faq.4.q": "What's the difference between a personal and an office account?",
+      "faq.4.a": "A personal account suits someone listing a property or two; an office account is for agencies managing a larger portfolio, with an office page and plans.",
+      "faq.5.q": "How do I verify my account?",
+      "faq.5.a": "Request verification inside the app or from support; once checked, a verified badge appears on your account and listings, and your publishing cap rises.",
+      "faq.6.q": "What happens to my listing after its period ends?",
+      "faq.6.a": "The listing expires automatically after its period (30 days for a free listing), and you can renew it from My Properties at any time.",
 
       "footer.tag": "The real estate listings platform — from owner and office to buyer.",
+      "footer.apk": "APK file",
       "footer.repo": "Repository",
       "footer.support": "Support",
       "footer.rights": "All rights reserved.",
-      "footer.version": "First release · coming soon",
+      "footer.version": "Version 1.0.0 · now live",
 
-      "mobile.soon": "Coming soon — stay tuned",
-      "mobile.explore": "Discover Aqar",
+      "mobile.dl": "Get the app",
+      "mobile.web": "Web",
       "toggle.light": "Light",
       "toggle.dark": "Dark",
       "toggle.langNext": "AR"
     }
+  };
+
+  var LISTINGS = [
+    { id: 1, type: "apartment", city: "damascus", price: 120000, area: 145, rooms: 3, img: "assets/images/apartment.jpg",
+      title: { ar: "شقة بإطلالة بانورامية", en: "Apartment with a panoramic view" } },
+    { id: 2, type: "villa", city: "damascus", price: 320000, area: 320, rooms: 5, img: "assets/images/villa.jpg",
+      title: { ar: "فيلا بحديقة خاصة", en: "Villa with a private garden" } },
+    { id: 3, type: "apartment", city: "damascus", price: 85000, area: 95, rooms: 2, img: "assets/images/interior.jpg",
+      title: { ar: "شقة مفروشة حديثاً", en: "Newly furnished apartment" } },
+    { id: 4, type: "land", city: "homs", price: 60000, area: 900, rooms: 0, img: "assets/images/land.jpg",
+      title: { ar: "أرض سكنية على شارعين", en: "Residential plot on two streets" } },
+    { id: 5, type: "office", city: "damascus", price: 150000, area: 120, rooms: 4, img: "assets/images/office.jpg",
+      title: { ar: "مكتب تجاري مجهّز", en: "Fitted commercial office" } },
+    { id: 6, type: "apartment", city: "aleppo", price: 70000, area: 110, rooms: 3, img: "assets/images/building.jpg",
+      title: { ar: "شقة في بناء حديث", en: "Apartment in a new building" } },
+    { id: 7, type: "villa", city: "latakia", price: 210000, area: 260, rooms: 4, img: "assets/images/villa.jpg",
+      title: { ar: "فيلا قريبة من البحر", en: "Villa near the sea" } },
+    { id: 8, type: "land", city: "tartus", price: 95000, area: 1200, rooms: 0, img: "assets/images/land.jpg",
+      title: { ar: "أرض مطلّة على السهل", en: "Plot overlooking the plain" } },
+    { id: 9, type: "office", city: "aleppo", price: 55000, area: 80, rooms: 2, img: "assets/images/office.jpg",
+      title: { ar: "مكتب صغير في مركز المدينة", en: "Small office downtown" } }
+  ];
+
+  var CITY_NAMES = {
+    damascus: { ar: "دمشق", en: "Damascus" },
+    aleppo: { ar: "حلب", en: "Aleppo" },
+    latakia: { ar: "اللاذقية", en: "Latakia" },
+    homs: { ar: "حمص", en: "Homs" },
+    tartus: { ar: "طرطوس", en: "Tartus" }
+  };
+
+  var TYPE_NAMES = {
+    apartment: { ar: "شقة", en: "Apartment" },
+    villa: { ar: "فيلا", en: "Villa" },
+    land: { ar: "أرض", en: "Land" },
+    office: { ar: "مكتب", en: "Office" }
   };
 
   var langToggle = document.getElementById("langToggle");
@@ -2191,10 +2746,18 @@
 
   var state = {
     theme: root.getAttribute("data-theme") === "light" ? "light" : "dark",
-    lang: root.lang === "en" ? "en" : "ar"
+    lang: root.lang === "en" ? "en" : "ar",
+    type: "all",
+    city: "all",
+    maxPrice: 400000,
+    favs: {}
   };
 
   function dict() { return I18N[state.lang]; }
+  function t(key) {
+    var value = dict()[key];
+    return typeof value === "string" ? value : key;
+  }
 
   function safeGet(key) {
     try { return localStorage.getItem(key); } catch (e) { return null; }
@@ -2203,14 +2766,18 @@
     try { localStorage.setItem(key, value); } catch (e) {}
   }
 
+  // أرقام لاتينية في اللغتين، كما تظهر داخل التطبيق وفي الأسعار.
+  function number(value) {
+    return new Intl.NumberFormat("en-US").format(value);
+  }
+
   function applyTheme(theme, persist) {
     state.theme = theme === "light" ? "light" : "dark";
     root.setAttribute("data-theme", state.theme);
     root.style.colorScheme = state.theme;
     themeToggle.setAttribute("aria-pressed", state.theme === "dark" ? "true" : "false");
-    var d = dict();
-    themeToggle.setAttribute("aria-label", d["a11y.theme"]);
-    if (themeLabel) themeLabel.textContent = d[state.theme === "dark" ? "toggle.dark" : "toggle.light"];
+    themeToggle.setAttribute("aria-label", t("a11y.theme"));
+    if (themeLabel) themeLabel.textContent = t(state.theme === "dark" ? "toggle.dark" : "toggle.light");
     if (persist) safeSet(KEY_THEME, state.theme);
   }
 
@@ -2246,6 +2813,8 @@
     }
 
     applyTheme(state.theme, false);
+    updatePriceOutput();
+    renderListings();
     if (persist) safeSet(KEY_LANG, state.lang);
   }
 
@@ -2256,6 +2825,172 @@
   themeToggle.addEventListener("click", function () {
     applyTheme(state.theme === "dark" ? "light" : "dark", true);
   });
+
+  /* ---------- Demo listings ---------- */
+  var listingsEl = document.getElementById("listings");
+  var resultCountEl = document.getElementById("resultCount");
+  var savedCountEl = document.getElementById("savedCount");
+  var priceFilter = document.getElementById("priceFilter");
+  var priceOut = document.getElementById("priceOut");
+  var cityFilter = document.getElementById("cityFilter");
+  var resetDemo = document.getElementById("resetDemo");
+  var typeButtons = Array.prototype.slice.call(document.querySelectorAll(".chip-btn"));
+
+  var FAV_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.2-7-9a3.9 3.9 0 0 1 7-2.4A3.9 3.9 0 0 1 19 11c0 4.8-7 9-7 9Z"/></svg>';
+  var PIN_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-6.4-5.4-6.4-10a6.4 6.4 0 1 1 12.8 0c0 4.6-6.4 10-6.4 10Z"/><circle cx="12" cy="11" r="2.2"/></svg>';
+
+  function updatePriceOutput() {
+    if (!priceOut) return;
+    priceOut.textContent = number(state.maxPrice) + " $";
+    if (priceFilter) {
+      var min = Number(priceFilter.min) || 0;
+      var max = Number(priceFilter.max) || 100;
+      var pct = ((state.maxPrice - min) / (max - min)) * 100;
+      priceFilter.style.setProperty("--fill", pct + "%");
+    }
+  }
+
+  function specs(item) {
+    if (item.type === "land") {
+      return number(item.area) + (state.lang === "ar" ? " م²" : " m²");
+    }
+    var roomsLabel = item.rooms + (state.lang === "ar" ? " غرف" : " beds");
+    return roomsLabel + " · " + number(item.area) + (state.lang === "ar" ? " م²" : " m²");
+  }
+
+  function renderListings() {
+    if (!listingsEl) return;
+
+    var filtered = LISTINGS.filter(function (item) {
+      if (state.type !== "all" && item.type !== state.type) return false;
+      if (state.city !== "all" && item.city !== state.city) return false;
+      if (item.price > state.maxPrice) return false;
+      return true;
+    });
+
+    listingsEl.innerHTML = "";
+
+    if (!filtered.length) {
+      var empty = document.createElement("div");
+      empty.className = "listing-empty";
+      empty.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="11" cy="11" r="6.4"/><path d="m16 16 4 4"/></svg><span></span>';
+      empty.querySelector("span").textContent = t("demo.none");
+      listingsEl.appendChild(empty);
+    } else {
+      filtered.forEach(function (item, index) {
+        var card = document.createElement("article");
+        card.className = "listing";
+        card.style.animationDelay = Math.min(index * 45, 260) + "ms";
+
+        var media = document.createElement("div");
+        media.className = "listing-media";
+
+        var img = document.createElement("img");
+        img.src = item.img;
+        img.alt = "";
+        img.loading = "lazy";
+        img.width = 600;
+        img.height = 450;
+
+        var typeTag = document.createElement("span");
+        typeTag.className = "listing-type";
+        typeTag.textContent = TYPE_NAMES[item.type][state.lang];
+
+        var fav = document.createElement("button");
+        fav.type = "button";
+        fav.className = "fav-btn";
+        var isFav = !!state.favs[item.id];
+        fav.setAttribute("aria-pressed", isFav ? "true" : "false");
+        fav.setAttribute("aria-label", t(isFav ? "demo.remove" : "demo.save"));
+        fav.innerHTML = FAV_ICON;
+        fav.addEventListener("click", function () {
+          if (state.favs[item.id]) delete state.favs[item.id];
+          else state.favs[item.id] = true;
+          safeSet(KEY_FAV, Object.keys(state.favs).join(","));
+          renderListings();
+        });
+
+        media.appendChild(img);
+        media.appendChild(typeTag);
+        media.appendChild(fav);
+
+        var body = document.createElement("div");
+        body.className = "listing-body";
+
+        var h3 = document.createElement("h3");
+        h3.textContent = item.title[state.lang];
+
+        var loc = document.createElement("p");
+        loc.className = "listing-loc";
+        loc.innerHTML = PIN_ICON + "<span></span>";
+        loc.querySelector("span").textContent = CITY_NAMES[item.city][state.lang];
+
+        var foot = document.createElement("div");
+        foot.className = "listing-foot";
+
+        var price = document.createElement("b");
+        price.className = "listing-price";
+        price.textContent = number(item.price) + " $";
+
+        var spec = document.createElement("span");
+        spec.className = "listing-spec";
+        spec.textContent = specs(item);
+
+        foot.appendChild(price);
+        foot.appendChild(spec);
+        body.appendChild(h3);
+        body.appendChild(loc);
+        body.appendChild(foot);
+
+        card.appendChild(media);
+        card.appendChild(body);
+        listingsEl.appendChild(card);
+      });
+    }
+
+    if (resultCountEl) resultCountEl.textContent = number(filtered.length);
+    if (savedCountEl) savedCountEl.textContent = number(Object.keys(state.favs).length);
+  }
+
+  typeButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      state.type = btn.getAttribute("data-type");
+      typeButtons.forEach(function (other) {
+        other.setAttribute("aria-pressed", other === btn ? "true" : "false");
+      });
+      renderListings();
+    });
+  });
+
+  if (cityFilter) {
+    cityFilter.addEventListener("change", function () {
+      state.city = cityFilter.value;
+      renderListings();
+    });
+  }
+
+  if (priceFilter) {
+    priceFilter.addEventListener("input", function () {
+      state.maxPrice = Number(priceFilter.value);
+      updatePriceOutput();
+      renderListings();
+    });
+  }
+
+  if (resetDemo) {
+    resetDemo.addEventListener("click", function () {
+      state.type = "all";
+      state.city = "all";
+      state.maxPrice = 400000;
+      if (cityFilter) cityFilter.value = "all";
+      if (priceFilter) priceFilter.value = "400000";
+      typeButtons.forEach(function (btn) {
+        btn.setAttribute("aria-pressed", btn.getAttribute("data-type") === "all" ? "true" : "false");
+      });
+      updatePriceOutput();
+      renderListings();
+    });
+  }
 
   /* Header elevation + reading progress */
   var header = document.querySelector(".site-header");
@@ -2297,7 +3032,42 @@
     items.forEach(function (el) { el.classList.add("is-in"); });
   }
 
+  /* Count-up numbers */
+  var counters = Array.prototype.slice.call(document.querySelectorAll(".count"));
+  function animateCount(el) {
+    var target = Number(el.getAttribute("data-count")) || 0;
+    if (!target) { el.textContent = number(0); return; }
+    var start = null;
+    var duration = 900;
+    function step(now) {
+      if (start === null) start = now;
+      var p = Math.min(1, (now - start) / duration);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = number(Math.round(target * eased));
+      if (p < 1) window.requestAnimationFrame(step);
+    }
+    window.requestAnimationFrame(step);
+  }
+  if ("IntersectionObserver" in window && counters.length) {
+    var co = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          animateCount(entry.target);
+          co.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(function (el) { co.observe(el); });
+  }
+
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+  var savedFavs = safeGet(KEY_FAV);
+  if (savedFavs) {
+    savedFavs.split(",").forEach(function (id) {
+      if (id) state.favs[id] = true;
+    });
+  }
 
   var savedLang = safeGet(KEY_LANG);
   var savedTheme = safeGet(KEY_THEME);
