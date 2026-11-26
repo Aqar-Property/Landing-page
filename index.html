@@ -462,21 +462,18 @@
   }
   html[dir="ltr"] h1 { line-height: 1.04; letter-spacing: -.035em; max-width: 17ch; }
 
+  /* الخط تحت «عقار» يرسمه المتصفح فوق خط الأساس مباشرة، فلا يهبط إلى
+     السطر التالي مهما كبر الخط أو تغيّر الخط العربي. */
   h1 em {
-    position: relative;
     font-style: normal;
     color: var(--brand);
     white-space: nowrap;
-  }
-  h1 em::after {
-    content: "";
-    position: absolute;
-    inset-inline: .04em;
-    bottom: -.09em;
-    height: .09em;
-    border-radius: 99px;
-    background: var(--brand);
-    opacity: .32;
+    text-decoration-line: underline;
+    text-decoration-style: solid;
+    text-decoration-color: var(--brand-line);
+    text-decoration-thickness: .06em;
+    text-underline-offset: .1em;
+    text-decoration-skip-ink: none;
   }
 
   .lead {
